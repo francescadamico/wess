@@ -1,0 +1,8 @@
+'use strict';
+
+module.exports = {
+  env: 'development',
+  postgres: {
+    uri: 'postgres://postgres:passgres@localhost:5432/postgres'
+  }
+};

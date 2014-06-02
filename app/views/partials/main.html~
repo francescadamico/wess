@@ -1,0 +1,21 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="jumbotron">
+  <h1>Welcome to the WESS project</h1>
+  <p class="lead">
+    Tha WESS project is about collecting and offering data measurements from the WESS measurement stations.
+		We currently have {{count}} measurement records and are trying to provide you access to and visualistion of all this data.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">Tell me more!</a></p>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="thing in awesomeThings">
+      <h4>{{thing.name}}</h4>
+      <p>{{thing.info}}</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>♥ from the WESS team</p>
+</div>
