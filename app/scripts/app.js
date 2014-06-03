@@ -12,6 +12,9 @@ angular.module('wessApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
+      .when('/aboutus', {
+        templateUrl: 'partials/aboutus'
+      })
       .otherwise({
         redirectTo: '/'
       });
