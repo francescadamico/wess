@@ -14,15 +14,19 @@ describe('Controller: MainCtrl', function () {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/api/awesomeThings')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    $httpBackend.expectGET('/api/dataCount')
+      .respond({ count: '42' });
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('should attach a list of awesomeThings and a count of records to the scope', function () {
     expect(scope.awesomeThings).toBeUndefined();
+    expect(scope.count).toBeUndefined();
     $httpBackend.flush();
     expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.count).toBe('42');
   });
 });
