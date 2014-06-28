@@ -15,6 +15,10 @@ angular.module('wessApp', [
       .when('/aboutus', {
         templateUrl: 'partials/aboutus'
       })
+      .when('/weather', {
+        templateUrl: 'partials/weather',
+        controller: 'WeatherCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

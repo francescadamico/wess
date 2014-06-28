@@ -10,6 +10,10 @@ angular.module('wessApp')
       {
         'title': 'About Us',
         'link': '/aboutus'
+      },
+      {
+        'title': 'Weather',
+        'link': '/weather'
       }
     ];
     
