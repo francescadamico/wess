@@ -4,7 +4,8 @@ angular.module('wessApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'n3-line-chart'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
