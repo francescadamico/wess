@@ -8,12 +8,12 @@ angular.module('wessApp')
         'link': '/'
       },
       {
-        'title': 'About Us',
-        'link': '/about'
-      },
-      {
         'title': 'Weather',
         'link': '/weather'
+      },
+      {
+        'title': 'User data',
+        'link': '/user_data'
       }
     ];
 

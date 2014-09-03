@@ -1,0 +1,77 @@
+[33mcommit 2235db3ae057ac7f1c5a7d41158aab1fa6a4ef46[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Sat Aug 16 19:15:26 2014 +0200
+
+    Migrated from angular-fullstack 1.4.3 to 2.0.10
+
+[33mcommit 81f32f4b71785adb65e020c8f9db667a96af69fd[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Sat Jul 12 11:12:45 2014 +0200
+
+    Added n3-line-charts with dummy data as example
+
+[33mcommit 8854ecc009ced6490826557357add27369c37378[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Sat Jun 28 12:39:34 2014 +0200
+
+    Added and changed buttons in main.html
+
+[33mcommit 13a70ab9df4cd1a34df36a5789ac696c9882931d[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Sat Jun 28 12:33:05 2014 +0200
+
+    Created weather route and added it to navbar
+
+[33mcommit 66bf72fbddfc86a2f1b9510b4098e759a566fa3f[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Sat Jun 28 12:18:13 2014 +0200
+
+    Adjustments to content in main and aboutUs
+
+[33mcommit b8db501cbf39e1408e317ba86dcce2169bee193c[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Wed Jun 4 21:08:50 2014 +0200
+
+    Added error handling for dataCount API call
+
+[33mcommit 12ca3456e123686add906f5b21b033564bf78dcf[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Tue Jun 3 17:34:38 2014 +0200
+
+    Fixed karma test not running/passing
+
+[33mcommit e27869c4c20e97e3ee8000ddaeadc61f75ef98dc[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Tue Jun 3 12:07:12 2014 +0200
+
+    Added new About Us page
+
+[33mcommit 2200e339bd4f57b15e550ca221b26e00f7d8286b[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Tue Jun 3 11:21:08 2014 +0200
+
+    Reformatting and variable renaming in app's MainCtrl
+
+[33mcommit 19b4712b32e4f3a57a45d65bd22a1f340b474b11[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Tue Jun 3 10:42:34 2014 +0200
+
+    Added server-test for /api/dataCount
+
+[33mcommit c382774879fa710c384cbf0bc86f4c68f3dd8be1[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Tue Jun 3 10:10:09 2014 +0200
+
+    Added vim style temp-files to ignore-rules
+
+[33mcommit 931a786c75e840948e7bf8c9f6b91e1a79f60a61[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Tue Jun 3 09:53:59 2014 +0200
+
+    Fixes to enable test execution
+
+[33mcommit a54b013359faa23bda0eb1b5dc63036e8790c374[m
+Author: Carmelo Scollo <carmelo.scollo@gmail.com>
+Date:   Mon Jun 2 19:07:35 2014 +0200
+
+    1st version with working pg-query and api for AnuglarJS client
