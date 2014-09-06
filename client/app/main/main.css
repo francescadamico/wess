@@ -152,8 +152,12 @@ ul.nav.nav-pills a:hover {
   text-decoration: none;
 }
 
-/* active doesn't work, why? */
-ul.nav.nav-pills a:active {
+/* active doesn't work, why? 
+* Because ul.nav.nav-pills a:active is wrong.
+* We are not using the state but the active class and not on the anchor but on the list-item containing the anchor.
+* Changing the selector to ul.nav.nav-pills > li.active > a does the trick.
+*/
+ul.nav.nav-pills > li.active > a {
   color: white;
   background-color: #A51E37;
   text-decoration: none;

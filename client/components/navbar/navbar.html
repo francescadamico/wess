@@ -24,13 +24,13 @@ xs stands for extra small screen, so it keeps the row allingment even though the
     </div>
 
     
-<!-- navigation bar-->
-<div class="navbar-wrapper" ng-controller="NavbarCtrl">
-    <ul class="nav nav-pills mainMenu-nav-pills">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-    </ul>
+	<!-- navigation bar-->
+	<div class="navbar-wrapper" ng-controller="NavbarCtrl">
+		<ul class="nav nav-pills mainMenu-nav-pills">
+			<li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+				<a ng-href="{{item.link}}">{{item.title}}</a>
+			</li>
+		</ul>
+	</div>
 </div>
-    </div>
 
