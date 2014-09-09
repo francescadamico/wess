@@ -3,8 +3,8 @@
 angular.module('wessApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/sites', {
-        templateUrl: 'app/sites/sites.html',
-        controller: 'SitesCtrl'
+      .when('/goals', {
+        templateUrl: 'app/main/goals/goals.html',
+        controller: 'GoalsCtrl'
       });
   });

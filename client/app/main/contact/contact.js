@@ -4,7 +4,7 @@ angular.module('wessApp')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/contact', {
-        templateUrl: 'app/contact/contact.html',
+        templateUrl: 'app/main/contact/contact.html',
         controller: 'ContactCtrl'
       });
   });
