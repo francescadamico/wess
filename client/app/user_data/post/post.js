@@ -3,8 +3,8 @@
 angular.module('wessApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/post', {
-        templateUrl: 'app/post/post.html',
+      .when('/user_data/post', {
+        templateUrl: 'app/user_data/post/post.html',
         controller: 'PostCtrl'
       });
   });

@@ -3,8 +3,8 @@
 angular.module('wessApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/wikipage', {
-        templateUrl: 'app/wikipage/wikipage.html',
+      .when('/user_data/wikipage', {
+        templateUrl: 'app/user_data/wikipage/wikipage.html',
         controller: 'WikipageCtrl'
       });
   });
