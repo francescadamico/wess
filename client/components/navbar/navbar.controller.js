@@ -50,4 +50,22 @@ angular.module('wessApp')
           return route === $location.path();
         }
     };
+      /* method to give the right title (i.e. the upper level page name)
+        to the left menus
+      */
+      $scope.addTitleToLeftMenu = function() {
+          /* Home has to be hand written because the url of the parent page
+            is different from the url of the children 
+          */
+          if ($location.path().split("/")[1] === "main") {
+            return "Home";
+          }
+          else {
+              for ($scope.i = 0; $scope.i < $scope.menu.length; $scope.i++) {
+                  if (("/" + $location.path().split("/")[1]) === $scope.menu[$scope.i].link) {
+                      return $scope.menu[$scope.i].title;
+                  }
+              }
+          }
+      };
   });
