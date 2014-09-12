@@ -136,14 +136,6 @@ a:hover {
   text-align: center;
 }
 
-.leftmenu-wrapper {
-  background: #825D2D;
-  padding: 1px; 
-    border-radius: 5px;
-    text-align: left; 
-}
-
-
 /* a:hover MUST come after a:link and a:visited 
    a:active MUST come after a:hover */
 ul.nav.nav-pills a:link, ul.nav.nav-pills a:visited {
@@ -184,6 +176,24 @@ ul.nav.nav-pills > li.active > a {
 }
 
 /* specific for the left menu */
+
+.leftmenu-wrapper {
+    position: relative;
+    top: 30px;
+    background: #825D2D;
+    padding: 1px; 
+    border-radius: 5px;
+    text-align: left; 
+}
+
+/* left menu title*/
+ul.nav.leftMenu-nav-pills > .title {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background: #825D2D;
+}
+
 ul.nav.leftMenu-nav-pills a:hover {
   color: white;
   background-color: #825D2D;

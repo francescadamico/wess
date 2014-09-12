@@ -2,11 +2,9 @@
     <div class="leftmenu-wrapper" ng-controller="LeftmenuCtrl">
         <ul class="nav nav-pills leftMenu-nav-pills nav-stacked">
              <!-- Title for the left menu -->
-            <div ng-controller="NavbarCtrl">
-                <li class="title">
+            <li class="title" ng-controller="NavbarCtrl">
                     {{addTitleToLeftMenu()}}
-                </li>
-            </div>
+            </li>
             <li ng-repeat="item in leftmenu" ng-class="{active:isActive(item.link)}">
                 <a ng-href="{{item.link}}">{{item.title}}</a> 
             </li>
