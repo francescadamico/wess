@@ -10,7 +10,7 @@ angular.module('wessApp')
       $scope.awesomeThings = awesomeThings;
     });
 
-    $http.get('/api/dataCount').success(function(result) {
+    $http.get('/api/data').success(function(result) {
       $scope.count = result.count;
       $scope.isCountCallSuccessful = true;
     }).error(function(data, status, headers, config) {
