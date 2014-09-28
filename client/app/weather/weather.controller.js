@@ -5,8 +5,11 @@ angular.module('wessApp')
   
     $scope.data;
     $scope.isAPICallSuccessful;
+  
     var sensorid = 197;
-    var day = '2014-03-21';
+    var today = new Date();
+    var yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
     
     $scope.options = {
       axes: {
@@ -28,12 +31,14 @@ angular.module('wessApp')
       drawDots: true
     };
     
-    $http.get('/api/data/hourlyAvgForDay', {params: {sensorid: sensorid, day: day}})
-    .success(function(result) {  
+    $http.get('/api/data/hourlyAvgForDay', {params: {sensorid: sensorid, day: yesterday}})
+    .success(function(result) {
       for (var i = 0; i < result.length; i++) {
         result[i].tick = new Date(result[i].tick).getTime(); 
       }
+      
       console.log(JSON.stringify(result));
+      
       $scope.data = result;
       $scope.isAPICallSuccessful = true;})
     .error(function(data, status, headers,config) {
