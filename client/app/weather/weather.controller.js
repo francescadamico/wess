@@ -16,9 +16,14 @@ angular.module('wessApp')
       series: [
         {y: 'value', color: 'steelblue', thickness: '2px', striped: true, label: 'Our data'}
       ],
+      tooltip: {
+        mode: "scrubber",
+        formatter: function (x, y, series) {
+          return moment(x).format("MMMM Do YYYY, h:mm:ss a") + ' : ' + y;
+        }
+      },
       lineMode: 'linear',
       tension: 0.7,
-      tooltipMode: 'dots',
       drawLegend: true,
       drawDots: true
     };
