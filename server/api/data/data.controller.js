@@ -22,14 +22,21 @@ exports.hourlyAvgForDay = function(req, res) {
   var sensid = req.query.sensorid;
   var day = req.query.day;
   query("SELECT date_trunc('hour', \"timestamp\") as tick, avg(value) as value FROM data_val WHERE \"timestamp\" BETWEEN $2::timestamp AND $2::timestamp + time '23:59:59' AND sensor = $1::int GROUP BY 1 ORDER BY 1 ASC", [sensid, day], function (err, rows, result) {
+    //checks errors in the connection to the db
     if(!err){
-      res.json(
-        rows
-      );
+        //checks if the result is empty
+        if (rows.length!==0) {
+            res.json(
+                rows
+            );
+        }
+        else {
+            res.status(603).send(err);
+        }
     } else {
-      res.status(503).send(
-        err
-      );
+        res.status(503).send(
+            err
+        );
     }
   });
 };
