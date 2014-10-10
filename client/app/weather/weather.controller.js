@@ -6,15 +6,13 @@ angular.module('wessApp')
     $scope.data;
     $scope.isAPICallSuccessful;
   
-    var sensorid = 197;
-    var today = new Date();
-    var yesterday = new Date(today);
-    yesterday.setDate(today.getDate() - 1);
+    var sensorid = 210;
+    var day = new Date(Date.UTC(2013, 9, 9, 0, 0, 0)); //it creates a UTC date to be given to the server for the query
     
     $scope.options = {
       axes: {
         x: {key: 'tick', type: 'date'},
-        y: {type: 'linear', min: -70, max: -50}
+        y: {type: 'linear'}//, min: -70, max: -50}
       },
       series: [
         {y: 'value', color: 'steelblue', thickness: '2px', striped: true, label: 'Our data'}
@@ -31,7 +29,7 @@ angular.module('wessApp')
       drawDots: true
     };
     
-    $http.get('/api/data/hourlyAvgForDay', {params: {sensorid: sensorid, day: yesterday}})
+    $http.get('/api/data/hourlyAvgForDay', {params: {sensorid: sensorid, day: day }}) 
     .success(function(result) {
       for (var i = 0; i < result.length; i++) {
         result[i].tick = new Date(result[i].tick).getTime(); 
