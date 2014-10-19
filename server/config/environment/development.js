@@ -5,10 +5,10 @@
 module.exports = {
   // PostgreSQL connection options
   postgres: {
-		user: 'uweller',
-		password: 'kr0mb1er',
-		host: '134.2.49.179',
+		user: '##',
+		password: '##',
+		host: '##',
 		port: '5432',
-		database: 'WESS_Daten'
+		database: '##'
   }
 };
