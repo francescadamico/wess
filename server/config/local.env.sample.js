@@ -8,6 +8,11 @@
 module.exports = {
   DOMAIN: 'http://localhost:9000',
   SESSION_SECRET: "wess-secret",
+  PGHOST: 'host',
+  PGPORT: '5432',
+  PGDATABASE: 'database',
+  PGUSER: 'user',
+  PGPASSWORD: 'password',
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };

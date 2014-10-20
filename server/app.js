@@ -9,12 +9,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
 var config = require('./config/environment');
-var pg = require('pg');
-pg.defaults.user = (config.postgres.user);
-pg.defaults.password = (config.postgres.password);
-pg.defaults.host = (config.postgres.host);
-pg.defaults.port = (config.postgres.port);
-pg.defaults.database = (config.postgres.database);
 // Setup server
 var app = express();
 var server = require('http').createServer(app);
