@@ -31,14 +31,22 @@ angular.module('wessApp')
     
     $http.get('/api/data/hourlyAvgForDay', {params: {sensorid: sensorid, day: day }}) 
     .success(function(result) {
-      for (var i = 0; i < result.length; i++) {
-        result[i].tick = new Date(result[i].tick).getTime(); 
-      }
+        
+        //to check whether the query result is empty or not 
+        if (result.length === 0){
+            console.log ('the result of the query is empty');
+        }
+        else {
+            for (var i = 0; i < result.length; i++) {
+                result[i].tick = new Date(result[i].tick).getTime(); 
+            }
       
-      console.log(JSON.stringify(result));
+            console.log(JSON.stringify(result));
       
-      $scope.data = result;
-      $scope.isAPICallSuccessful = true;})
+            $scope.data = result;
+            $scope.isAPICallSuccessful = true;
+        }
+    })
     .error(function(data, status, headers,config) {
       $scope.isAPICallSuccessful = false;
       console.log(data);
