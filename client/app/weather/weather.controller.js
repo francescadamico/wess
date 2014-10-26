@@ -5,10 +5,10 @@ angular.module('wessApp')
   
     $scope.data;
     $scope.isAPICallSuccessful;
+    $scope.resultIsEmpty;
   
     var sensorid = 210;
-    var day = new Date(Date.UTC(2013, 9, 9, 0, 0, 0)); //it creates a UTC date to be given to the server for the query
-
+    var day = new Date(Date.UTC(2013, 9, 9)); //it creates a UTC date to be given to the server for the query
     
     $scope.options = {
       axes: {
@@ -34,7 +34,8 @@ angular.module('wessApp')
     .success(function(result) {      
       //to check whether the query result is empty or not 
       if (result.length === 0){
-        console.log ('the result of the query is empty');
+        $scope.resultIsEmpty = true;
+        $scope.isAPICallSuccessful = true;
       }
       else {
         $scope.data = result.map(function(datum) {
@@ -43,6 +44,7 @@ angular.module('wessApp')
             tick: new Date(datum.tick).getTime()
           };
         });
+        $scope.resultIsEmpty = false;
         $scope.isAPICallSuccessful = true;
       }
     })

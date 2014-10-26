@@ -1,6 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<p class="lead">This is the weather view showing an example of how our data could be visualized using a line-chart with n3-line-chart</p>
-<div class="plot_container">
-    <linechart data="data" options="options" mode=""></linechart>
+<div class="container" ng-switch="isAPICallSuccessful">  
+  <div class="container" ng-switch-when="true">
+    <p class="lead">This is an exmaple of how our data will be visualized using a line-chart with n3-line-chart</p>
+    <div class="plot_container" ng-switch="resultIsEmpty">
+      <linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>
+      <p ng-switch-when="true">No data was found for the specified sensor and day.</p>
+    </div>
+  </div>
+  <p class="lead" ng-switch-when="false">We are currently unable to serve you our data. We're sorry!</p>
 </div>
