@@ -41,7 +41,7 @@ angular.module('wessApp')
         $scope.data = result.map(function(datum) {
           return {
             value: Number(datum.value),
-            tick: new Date(datum.tick).getTime()
+            tick: Date.parse(datum.tick)
           };
         });
         $scope.resultIsEmpty = false;
