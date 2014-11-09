@@ -1,36 +1,15 @@
+<!-- to include the navbar-->
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container" ng-switch="isCountCallSuccessful">  
-    <h1>Welcome to the WESS project</h1>
-    <p class="lead" ng-switch-when="true">
-      We currently have {{count}} measurement records and are trying to provide you access to and visualistion of all this data.
-    </p>
-    <p class="lead" ng-switch-when="false">
-      We are currently experiencing problems and can not serve you our data. Be sure to check back later.
-    </p>
-    <p><a class="btn btn-lg btn-primary" ng-switch-when="true" ng-href="/weather">Show me!</a>
-       <a class="btn btn-lg btn-info" ng-href="/about">Tell me more!</a></p>    
-    
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
+    <div class="row">
+        <div ng-include="'components/leftmenu/leftmenu.html'"></div>
+        <div class="col-xs-9">
+            <h2>The Ammer Valley Surface Measurement Network Project</h2>
+
+            <p>The Ammer Valley Surface Measurement Network is a project funded by WESS though a grant from the DFG. This project is an interdisciplinary effort to monitor near-surface conditions in the Ammer Valley just west of Tuebingen. Measurement stations have been placed at five locations in the valley have. These sites were chosen for their soil type and land usage, and together they form a representative group for the Ammer Valley. The measurements are of sub-surface temperature and moisture, at 5 levels to a maximum depth of 1.5m. At the surface, rain and soil heat flux, and sunlight. The atmosphere is measured at two levels for temperature, humidity, wind-speed and wind-direction. The initial goal of this project was to provide surface data to validate models of soil water. Since its inception the goal has expanded to include measurements of interest for plant growth, surface energy balance, and energy fluxes in the surface layer of the atmosphere. </p>
+        </div>
     </div>
-  </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.10 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>

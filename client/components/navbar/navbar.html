@@ -1,20 +1,36 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">wess</a>
+<div class="container">
+    <!-- header -->
+    <!-- the class container_fluid creates a grid -->
+    <div class="container_fluid">
+        <!-- grid row -->
+        <div class="row">
+        <!-- grid columns: the max cols number per row is 12 => col-3 means a col that is 1/4th of 12.
+xs stands for extra small screen, so it keeps the row allingment even though the browser is reduced (instead of sm, md, lg)-->
+            <div class="col-xs-3">
+                <img src="../../img/image2.JPG" width="180" height="120">
+
+            </div>
+            <div class="col-xs-7">
+                <div class="text-center">
+                    <h2><strong>The Ammer Valley Surface Measurement Network</strong></h2>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="pull-right">
+                    <a href="http://www.wess.info/typo3/index.php?id=5"><img height="45" src="../../img/WESS_banner_scale.png"></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+    
+	<!-- navigation bar-->
+	<div class="navbar-wrapper" ng-controller="NavbarCtrl">
+		<ul class="nav nav-pills mainMenu-nav-pills">
+			<li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+				<a ng-href="{{item.link}}">{{item.title}}</a>
+			</li>
+		</ul>
+	</div>
 </div>
+

@@ -1,12 +1,17 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container" ng-switch="isAPICallSuccessful">  
-  <div class="container" ng-switch-when="true">
-    <p class="lead">This is an exmaple of how our data will be visualized using a line-chart with n3-line-chart</p>
-    <div class="plot_container" ng-switch="resultIsEmpty">
-      <linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>
-      <p ng-switch-when="true">No data was found for the specified sensor and day.</p>
-    </div>
-  </div>
-  <p class="lead" ng-switch-when="false">We are currently unable to serve you our data. We're sorry!</p>
+<div class="container">
+	<div class="row">
+		<div ng-include="'components/leftmenuweather/leftmenuweather.html'"></div>
+		<div class="col-xs-9" ng-switch="isAPICallSuccessful">
+			  <div ng-switch-when="true">
+					<p class="lead">This is an exmaple of how our data will be visualized using a line-chart with n3-line-chart</p>
+					<div class="plot_container" ng-switch="resultIsEmpty">
+						<linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>
+						<p ng-switch-when="true">No data was found for the specified sensor and day.</p>
+					</div>
+			  </div>
+			  <p class="lead" ng-switch-when="false">We are currently unable to serve you our data. We're sorry!</p>
+		</div>
+	</div>
 </div>
