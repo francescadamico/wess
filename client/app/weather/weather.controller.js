@@ -9,12 +9,11 @@ angular.module('wessApp')
   
       var station = [3,1,2];
       var height = 250;
-      var sensortype = 7;
-      var measuredescr = 'avg';//41;
-      var sensorid = [210,232];
-      var descriptionid = 41;
+      var measuredescr = 'avg';
       var senstypedescr = 'temperature'; 
-    var day = new Date(Date.UTC(2013, 9, 9)); //it creates a UTC date to be given to the server for the query
+      $scope.day = new Date(Date.UTC(2013, 9, 10)); //it creates a UTC date to be given to the server for the query
+      
+      $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
     
     $scope.options = {
       axes: {
@@ -22,7 +21,9 @@ angular.module('wessApp')
         y: {type: 'linear'}
       },
       series: [
-        {y: 'value', color: 'steelblue', thickness: '2px', striped: true, label: 'Our data'}
+          {y: 'value1', color: 'steelblue', thickness: '2px', striped: true, label: 'Poltringen'},
+          {y: 'value2', color: 'red', thickness: '2px', striped: true, label: 'Tailfingen'},
+          {y: 'value3', color: 'green', thickness: '2px', striped: true, label: 'Entringen'}
       ],
       tooltip: {
         mode: "scrubber",
@@ -36,7 +37,7 @@ angular.module('wessApp')
       drawDots: true
     };
     
-    $http.get('/api/data/hourlyAvgForDay', {params: {day: day, station: station[0], height: height, senstypedescr:senstypedescr, measuredescr:measuredescr}}) 
+    $http.get('/api/data/hourlyAvgForDay3Sites', {params: {day: $scope.day, station: station, height: height, senstypedescr:senstypedescr, measuredescr:measuredescr}}) 
     .success(function(result) {      
       //to check whether the query result is empty or not 
       if (result.length === 0){
@@ -46,7 +47,9 @@ angular.module('wessApp')
       else {
         $scope.data = result.map(function(datum) {
           return {
-            value: Number(datum.value),
+            value1: Number(datum.value1),
+            value2: Number(datum.value2),
+            value3: Number(datum.value3),
             tick: Date.parse(datum.tick)
           };
         });

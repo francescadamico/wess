@@ -7,5 +7,6 @@ var router = express.Router();
 
 router.get('/', controller.index);
 router.get('/hourlyAvgForDay', controller.hourlyAvgForDay);
+router.get('/hourlyAvgForDay3Sites', controller.hourlyAvgForDay3Sites);
 
 module.exports = router;

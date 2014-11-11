@@ -5,7 +5,7 @@
 		<div ng-include="'components/leftmenuweather/leftmenuweather.html'"></div>
 		<div class="col-xs-9" ng-switch="isAPICallSuccessful">
 			  <div ng-switch-when="true">
-					<p class="lead">This is an exmaple of how our data will be visualized using a line-chart with n3-line-chart</p>
+					<p class="lead">Atmospheric temperature on the {{day.getDate()}}th {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
 					<div class="plot_container" ng-switch="resultIsEmpty">
 						<linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>
 						<p ng-switch-when="true">No data was found for the specified sensor and day.</p>
