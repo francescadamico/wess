@@ -7,7 +7,13 @@ angular.module('wessApp')
     $scope.isAPICallSuccessful;
     $scope.resultIsEmpty;
   
-    var sensorid = 210;
+      var station = [3,1,2];
+      var height = 250;
+      var sensortype = 7;
+      var measuredescr = 'avg';//41;
+      var sensorid = [210,232];
+      var descriptionid = 41;
+      var senstypedescr = 'temperature'; 
     var day = new Date(Date.UTC(2013, 9, 9)); //it creates a UTC date to be given to the server for the query
     
     $scope.options = {
@@ -30,7 +36,7 @@ angular.module('wessApp')
       drawDots: true
     };
     
-    $http.get('/api/data/hourlyAvgForDay', {params: {sensorid: sensorid, day: day }}) 
+    $http.get('/api/data/hourlyAvgForDay', {params: {day: day, station: station[0], height: height, senstypedescr:senstypedescr, measuredescr:measuredescr}}) 
     .success(function(result) {      
       //to check whether the query result is empty or not 
       if (result.length === 0){
