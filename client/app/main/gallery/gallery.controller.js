@@ -33,7 +33,7 @@ angular.module('wessApp')
       /* function to set the image path to a certain path given from the html, in this case it is
        * taken as pic in $scope.pictures, so it is one of the path given above */
       $scope.setImage = function(imageUrl) {
-          $scope.mainImageUrl = imageUrl;
+          $scope.picIdx = $scope.pictures.indexOf(imageUrl); 
       };
 
       /* open function: it opens the modal pop-up window and it fills it with the html given by templateUrl
@@ -45,9 +45,12 @@ angular.module('wessApp')
               templateUrl: templateUrl,
               controller: 'PicmodalCtrl',
               resolve: {
-                  mainImageUrl: function () {
-                      return $scope.mainImageUrl;
-                  }
+                  pictures: function () {
+                      return $scope.pictures;
+                  },
+                  picIdx: function () {
+                      return $scope.picIdx;
+                  } 
               }
           });
       };
