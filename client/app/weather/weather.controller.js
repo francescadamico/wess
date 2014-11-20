@@ -37,7 +37,7 @@ angular.module('wessApp')
       drawDots: true
     };
     
-    $http.get('/api/data/hourlyAvgForDay3Sites', {params: {day: $scope.day, station: station, height: height, senstypedescr:senstypedescr, measuredescr:measuredescr}}) 
+    $http.get('/api/data/hourlyAvgForDay3Sites', {params: {day: $scope.day, height: height, senstypedescr:senstypedescr, measuredescr:measuredescr}}) 
     .success(function(result) {      
       //to check whether the query result is empty or not 
       if (result.length === 0){
