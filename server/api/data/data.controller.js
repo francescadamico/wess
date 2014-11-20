@@ -61,6 +61,13 @@ GROUP BY 1 ORDER BY 1 ASC", [day, station, height, senstypedescr, measdescr], fu
   });
 };
 
+/* The stations are not given as a parameter since at the moment of writing there are only 
+ * 3 different stations, so all of them are hardcoded in the query.
+ * TODO: When the number of stations will increase it could be useful to pass an array or 
+ * station1, station2, station3 to the function. 
+ * Possible ISSUES: the array approach leads to a problem due to the fact that passing arrays as 
+ * GET query parameter is not really standardized and so I don't know how to to the 
+ * parameters validation. */
 exports.hourlyAvgForDay3Sites = function(req, res) {
     req.checkQuery('day', 'Invalid date!').isDate();
     req.checkQuery('height', 'Invalid sensor height!').isInt();
