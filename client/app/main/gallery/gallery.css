@@ -1,8 +1,11 @@
-img {
-    height: auto;
-    max-width: 100%;
+
+
+.container-narrow {
+    margin-top: 30px
 }
-img.expanded {
+
+
+/*img.expanded {
     max-width: none;
 }
 ul {
@@ -15,4 +18,4 @@ ul {
 }
 ul li img {
     cursor: pointer;
-}
+}*/

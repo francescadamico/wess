@@ -3,7 +3,31 @@
 angular.module('wessApp')
   .controller('GalleryCtrl', function ($scope, $modal) {
       // list of the pictures
-      $scope.pictures = ["../../assets/images/image1.JPG", "../../assets/images/image2.JPG", "../../assets/images/image3.JPG", "../../assets/images/image4.JPG", "../../assets/images/image5.JPG", "../../assets/images/image6.JPG"
+      $scope.pictures = [
+          {
+              'thumb': '../../assets/images/image1_tn.jpg',
+              'img': '../../assets/images/image1.JPG'
+          }, 
+          {
+              'thumb': '../../assets/images/image2_tn.jpg',
+              'img': '../../assets/images/image2.JPG'
+          },
+          {
+              'thumb': '../../assets/images/image3_tn.jpg',
+              'img': '../../assets/images/image3.JPG'
+          },
+          {
+              'thumb': '../../assets/images/image4_tn.jpg',
+              'img': '../../assets/images/image4.JPG'
+          }, 
+          {
+              'thumb': '../../assets/images/image5_tn.jpg',
+              'img': '../../assets/images/image5.JPG'
+          },
+          {
+              'thumb': '../../assets/images/image6_tn.jpg',
+              'img': '../../assets/images/image6.JPG'
+          }
     ];
       
       /* function to set the image path to a certain path given from the html, in this case it is
@@ -28,3 +52,5 @@ angular.module('wessApp')
           });
       };
   });
+
+/* */
