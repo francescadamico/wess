@@ -3,7 +3,7 @@
 angular.module('wessApp')
   .controller('GalleryCtrl', function ($scope, $modal) {
       // list of the pictures
-      $scope.pictures = ["../../img/image1.JPG", "../../img/image2.JPG", "../../img/image3.JPG", "../../img/image4.JPG", "../../img/image5.JPG", "../../img/image6.JPG"
+      $scope.pictures = ["../../assets/images/image1.JPG", "../../assets/images/image2.JPG", "../../assets/images/image3.JPG", "../../assets/images/image4.JPG", "../../assets/images/image5.JPG", "../../assets/images/image6.JPG"
     ];
       
       /* function to set the image path to a certain path given from the html, in this case it is
