@@ -62,6 +62,17 @@ GROUP BY 1 ORDER BY 1 ASC", [day, station, height, senstypedescr, measdescr], fu
 };
 
 exports.hourlyAvgForDay3Sites = function(req, res) {
+    req.checkQuery('day', 'Invalid date!').isDate();
+    req.checkQuery('height', 'Invalid sensor height!').isInt();
+    req.checkQuery('measuredescr', 'Invalid measurement description!').isAlpha;
+    req.checkQuery('senstypedescr', 'Invalid sensor type description!').isAlpha();
+  
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
+    
     var day = req.query.day;
     var height = req.query.height;
     var measdescr = req.query.measuredescr;
