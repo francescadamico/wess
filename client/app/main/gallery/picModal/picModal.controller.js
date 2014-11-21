@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wessApp')
-  .controller('PicmodalCtrl', function ($scope, pictures, picIdx) {
+  .controller('PicmodalCtrl', function ($scope, $modalInstance, pictures, picIdx) {
     // this is passed by the "resolve:" in about.controller.js to be used by the html
       $scope.pictures = pictures;
       
@@ -27,5 +27,9 @@ angular.module('wessApp')
           else {
               return $scope.picIdx = $scope.pictures.length -1;
           }
+      };
+      
+      $scope.close = function(){
+          $modalInstance.close();
       };
   });
