@@ -132,3 +132,38 @@ GROUP BY 1 ORDER BY 1 ASC", [day, height, senstypedescr, measdescr], function (e
          }
      });
  }; 
+
+
+/* This is a generic query that given day, station, sensor_type description, measurement description and sensors heights
+ * returns the timestamp, the average per hour and of the value (averaged through the sensors, if there are more than
+ * one). 
+ */
+exports.hourlyAvgForDayParametric = function(req, res) { // exports connects it to the db specifics in server/config/environment/development.js and index is the variable that contains the result of the query
+  
+    var day = req.query.day;
+    var station = req.query.station;
+    var measdescr = req.query.measdescr;
+    var senstypedescr = req.query.senstypedescr;
+    var sensheight1 = req.query.sensheight1;
+    var sensheight2 = req.query.sensheight2;
+    
+    query("SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value \
+FROM data_value, sensor, measurement_description, sensor_type \
+WHERE data_value.sensor_id = sensor.sensor_id \
+AND data_value.measurement_description_id = measurement_description.measurement_description_id \
+AND sensor_type.sensor_type_id = sensor.sensor_type_id \
+AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:59' \
+AND sensor.station_id = $2::int \
+AND sensor_type.description = $3::text \
+AND measurement_description.type = $4::text \
+AND sensor.height IN ($5::int,$6::int)\
+GROUP BY 1 ORDER BY 1 ASC", [day, station, senstypedescr, measdescr,sensheight1,sensheight2], function (err, rows, result){ 
+         //checks errors in the connection to the db
+         if(!err){
+             res.json(rows);
+         } else {
+            res.status(503).send(err);
+         }
+     });
+ }; 
+
