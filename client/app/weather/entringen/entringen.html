@@ -3,15 +3,23 @@
 <div class="container">
     <div class="row">
         <div ng-include="'components/leftmenuweather/leftmenuweather.html'"></div>
-        <div class="col-xs-9" ng-switch="isAPICallSuccessful">
-			  <div ng-switch-when="true">
-					<p class="lead">Atmospheric temperature on the {{day.getDate()}}th {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
-					<div class="plot_container" ng-switch="resultIsEmpty">
-						<linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>
-						<p ng-switch-when="true">No data was found for the specified sensor and day.</p>
-					</div>
-			  </div>
-			  <p class="lead" ng-switch-when="false">We are currently unable to serve you our data. We're sorry!</p>
+        <div class="col-xs-9">
+            <p class="lead">Some measurement plots on the {{day.getDate()}}th {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
+            <div ng-repeat="item in plots">
+                <p class = lead>{{item.measurement_name}}</p>
+                <div ng-controller="ParametricplotCtrl">
+                    <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(day,station,item.senstypedescr,item.measdescr,item.sensheight1,item.sensheight2)">
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
 </div>
+
+
+
+
+
+                
+			
+            
