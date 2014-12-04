@@ -140,6 +140,18 @@ GROUP BY 1 ORDER BY 1 ASC", [day, height, senstypedescr, measdescr], function (e
  */
 exports.hourlyAvgForDayParametric = function(req, res) { // exports connects it to the db specifics in server/config/environment/development.js and index is the variable that contains the result of the query
   
+    req.checkQuery('day', 'Invalid date!').isDate();
+    req.checkQuery('station', 'Invalid sensor station!').isInt();
+    req.checkQuery('measdescr', 'Invalid measurement description!').isAlpha;
+    req.checkQuery('senstypedescr', 'Invalid sensor type description!').isAlpha();
+    req.checkQuery('sensheight1', 'Invalid sensor height!').isInt();
+    req.checkQuery('sensheight2', 'Invalid sensor height!').isInt();
+      
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
     var day = req.query.day;
     var station = req.query.station;
     var measdescr = req.query.measdescr;
