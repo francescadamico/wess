@@ -2,8 +2,14 @@
 
 angular.module('wessApp')
   .controller('GalleryCtrl', function ($scope, $modal) {
+      var num_pics = 41;
+      
+      $scope.pictures = [];
+      /*for (var i = 0; i < num_pics; i++)    
+          $scope.pictures.push({});*/
+      
       // list of the pictures
-      $scope.pictures = [
+     /* $scope.pictures = [
           {
               'thumb': '../../assets/images/image1_tn.jpg',
               'img': '../../assets/images/image1.JPG'
@@ -28,7 +34,14 @@ angular.module('wessApp')
               'thumb': '../../assets/images/image6_tn.jpg',
               'img': '../../assets/images/image6.JPG'
           }
-    ];
+    ];*/
+      
+      for (var i=1; i<num_pics; i++) {
+          $scope.pictures.push({
+              'thumb': '../../assets/images/image'+i+'_tn.jpg',
+              'img': '../../assets/images/image'+i+'.JPG'
+          })
+      };
       
       /* function to set the image path to a certain path given from the html, in this case it is
        * taken as pic in $scope.pictures, so it is one of the path given above */
