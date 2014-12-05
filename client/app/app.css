@@ -164,6 +164,11 @@ ul.nav.nav-pills > li.active > a {
   text-decoration: none;
 }
 
+/* when the link is disabled the text is in grey */
+ul.nav.nav-pills > li.disabled > a {
+  color: grey;
+}
+
 /* to center the navigation bar buttons */
 .mainMenu-nav-pills > li {
     float:none;
