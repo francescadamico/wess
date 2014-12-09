@@ -11,29 +11,29 @@ angular.module('wessApp')
           measurement_name:'Atmospheric Temperature',
           senstypedescr:'temperature',
           measdescr:'avg',
-          sensheight1: 150,
-          sensheight2: 250
+          sensheight1: 185,
+          sensheight2: 284
       },
       {
           measurement_name:'Atmospheric Humidity',
           senstypedescr:'moisture',
           measdescr:'avg',
-          sensheight1: 150,
-          sensheight2: 250
+          sensheight1: 185,
+          sensheight2: 284
       },
       {
           measurement_name:'Wind Speed',
           senstypedescr:'wind speed',
           measdescr:'avg',
-          sensheight1: 150,
-          sensheight2: 250
+          sensheight1: 185,
+          sensheight2: 284
       },
       {
           measurement_name:'Incoming Short-Wave Radiation',
           senstypedescr:'pyranometer up',
           measdescr:'avg',
-          sensheight1: 150,
-          sensheight2: 150
+          sensheight1: 185,
+          sensheight2: 184
       },
       {
           measurement_name:'Soil Temperature',
