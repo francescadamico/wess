@@ -3,7 +3,9 @@
 <div class="container">
 	<div class="row">
 		<div ng-include="'components/leftmenuweather/leftmenuweather.html'"></div>
-		<div class="col-xs-9" ng-switch="isAPICallSuccessful">
+		<div class="col-xs-9">
+            <img src="../../assets/images/Site_cross_section.png" class="img-responsive">
+            <div ng-switch="isAPICallSuccessful">
 			  <div ng-switch-when="true">
 					<p class="lead">Atmospheric temperature on the {{day.getDate()}}th {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
 					<div class="plot_container" ng-switch="resultIsEmpty">
@@ -12,6 +14,7 @@
 					</div>
 			  </div>
 			  <p class="lead" ng-switch-when="false">We are currently unable to serve you our data. We're sorry!</p>
+            </div>
 		</div>
 	</div>
 </div>
