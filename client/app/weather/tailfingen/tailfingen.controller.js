@@ -32,8 +32,8 @@ angular.module('wessApp')
           measurement_name:'Incoming Short-Wave Radiation',
           senstypedescr:'pyranometer up',
           measdescr:'avg',
-          sensheight1: 183,
-          sensheight2: 183
+          sensheight1: 160,
+          sensheight2: 160
       },
       {
           measurement_name:'Soil Temperature',
