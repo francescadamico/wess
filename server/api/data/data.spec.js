@@ -83,7 +83,7 @@ describe('GET /api/data/hourlyAvgForDayParametric with valid inputs', function()
 
   it('should respond with data as JSON array', function(done) {
     request(app)
-      .get('/api/data/hourlyAvgForDayParametric?day=2014-03-22T00:00:00.000Z&station=2&measdescr=avg&senstypedescr=temperature&sensheight1=150&sensheight2=250')
+      .get('/api/data/hourlyAvgForDayParametric?day=2014-03-22T00:00:00.000Z&station=1&measdescr=avg&senstypeid=7&sensheight1=187&sensheight2=287')
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -94,11 +94,11 @@ describe('GET /api/data/hourlyAvgForDayParametric with valid inputs', function()
   });
 });
 
-describe('GET /api/data/hourlyAvgForDayParametric with invalid day and sensorid', function() {
+describe('GET /api/data/hourlyAvgForDayParametric with invalid day and measdescr and senstypeid and sensheight1 and sensheight2', function() {
 
   it('should respond with HTTP 400', function(done) {
     request(app)
-      .get('/api/data/hourlyAvgForDayParametric?day=2014-03-32&measdescr=123&senstypedescr=123&sensheight1=abc&sensheight2=abc')
+      .get('/api/data/hourlyAvgForDayParametric?day=2014-03-32&measdescr=123&senstypeid=abc&sensheight1=abc&sensheight2=abc')
       .expect(400)
       .expect('Content-Type', /text/)
       .end(function(err, res) {

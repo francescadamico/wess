@@ -139,8 +139,8 @@ exports.hourlyAvgForDayParametric = function(req, res) { // exports connects it 
   
     req.checkQuery('day', 'Invalid date!').isDate();
     req.checkQuery('station', 'Invalid sensor station!').isInt();
+    req.checkQuery('senstypeid', 'Invalid sensor type id!').isInt();
     req.checkQuery('measdescr', 'Invalid measurement description!').isAlpha;
-    //req.checkQuery('senstypedescr', 'Invalid sensor type description!').isAlpha();
     req.checkQuery('sensheight1', 'Invalid sensor height!').isInt();
     req.checkQuery('sensheight2', 'Invalid sensor height!').isInt();
       
@@ -151,22 +151,22 @@ exports.hourlyAvgForDayParametric = function(req, res) { // exports connects it 
     
     var day = req.query.day;
     var station = req.query.station;
+    var senstypeid = req.query.senstypeid;
     var measdescr = req.query.measdescr;
-    var senstypedescr = req.query.senstypedescr;
     var sensheight1 = req.query.sensheight1;
     var sensheight2 = req.query.sensheight2;
     
-    query("SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value \
+    query("SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr \
 FROM data_value, sensor, measurement_description, sensor_type \
 WHERE data_value.sensor_id = sensor.sensor_id \
 AND data_value.measurement_description_id = measurement_description.measurement_description_id \
 AND sensor_type.sensor_type_id = sensor.sensor_type_id \
 AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:59' \
 AND sensor.station_id = $2::int \
-AND sensor_type.description = $3::text \
+AND sensor_type.sensor_type_id = $3::int \
 AND measurement_description.type = $4::text \
 AND sensor.height IN ($5::int,$6::int)\
-GROUP BY 1 ORDER BY 1 ASC", [day, station, senstypedescr, measdescr,sensheight1,sensheight2], function (err, rows, result){ 
+GROUP BY 1,3 ORDER BY 1 ASC", [day, station, senstypeid, measdescr,sensheight1,sensheight2], function (err, rows, result){ 
          //checks errors in the connection to the db
          if(!err){
              res.json(rows);

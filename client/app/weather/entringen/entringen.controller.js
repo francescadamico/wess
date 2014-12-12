@@ -9,35 +9,40 @@ angular.module('wessApp')
       $scope.plots = [
       {
           measurement_name:'Atmospheric Temperature',
-          senstypedescr:'temperature',
+          //senstypedescr:'temperature',
+          senstypeid: 7,
           measdescr:'avg',
           sensheight1: 187,
           sensheight2: 287
       },
       {
           measurement_name:'Atmospheric Humidity',
-          senstypedescr:'moisture',
+          //senstypedescr:'moisture',
+          senstypeid: 6,
           measdescr:'avg',
           sensheight1: 187,
           sensheight2: 287
       },
       {
           measurement_name:'Wind Speed',
-          senstypedescr:'wind speed',
+          //senstypedescr:'wind speed',
+          senstypeid: 4,
           measdescr:'avg',
           sensheight1: 187,
           sensheight2: 287
       },
       {
           measurement_name:'Incoming Short-Wave Radiation',
-          senstypedescr:'pyranometer up',
+          //senstypedescr:'pyranometer up',
+          senstypeid: 10,
           measdescr:'avg',
           sensheight1: 150,
           sensheight2: 150
       },
       {
           measurement_name:'Soil Temperature',
-          senstypedescr:'soil temperature',
+          //senstypedescr:'soil temperature',
+          senstypeid: 3,
           measdescr:'sample',
           sensheight1: 10,
           sensheight2: 10
@@ -45,3 +50,4 @@ angular.module('wessApp')
     ];
 
   });
+

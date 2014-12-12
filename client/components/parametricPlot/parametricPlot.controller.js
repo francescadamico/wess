@@ -5,8 +5,9 @@ angular.module('wessApp')
       $scope.data;
       $scope.count;
       $scope.isAPICallSuccessful;
+      $scope.info;
       
-      $scope.loadPlot = function(day,station,senstypedescr,measdescr,sensheight1,sensheight2){ 
+      $scope.loadPlot = function(day,station,senstypeid,measdescr,sensheight1,sensheight2){ 
           
           $scope.options = {
               axes: {
@@ -14,7 +15,7 @@ angular.module('wessApp')
                   y: {type: 'linear'}//, min: 0, max: 20}
               },
               series: [
-                  {y: 'value', color: 'steelblue', thickness: '2px', striped: true, label: senstypedescr}
+                  {y: 'value', color: 'steelblue', thickness: '2px', striped: true, label: $scope.info}
               ], 
               tooltip: {
                   mode: "scrubber",
@@ -28,7 +29,7 @@ angular.module('wessApp')
               drawDots: true
           };
           
-          $http.get('/api/data/hourlyAvgForDayParametric', {params: {day: day, station: station, senstypedescr:senstypedescr, measdescr:measdescr, sensheight1:sensheight1, sensheight2:sensheight2}})
+          $http.get('/api/data/hourlyAvgForDayParametric', {params: {day: day, station: station, senstypeid:senstypeid, measdescr:measdescr, sensheight1:sensheight1, sensheight2:sensheight2}})
           .success(function(result) {
               //to check whether the query result is empty or not 
               if (result.length === 0){
@@ -42,6 +43,8 @@ angular.module('wessApp')
                           tick: Date.parse(datum.tick)
                       };
                   });
+                  info= String(result[1].senstypedescr);
+
                   $scope.resultIsEmpty = false;
                   $scope.isAPICallSuccessful = true;
               }
