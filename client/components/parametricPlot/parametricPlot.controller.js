@@ -5,7 +5,6 @@ angular.module('wessApp')
       $scope.data;
       $scope.count;
       $scope.isAPICallSuccessful;
-      $scope.info;
       
       $scope.loadPlot = function(day,station,senstypeid,measdescr,sensheight1,sensheight2){ 
           
@@ -15,7 +14,7 @@ angular.module('wessApp')
                   y: {type: 'linear'}//, min: 0, max: 20}
               },
               series: [
-                  {y: 'value', color: 'steelblue', thickness: '2px', striped: true, label: $scope.info}
+                  {y: 'value', color: 'steelblue', thickness: '2px', striped: true}
               ], 
               tooltip: {
                   mode: "scrubber",
@@ -43,8 +42,8 @@ angular.module('wessApp')
                           tick: Date.parse(datum.tick)
                       };
                   });
-                  info= String(result[1].senstypedescr);
-
+                  $scope.options.series[0].label = String(result[1].senstypedescr);
+                  
                   $scope.resultIsEmpty = false;
                   $scope.isAPICallSuccessful = true;
               }
