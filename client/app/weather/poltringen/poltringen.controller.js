@@ -2,14 +2,13 @@
 
 angular.module('wessApp')
   .controller('PoltringenCtrl', function ($scope, $http) {
-    $scope.day = new Date(Date.UTC(2014, 2, 10, 0, 0, 0)); //it creates a UTC date to be given to the server for the query
+    $scope.day = new Date(Date.UTC(2014, 2, 22, 0, 0, 0)); //it creates a UTC date to be given to the server for the query
       $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
       
       $scope.station = 3;
       $scope.plots = [
       {
           measurement_name:'Atmospheric Temperature',
-          //senstypedescr:'temperature',
           senstypeid: 7,
           measdescr:'avg',
           sensheight1: 185,
@@ -17,7 +16,6 @@ angular.module('wessApp')
       },
       {
           measurement_name:'Atmospheric Humidity',
-          //senstypedescr:'moisture',
           senstypeid: 6,
           measdescr:'avg',
           sensheight1: 185,
@@ -25,7 +23,6 @@ angular.module('wessApp')
       },
       {
           measurement_name:'Wind Speed',
-          //senstypedescr:'wind speed',
           senstypeid: 4,
           measdescr:'avg',
           sensheight1: 185,
@@ -33,15 +30,20 @@ angular.module('wessApp')
       },
       {
           measurement_name:'Incoming Short-Wave Radiation',
-          //senstypedescr:'pyranometer up',
           senstypeid: 10,
           measdescr:'avg',
           sensheight1: 150,
           sensheight2: 150
       },
       {
+          measurement_name:'Cumulative Rain',
+          senstypeid: 14,
+          measdescr:'tot',
+          sensheight1: 0,
+          sensheight2: 0
+      },
+      {
           measurement_name:'Soil Temperature',
-          //senstypedescr:'soil temperature',
           senstypeid: 3,
           measdescr:'sample',
           sensheight1: 10,

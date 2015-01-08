@@ -6,7 +6,7 @@ angular.module('wessApp')
       $scope.count;
       $scope.isAPICallSuccessful;
       
-      $scope.loadPlot = function(day,station,senstypeid,measdescr,sensheight1,sensheight2){ 
+      $scope.loadPlot = function(day,station,senstypeid,measdescr,sensheight1,sensheight2,measname){ 
           
           $scope.options = {
               axes: {
@@ -28,30 +28,59 @@ angular.module('wessApp')
               drawDots: true
           };
           
-          $http.get('/api/data/hourlyAvgForDayParametric', {params: {day: day, station: station, senstypeid:senstypeid, measdescr:measdescr, sensheight1:sensheight1, sensheight2:sensheight2}})
-          .success(function(result) {
-              //to check whether the query result is empty or not 
-              if (result.length === 0){
-                  $scope.resultIsEmpty = true;
-                  $scope.isAPICallSuccessful = true;
-              }
-              else {
-                  $scope.data = result.map(function(datum) {
-                      return {
-                          value: Number(datum.value),
-                          tick: Date.parse(datum.tick)
-                      };
-                  });
-                  $scope.options.series[0].label = String(result[1].senstypedescr);
-                  
-                  $scope.resultIsEmpty = false;
-                  $scope.isAPICallSuccessful = true;
-              }
-          })
-          .error(function(data, status, headers, config) {
-              $scope.isAPICallSuccessful = false;
-              //logs the corresponding error number in the console, see server/api/dataCount.controller.js, the reported error should be 503
-              console.log(data);
-          });
+          if (measname == 'Cumulative Rain') {
+              $http.get('/api/data/hourlyCumulativeRainForDay', {params: {day: day,station:station}})
+              .success(function(result) {
+                  //to check whether the query result is empty or not 
+                  if (result.length === 0){
+                      $scope.resultIsEmpty = true;
+                      $scope.isAPICallSuccessful = true;
+                  }
+                  else {
+                      $scope.data = result.map(function(datum) {
+                          return {
+                              value: Number(datum.value),
+                              tick: Date.parse(datum.tick)
+                          };
+                      });
+                      $scope.options.series[0].label = String(result[1].senstypedescr);
+                      
+                      $scope.resultIsEmpty = false;
+                      $scope.isAPICallSuccessful = true;
+                  }
+              })
+              .error(function(data, status, headers, config) {
+                  $scope.isAPICallSuccessful = false;
+                  //logs the corresponding error number in the console, see server/api/dataCount.controller.js, the reported error should be 503
+                  console.log(data);
+              });
+          }
+          else {
+              $http.get('/api/data/hourlyAvgForDayParametric', {params: {day: day, station: station, senstypeid:senstypeid, measdescr:measdescr, sensheight1:sensheight1, sensheight2:sensheight2}})
+              .success(function(result) {
+                  //to check whether the query result is empty or not
+                  if (result.length === 0){
+                      $scope.resultIsEmpty = true;
+                      $scope.isAPICallSuccessful = true;
+                  }
+                  else {
+                      $scope.data = result.map(function(datum) {
+                          return {
+                              value: Number(datum.value),
+                              tick: Date.parse(datum.tick)
+                          };
+                      });
+                      $scope.options.series[0].label = String(result[1].senstypedescr);
+                      
+                      $scope.resultIsEmpty = false;
+                      $scope.isAPICallSuccessful = true;
+                  }
+              })
+              .error(function(data, status, headers, config) {
+                  $scope.isAPICallSuccessful = false;
+                  //logs the corresponding error number in the console, see server/api/dataCount.controller.js, the reported error should be 503
+                  console.log(data);
+              });
+          }
       };
   });

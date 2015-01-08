@@ -8,7 +8,7 @@
             <div ng-repeat="item in plots">
                 <p class = lead>{{item.measurement_name}}</p>
                 <div ng-controller="ParametricplotCtrl">
-                    <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(day,station,item.senstypeid,item.measdescr,item.sensheight1,item.sensheight2)">
+                    <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(day,station,item.senstypeid,item.measdescr,item.sensheight1,item.sensheight2,item.measurement_name)">
                     </div>
                 </div>
             </div>

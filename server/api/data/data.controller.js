@@ -176,3 +176,40 @@ GROUP BY 1,3 ORDER BY 1 ASC", [day, station, senstypeid, measdescr,sensheight1,s
      });
  }; 
 
+exports.hourlyCumulativeRainForDay = function(req, res) {  
+  req.checkQuery('day', 'Invalid date!').isDate();
+  req.checkQuery('station', 'Invalid station!').isInt();
+  
+  var errors = req.validationErrors();
+  if (errors) {
+    res.send('There have been validation errors: ' + util.inspect(errors), 400);
+  }
+  
+    var day = req.query.day;
+    var station = req.query.station;
+    
+    query("SELECT tick, sum(value) OVER (ORDER BY tick) as value, senstypedescr \
+FROM \
+(SELECT date_trunc('hour', data_value.timestamp) as tick, sum(data_value.value) as value, sensor_type.description as senstypedescr \
+FROM data_value, sensor, measurement_description, sensor_type \
+WHERE data_value.sensor_id = sensor.sensor_id \
+AND data_value.measurement_description_id = measurement_description.measurement_description_id \
+AND sensor_type.sensor_type_id = sensor.sensor_type_id \
+AND data_value.timestamp BETWEEN  $1::timestamp AND $1::timestamp + time '23:59:59' \
+AND sensor.station_id = $2::int \
+AND sensor_type.sensor_type_id = 14 \
+AND measurement_description.type = 'tot' \
+GROUP BY 1,3)t \
+GROUP BY 1,3, value ORDER BY 1 ASC", [day,station] ,function (err, rows, result) {
+    //checks errors in the connection to the db
+    if(!err){
+        res.json(
+            rows
+        );
+    } else {
+        res.status(503).send(
+            err
+        );
+    }
+  });
+};
