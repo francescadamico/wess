@@ -1,4 +1,4 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<!--<div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
 	<div class="row">
@@ -13,6 +13,24 @@
 					</div>
 			  </div>
 			  <p class="lead" ng-switch-when="false">We are currently unable to serve you our data. We're sorry!</p>
+            </div>
+		</div>
+	</div>
+</div>
+-->
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+    <div class="row">
+        <div ng-include="'components/leftmenuweather/leftmenuweather.html'"></div>
+        <div class="col-xs-9">
+            <p class="lead">Some measurement plots on the {{day.getDate()}}th {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
+            <div ng-repeat="item in plots">
+                <p class = lead>{{item.measurement_name}}</p>
+                <div ng-controller="ParametricplotCtrl">
+                    <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(day,1,item.senstypeid,item.measdescr,1,1,item.measurement_name,'three_sites')">
+                    </div>
+                </div>
             </div>
 		</div>
 	</div>
