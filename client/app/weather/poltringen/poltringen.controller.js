@@ -10,44 +10,32 @@ angular.module('wessApp')
       {
           measurement_name:'Atmospheric Temperature',
           senstypeid: 7,
-          measdescr:'avg',
-          sensheight1: 185,
-          sensheight2: 284
+          measdescr:'avg'
       },
       {
           measurement_name:'Atmospheric Humidity',
           senstypeid: 6,
-          measdescr:'avg',
-          sensheight1: 185,
-          sensheight2: 284
+          measdescr:'avg'
       },
       {
           measurement_name:'Wind Speed',
           senstypeid: 4,
-          measdescr:'avg',
-          sensheight1: 185,
-          sensheight2: 284
+          measdescr:'avg'
       },
       {
           measurement_name:'Incoming Short-Wave Radiation',
           senstypeid: 10,
-          measdescr:'avg',
-          sensheight1: 150,
-          sensheight2: 150
+          measdescr:'avg'
       },
       {
           measurement_name:'Cumulative Rain',
           senstypeid: 14,
-          measdescr:'tot',
-          sensheight1: 0,
-          sensheight2: 0
+          measdescr:'tot'
       },
       {
           measurement_name:'Soil Temperature',
           senstypeid: 3,
-          measdescr:'sample',
-          sensheight1: 10,
-          sensheight2: 10
+          measdescr:'sample'
       }
     ];
 

@@ -19,6 +19,7 @@ exports.index = function(req, res) {
   });
 };
 
+
 exports.hourlyAvgForDay = function(req, res) {  
   req.checkQuery('day', 'Invalid date!').isDate();
   req.checkQuery('station', 'Invalid station!').isInt();
@@ -191,8 +192,6 @@ GROUP BY 1 ORDER BY 1 ASC", [day, senstypeid, measdescr], function (err, rows, r
  }; 
 
 
-
-
 /* This is a generic query that given day, station, sensor_type description, measurement description and sensors heights
  * returns the timestamp, the average per hour and of the value (averaged through the sensors, if there are more than
  * one). 
@@ -203,8 +202,8 @@ exports.hourlyAvgForDayParametric = function(req, res) { // exports connects it 
     req.checkQuery('station', 'Invalid sensor station!').isInt();
     req.checkQuery('senstypeid', 'Invalid sensor type id!').isInt();
     req.checkQuery('measdescr', 'Invalid measurement description!').isAlpha;
-    req.checkQuery('sensheight1', 'Invalid sensor height!').isInt();
-    req.checkQuery('sensheight2', 'Invalid sensor height!').isInt();
+    /*req.checkQuery('sensheight1', 'Invalid sensor height!').isInt();
+    req.checkQuery('sensheight2', 'Invalid sensor height!').isInt();*/
       
     var errors = req.validationErrors();
     if (errors) {
@@ -215,8 +214,8 @@ exports.hourlyAvgForDayParametric = function(req, res) { // exports connects it 
     var station = req.query.station;
     var senstypeid = req.query.senstypeid;
     var measdescr = req.query.measdescr;
-    var sensheight1 = req.query.sensheight1;
-    var sensheight2 = req.query.sensheight2;
+    /*var sensheight1 = req.query.sensheight1;
+    var sensheight2 = req.query.sensheight2;*/
     
     query("SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr \
 FROM data_value, sensor, measurement_description, sensor_type \
@@ -227,8 +226,7 @@ AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:5
 AND sensor.station_id = $2::int \
 AND sensor_type.sensor_type_id = $3::int \
 AND measurement_description.type = $4::text \
-AND sensor.height IN ($5::int,$6::int)\
-GROUP BY 1,3 ORDER BY 1 ASC", [day, station, senstypeid, measdescr,sensheight1,sensheight2], function (err, rows, result){ 
+GROUP BY 1,3 ORDER BY 1 ASC", [day, station, senstypeid, measdescr], function (err, rows, result){ 
          //checks errors in the connection to the db
          if(!err){
              res.json(rows);
@@ -275,3 +273,82 @@ GROUP BY 1,3, value ORDER BY 1 ASC", [day,station] ,function (err, rows, result)
     }
   });
 };
+
+/* This query is created starting from the imputs given and it is performs all the queries needed by the "Weather" section */
+exports.genericQuery = function(req, res) {
+    
+    req.checkQuery('day', 'Invalid date!').isDate();
+    req.checkQuery('senstypeid', 'Invalid sensor type id!').isInt();
+    req.checkQuery('measdescr', 'Invalid measurement description!').isAlpha;
+    req.checkQuery('station', 'Invalid station!').isInt(); //add: it should be >=0, <=3
+
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
+    var day = req.query.day;
+    var senstypeid = req.query.senstypeid;
+    var measdescr = req.query.measdescr;
+    var station = req.query.station;
+    
+    var simpleOneStationQuery=[]; 
+    var queryText;
+    
+    if(station == 0) {
+        for (var ii=0; ii<3; ii++) {
+            simpleOneStationQuery[ii] = "FROM data_value, sensor, measurement_description, sensor_type \
+WHERE data_value.sensor_id = sensor.sensor_id \
+AND data_value.measurement_description_id = measurement_description.measurement_description_id \
+AND sensor_type.sensor_type_id = sensor.sensor_type_id \
+AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:59' \
+AND sensor.station_id = " + (ii+1).toString() + " AND sensor_type.sensor_type_id = $2::int \
+AND measurement_description.type = $3::text GROUP BY 1";
+        }
+        
+        queryText = "SELECT tick , sum(value1) as value1, sum(value2) as value2, sum(value3) as value3 \
+FROM ( \
+SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value1, null::numeric as value2, null::numeric as value3 " + simpleOneStationQuery[0] + " UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, avg(data_value.value) as value2, null::numeric as value3 " + simpleOneStationQuery[1] + " UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, null::numeric as value2, avg(data_value.value) as value3 " + simpleOneStationQuery[2] + ")t GROUP BY 1 ORDER BY 1 ASC";
+        
+        query(queryText, [day, senstypeid, measdescr], function (err, rows, result){
+            //checks errors in the connection to the db
+            if(!err){
+                res.json(rows);
+            } else {
+                res.status(503).send(err);
+            }
+        });
+    }
+    else {
+        simpleOneStationQuery[0] = "SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr \
+FROM data_value, sensor, measurement_description, sensor_type \
+WHERE data_value.sensor_id = sensor.sensor_id \
+AND data_value.measurement_description_id = measurement_description.measurement_description_id \
+AND sensor_type.sensor_type_id = sensor.sensor_type_id \
+AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:59' \
+AND sensor.station_id = $4::int \
+AND sensor_type.sensor_type_id = $2::int \
+AND measurement_description.type = $3::text";
+        if (senstypeid == 14) {//cumulative rain
+            queryText = "SELECT tick, sum(value) OVER (ORDER BY tick) as value, senstypedescr \
+FROM \
+(" + simpleOneStationQuery[0] + " GROUP BY 1,3)t GROUP BY 1,3, value ORDER BY 1 ASC";
+        }
+        else if (senstypeid == 3) {//soil temperature, the sensor height is needed
+            queryText = simpleOneStationQuery[0] + " AND sensor.height = 10 GROUP BY 1,3 ORDER BY 1 ASC";
+        }
+        else { //any other plot
+            queryText = simpleOneStationQuery[0] + " GROUP BY 1,3 ORDER BY 1 ASC";
+        }
+        query(queryText, [day, senstypeid, measdescr, station], function (err, rows, result){
+            //checks errors in the connection to the db
+            if(!err){
+                res.json(rows);
+            } else {
+                res.status(503).send(err);
+            }
+        });
+        
+    }
+    
+ }; 
