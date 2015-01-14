@@ -2,7 +2,7 @@
 
 angular.module('wessApp')
   .controller('EntringenCtrl', function ($scope, $http) {
-      $scope.day = new Date(Date.UTC(2014, 2, 22, 0, 0, 0)); //it creates a UTC date to be given to the server for the query
+      $scope.day = new Date(Date.UTC(2014, 2, 22, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
       $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
       
       $scope.station = 1;
