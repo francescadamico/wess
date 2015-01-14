@@ -4,7 +4,6 @@
     <div class="row">
         <div ng-include="'components/leftmenuweather/leftmenuweather.html'"></div>
         <div class="col-xs-9">
-            <p class="lead">{{queryText}}</p>
             <p class="lead">Some measurement plots on the {{day.getDate()}}th {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
             <div ng-repeat="item in plots">
                 <p class = lead>{{item.measurement_name}}</p>
