@@ -45,8 +45,12 @@ angular.module('wessApp')
               drawDots: true
           };
           
-          
-              $http.get('/api/data/genericQuery', {params: {day:day, senstypeid:senstypeid, measdescr:measdescr, station:station}})
+          // the data to display are from the day before
+          if (day.getHours < 12)
+              var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
+          else
+              var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
+          $http.get('/api/data/genericQuery', {params: {day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})
               .success(function(result) { 
                   //to check whether the query result is empty or not 
                   if (result.length === 0){

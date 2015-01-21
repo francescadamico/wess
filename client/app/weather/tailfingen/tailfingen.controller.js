@@ -2,7 +2,7 @@
 
 angular.module('wessApp')
   .controller('TailfingenCtrl', function ($http, $scope) {
-   $scope.day = new Date(Date.UTC(2014, 2, 22, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
+   $scope.day = new Date(Date.UTC(2014, 2, 25, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
       $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
       
       $scope.station = 2;

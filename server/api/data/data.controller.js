@@ -292,23 +292,104 @@ exports.genericQuery = function(req, res) {
     var measdescr = req.query.measdescr;
     var station = req.query.station;
     
-    var simpleOneStationQuery=[]; 
     var queryText;
     
-    if(station == 0) {
-        for (var ii=0; ii<3; ii++) {
-            simpleOneStationQuery[ii] = "FROM data_value, sensor, measurement_description, sensor_type \
-WHERE data_value.sensor_id = sensor.sensor_id \
+    var dateTrunc_1h = "date_trunc('hour', data_value.timestamp)";
+    var dateTrunc_2h = "date_trunc('day', data_value.timestamp) + \
+    INTERVAL '1 hour' * round(extract('hour' from timestamp) / 2) * 2";
+    var dateTrunc_15m = "date_trunc('hour', data_value.timestamp) + \
+    INTERVAL '1 minute' * round(extract('minute' from timestamp) / 15) * 15";
+    
+    // time interval selection
+    var timeInterval_oneDay = " - interval '1 day' ";
+    var timeInterval_oneMonth = " - interval '1 month'";
+    
+    // single station query parts
+    var selectOneStation = "SELECT " + dateTrunc_15m + "as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr ";
+    var fromOneStation = "FROM data_value, sensor, measurement_description, sensor_type ";
+    var whereOneStation = "WHERE data_value.sensor_id = sensor.sensor_id \
 AND data_value.measurement_description_id = measurement_description.measurement_description_id \
 AND sensor_type.sensor_type_id = sensor.sensor_type_id \
-AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:59' \
-AND sensor.station_id = " + (ii+1).toString() + " AND sensor_type.sensor_type_id = $2::int \
-AND measurement_description.type = $3::text GROUP BY 1";
-        }
-        
-        queryText = "SELECT tick , sum(value1) as value1, sum(value2) as value2, sum(value3) as value3 \
-FROM ( \
-SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value1, null::numeric as value2, null::numeric as value3 " + simpleOneStationQuery[0] + " UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, avg(data_value.value) as value2, null::numeric as value3 " + simpleOneStationQuery[1] + " UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, null::numeric as value2, avg(data_value.value) as value3 " + simpleOneStationQuery[2] + ")t GROUP BY 1 ORDER BY 1 ASC";
+AND data_value.timestamp BETWEEN $1::timestamp " + timeInterval_oneDay + "AND $1::timestamp \
+AND sensor_type.sensor_type_id = $2::int \
+AND measurement_description.type = $3::text \
+AND sensor.station_id = "; // the sensor.station_id has to be added
+    var groupByOneStation1 = "GROUP BY 1 ";
+    var groupByOneStation13 = "GROUP BY 1,3 ORDER BY 1 ASC ";
+    
+    var queryOneStation = selectOneStation + fromOneStation + whereOneStation + "$4::int ";
+    
+    
+    // all stations query parts
+    var selectAllStations = "SELECT tick , sum(value1) as value1, sum(value2) as value2, sum(value3) as value3 ";
+    var fromSelectAllStations_firstStation = "FROM ( \
+SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value1, null::numeric as value2, null::numeric as value3 ";
+    var fromSelectAllStations_secondStation = "UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, avg(data_value.value) as value2, null::numeric as value3 ";
+    var fromSelectAllStations_thirdStation = "UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, null::numeric as value2, avg(data_value.value) as value3 ";
+    var groupByAllStations = ")t GROUP BY 1 ORDER BY 1 ASC";
+    
+    var queryAllStations = selectAllStations + fromSelectAllStations_firstStation + fromOneStation + whereOneStation + "1 " + groupByOneStation1 + 
+            fromSelectAllStations_secondStation + fromOneStation + whereOneStation + "2 " + groupByOneStation1 +
+            fromSelectAllStations_thirdStation + fromOneStation + whereOneStation + "3 " + groupByOneStation1 +
+            groupByAllStations;
+
+    
+    // cumulative rain
+    var selectOneStation_cumulativeRain= "SELECT tick, sum(value) OVER (ORDER BY tick) as value, senstypedescr \
+FROM \
+(";
+    var selectAllStations_cumulativeRain = "SELECT tick, sum(value1) OVER (ORDER BY tick) as value1, sum(value2) OVER (ORDER BY tick) as value2, sum(value3) OVER (ORDER BY tick) as value3 \
+FROM \
+(";
+    var groupByOneStation_cumulativeRain = ")c GROUP BY 1,3, value ORDER BY 1 ASC ";
+    var groupByAllStations_cumulativeRain = ")c GROUP BY 1, value1, value2, value3 ORDER BY 1 ASC ";
+
+    // soil temperature, the sensor height is needed
+    var whereOneStation_sensorHeight = "AND sensor.height = 10 ";
+    
+    if (station == 0) {
+        if (senstypeid == 14) // cumulative rain
+            /*
+            SELECT tick, sum(value1) OVER (ORDER BY tick) as value1, sum(value2) OVER (ORDER BY tick) as value2, sum(value3) OVER (ORDER BY tick) as value3
+FROM 
+(SELECT tick , sum(value1) as value1, sum(value2) as value2, sum(value3) as value3 
+FROM ( 
+SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value1, null::numeric as value2, null::numeric as value3 
+FROM data_value, sensor, measurement_description, sensor_type
+WHERE data_value.sensor_id = sensor.sensor_id 
+AND data_value.measurement_description_id = measurement_description.measurement_description_id 
+AND sensor_type.sensor_type_id = sensor.sensor_type_id 
+AND data_value.timestamp BETWEEN '2014-03-22 00:00:00' AND '2014-03-22 23:59:59'
+AND sensor_type.sensor_type_id = 14
+AND measurement_description.type = 'tot' 
+AND sensor.station_id = 1
+GROUP BY 1
+UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, avg(data_value.value) as value2, null::numeric as value3 
+FROM data_value, sensor, measurement_description, sensor_type
+WHERE data_value.sensor_id = sensor.sensor_id 
+AND data_value.measurement_description_id = measurement_description.measurement_description_id 
+AND sensor_type.sensor_type_id = sensor.sensor_type_id 
+AND data_value.timestamp BETWEEN '2014-03-22 00:00:00' AND '2014-03-22 23:59:59'
+AND sensor_type.sensor_type_id = 14
+AND measurement_description.type = 'tot' 
+AND sensor.station_id = 2
+GROUP BY 1
+UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, null::numeric as value2, avg(data_value.value) as value3 
+FROM data_value, sensor, measurement_description, sensor_type
+WHERE data_value.sensor_id = sensor.sensor_id 
+AND data_value.measurement_description_id = measurement_description.measurement_description_id 
+AND sensor_type.sensor_type_id = sensor.sensor_type_id 
+AND data_value.timestamp BETWEEN '2014-03-22 00:00:00' AND '2014-03-22 23:59:59'
+AND sensor_type.sensor_type_id = 14
+AND measurement_description.type = 'tot' 
+AND sensor.station_id = 3
+GROUP BY 1
+)t GROUP BY 1 ORDER BY 1 ASC
+)c GROUP BY 1, value1, value2, value3 ORDER BY 1 ASC
+            */
+            queryText = selectAllStations_cumulativeRain + queryAllStations + groupByAllStations_cumulativeRain;
+        else // not cumulative rain
+            queryText = queryAllStations;
         
         query(queryText, [day, senstypeid, measdescr], function (err, rows, result){
             //checks errors in the connection to the db
@@ -320,26 +401,27 @@ SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) a
         });
     }
     else {
-        simpleOneStationQuery[0] = "SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr \
-FROM data_value, sensor, measurement_description, sensor_type \
-WHERE data_value.sensor_id = sensor.sensor_id \
-AND data_value.measurement_description_id = measurement_description.measurement_description_id \
-AND sensor_type.sensor_type_id = sensor.sensor_type_id \
-AND data_value.timestamp BETWEEN $1::timestamp AND $1::timestamp + time '23:59:59' \
-AND sensor.station_id = $4::int \
-AND sensor_type.sensor_type_id = $2::int \
-AND measurement_description.type = $3::text";
-        if (senstypeid == 14) {//cumulative rain
-            queryText = "SELECT tick, sum(value) OVER (ORDER BY tick) as value, senstypedescr \
-FROM \
-(" + simpleOneStationQuery[0] + " GROUP BY 1,3)t GROUP BY 1,3, value ORDER BY 1 ASC";
-        }
-        else if (senstypeid == 3) {//soil temperature, the sensor height is needed
-            queryText = simpleOneStationQuery[0] + " AND sensor.height = 10 GROUP BY 1,3 ORDER BY 1 ASC";
-        }
-        else { //any other plot
-            queryText = simpleOneStationQuery[0] + " GROUP BY 1,3 ORDER BY 1 ASC";
-        }
+        
+        if (senstypeid == 14) // cumulative rain
+            queryText = selectOneStation_cumulativeRain + queryOneStation + groupByOneStation13 + 
+                groupByOneStation_cumulativeRain;
+        else if (senstypeid == 3) // soil temperature, the sensor height is needed
+            queryText = queryOneStation + whereOneStation_sensorHeight + groupByOneStation13;
+        else // any other plot
+            /*
+                "SELECT date_trunc('hour', data_value.timestamp) + INTERVAL '1 minute' * round(extract('minute' from timestamp) / 15) * 15 as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr
+                FROM data_value, sensor, measurement_description, sensor_type 
+                WHERE data_value.sensor_id = sensor.sensor_id 
+                AND data_value.measurement_description_id = measurement_description.measurement_description_id 
+                AND sensor_type.sensor_type_id = sensor.sensor_type_id 
+                AND data_value.timestamp BETWEEN $1::timestamp - interval '1 day' AND $1::timestamp 
+                AND sensor_type.sensor_type_id = $2::int 
+                AND measurement_description.type = $3::text 
+                AND sensor.station_id = $4::int
+                GROUP BY 1,3 ORDER BY 1 ASC ";
+            */
+            queryText = queryOneStation + groupByOneStation13;
+        
         query(queryText, [day, senstypeid, measdescr, station], function (err, rows, result){
             //checks errors in the connection to the db
             if(!err){
@@ -348,7 +430,7 @@ FROM \
                 res.status(503).send(err);
             }
         });
-        
     }
+    
     
  }; 
