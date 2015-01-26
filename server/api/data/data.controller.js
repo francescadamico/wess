@@ -277,16 +277,19 @@ GROUP BY 1,3, value ORDER BY 1 ASC", [day,station] ,function (err, rows, result)
 /* This query is created starting from the imputs given and it is performs all the queries needed by the "Weather" section */
 exports.genericQuery = function(req, res) {
     
+    req.checkQuery('timeInterval', 'Invalid time interval description').isAlpha;
     req.checkQuery('day', 'Invalid date!').isDate();
     req.checkQuery('senstypeid', 'Invalid sensor type id!').isInt();
     req.checkQuery('measdescr', 'Invalid measurement description!').isAlpha;
     req.checkQuery('station', 'Invalid station!').isInt(); //add: it should be >=0, <=3
 
+    
     var errors = req.validationErrors();
     if (errors) {
         res.send('There have been validation errors: ' + util.inspect(errors), 400);
     }
     
+    var timeInterval = req.query.timeInterval;
     var day = req.query.day;
     var senstypeid = req.query.senstypeid;
     var measdescr = req.query.measdescr;
@@ -294,23 +297,34 @@ exports.genericQuery = function(req, res) {
     
     var queryText;
     
-    var dateTrunc_1h = "date_trunc('hour', data_value.timestamp)";
+    var dateTrunc_chosen;
+    var dateTrunc_1day = "date_trunc('day', data_value.timestamp) ";
+    var dateTrunc_1h = "date_trunc('hour', data_value.timestamp) ";
     var dateTrunc_2h = "date_trunc('day', data_value.timestamp) + \
-    INTERVAL '1 hour' * round(extract('hour' from timestamp) / 2) * 2";
+    INTERVAL '1 hour' * round(extract('hour' from timestamp) / 2) * 2 ";
     var dateTrunc_15m = "date_trunc('hour', data_value.timestamp) + \
-    INTERVAL '1 minute' * round(extract('minute' from timestamp) / 15) * 15";
+    INTERVAL '1 minute' * round(extract('minute' from timestamp) / 15) * 15 ";
     
     // time interval selection
+    var timeInterval_chosen;
     var timeInterval_oneDay = " - interval '1 day' ";
     var timeInterval_oneMonth = " - interval '1 month'";
     
+    if (timeInterval == "One day") {
+        dateTrunc_chosen = dateTrunc_15m;
+        timeInterval_chosen = timeInterval_oneDay;
+    } else { // timeInterval == "One month"
+        dateTrunc_chosen = dateTrunc_1day;//dateTrunc_2h;
+        timeInterval_chosen = timeInterval_oneMonth;
+    }
+    
     // single station query parts
-    var selectOneStation = "SELECT " + dateTrunc_15m + "as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr ";
+    var selectOneStation = "SELECT " + dateTrunc_chosen + "as tick, avg(data_value.value) as value, sensor_type.description as senstypedescr ";
     var fromOneStation = "FROM data_value, sensor, measurement_description, sensor_type ";
     var whereOneStation = "WHERE data_value.sensor_id = sensor.sensor_id \
 AND data_value.measurement_description_id = measurement_description.measurement_description_id \
 AND sensor_type.sensor_type_id = sensor.sensor_type_id \
-AND data_value.timestamp BETWEEN $1::timestamp " + timeInterval_oneDay + "AND $1::timestamp \
+AND data_value.timestamp BETWEEN $1::timestamp " + timeInterval_chosen + "AND $1::timestamp \
 AND sensor_type.sensor_type_id = $2::int \
 AND measurement_description.type = $3::text \
 AND sensor.station_id = "; // the sensor.station_id has to be added
@@ -323,9 +337,9 @@ AND sensor.station_id = "; // the sensor.station_id has to be added
     // all stations query parts
     var selectAllStations = "SELECT tick , sum(value1) as value1, sum(value2) as value2, sum(value3) as value3 ";
     var fromSelectAllStations_firstStation = "FROM ( \
-SELECT date_trunc('hour', data_value.timestamp) as tick, avg(data_value.value) as value1, null::numeric as value2, null::numeric as value3 ";
-    var fromSelectAllStations_secondStation = "UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, avg(data_value.value) as value2, null::numeric as value3 ";
-    var fromSelectAllStations_thirdStation = "UNION SELECT date_trunc('hour', data_value.timestamp) as tick, null::numeric as value1, null::numeric as value2, avg(data_value.value) as value3 ";
+SELECT " + dateTrunc_chosen + "as tick, avg(data_value.value) as value1, null::numeric as value2, null::numeric as value3 ";
+    var fromSelectAllStations_secondStation = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as value1, avg(data_value.value) as value2, null::numeric as value3 ";
+    var fromSelectAllStations_thirdStation = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as value1, null::numeric as value2, avg(data_value.value) as value3 ";
     var groupByAllStations = ")t GROUP BY 1 ORDER BY 1 ASC";
     
     var queryAllStations = selectAllStations + fromSelectAllStations_firstStation + fromOneStation + whereOneStation + "1 " + groupByOneStation1 + 

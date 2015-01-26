@@ -20,7 +20,7 @@ angular.module('wessApp')
        *        0 has to be chosen to query all the stations at the same time;
        * - (Number) sensheight: optional input; height or depth of the instrument. 
        */
-      $scope.loadPlot = function(day,senstypeid,measdescr,measname,station,sensheight){ 
+      $scope.loadPlot = function(timeInterval,day,senstypeid,measdescr,measname,station,sensheight){ 
 
           //day,station,senstypeid,measdescr,sensheight1,sensheight2,measname,sitesnum
           
@@ -50,7 +50,7 @@ angular.module('wessApp')
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
           else
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
-          $http.get('/api/data/genericQuery', {params: {day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})
+          $http.get('/api/data/genericQuery', {params: {timeInterval:timeInterval, day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})
               .success(function(result) { 
                   //to check whether the query result is empty or not 
                   if (result.length === 0){

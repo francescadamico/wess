@@ -6,7 +6,7 @@ angular.module('wessApp')
       $scope.day = new Date(Date.UTC(2014, 2, 25, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
       
       $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-    
+      
       $scope.plots = [
       {
           measurement_name:'Atmospheric Temperature',
@@ -29,4 +29,11 @@ angular.module('wessApp')
           measdescr:'avg'
       }
     ];
+      
+      // listener to the "timeSelector" message 
+      $scope.$on("timeSelector", function(eventContext, timeInterval){
+          $scope.timeInterval = timeInterval;
+          // React to the event.
+      });
+      
   });
