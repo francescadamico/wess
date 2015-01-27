@@ -314,7 +314,7 @@ exports.genericQuery = function(req, res) {
         dateTrunc_chosen = dateTrunc_15m;
         timeInterval_chosen = timeInterval_oneDay;
     } else { // timeInterval == "One month"
-        dateTrunc_chosen = dateTrunc_1day;//dateTrunc_2h;
+        dateTrunc_chosen = dateTrunc_2h;//dateTrunc_2h;
         timeInterval_chosen = timeInterval_oneMonth;
     }
     
