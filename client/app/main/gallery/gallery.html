@@ -1,17 +1,18 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div ng-include="'components/leftmenu/leftmenu.html'"></div> 
-        <div class="container-narrow">
-            <div class="col-xs-9">
-                <div class="row">
-                    <div ng-repeat="item in pictures">
-                        <div class="col-lg-3 col-md-4 col-xs-4">
-                            <a class="thumbnail">
-                                <img class="img-responsive" ng-src="{{item.thumb}}" ng-click="setImage(item);open('app/main/gallery/picModal/picModal.html')" alt="Responsive image">
-                            </a>
-                        </div>
+		<div class="col-xs-12 col-md-3 col-lg-2">
+	        <div ng-include="'components/leftmenu/leftmenu.html'"></div> 
+		</div>
+        <div class="col-xs-12 col-md-9 col-lg-10">
+            <br>
+            <div class="row">
+                <div ng-repeat="item in pictures">
+                    <div class="col-lg-3 col-md-4 col-xs-4">
+                        <a class="thumbnail">
+                            <img class="img-responsive" ng-src="{{item.thumb}}" ng-click="setImage(item);open('app/main/gallery/picModal/picModal.html')" alt="Responsive image">
+                        </a>
                     </div>
                 </div>
             </div>

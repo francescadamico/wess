@@ -38,6 +38,15 @@
     padding: 0.2em 0;
 }
 
+/*this defines the max height for the plots
+It is necessary because n3-line-chart has a bug
+and, if the plot is not put inside a <div> with fixed
+height, when the browser is resized the plot grows in height
+*/
+.plot_container {
+     height: 400px;
+}
+
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -80,16 +89,6 @@ a:hover {
   border-top: 1px solid #e5e5e5;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
@@ -127,6 +126,20 @@ a:hover {
   }
 }
 
+/* Customize container */
+/*@media (min-width: 768px) {
+  .container {
+      max-width: 730px
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}*/
+
+.container-fluid {
+    margin: 20px;
+}
+
 /* Styles imported from Fra's project */
 
 .navbar-wrapper {
@@ -143,7 +156,7 @@ ul.nav.nav-pills a:link, ul.nav.nav-pills a:visited {
   background-color: white;
   display: inline-block;
  /* width and margin should be changed together */
-  width: 149px;
+  width: 150px;
   margin: 1px;
 }
 
@@ -183,8 +196,8 @@ ul.nav.nav-pills > li.disabled > a {
 /* specific for the left menu */
 
 .leftmenu-wrapper {
+    width: 154px;
     position: relative;
-    top: 30px;
     background: #825D2D;
     padding: 1px; 
     border-radius: 5px;
