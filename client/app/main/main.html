@@ -1,18 +1,15 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-
-<div class="container-fluid">
-    <div class="row">
-		<div class="col-xs-12 col-md-3 col-lg-2">
-	        <div ng-include="'components/leftmenu/leftmenu.html'"></div>
-		</div>        
-        <div class="col-xs-12 col-md-9 col-lg-10">
-            <br>
-            <h2><strong>The Ammertal Network<br>
-            <h4>A surface measurement network in the Ammer valley</strong></h4></h2>
-
-            <p>The Ammer Valley Surface Measurement Network is a project funded by WESS though a grant from the DFG. This project is an interdisciplinary effort to monitor near-surface conditions in the Ammer Valley just west of Tuebingen. Measurement stations have been placed at five locations in the valley have. These sites were chosen for their soil type and land usage, and together they form a representative group for the Ammer Valley. The measurements are of sub-surface temperature and moisture, at 5 levels to a maximum depth of 1.5m. At the surface, rain and soil heat flux, and sunlight. The atmosphere is measured at two levels for temperature, humidity, wind-speed and wind-direction. The initial goal of this project was to provide surface data to validate models of soil water. Since its inception the goal has expanded to include measurements of interest for plant growth, surface energy balance, and energy fluxes in the surface layer of the atmosphere. </p>
-            <img src="../../assets/images/ammertal.png" class="img-responsive">
-        </div>
+<div ng-switch="firstCall">
+    <div ng-switch-when="true">
+        <div ng-include="'components/pageStructure/pageStructure.html'"></div>
+    </div>
+    
+    <div ng-switch-when="false">
+        {{path}}
+        <h2><strong>The Ammertal Network<br>
+            <h4>A surface measurement network in the Ammer valley</strong></h4>
+        </h2>
+        <p>The Ammer Valley Surface Measurement Network is a project funded by WESS though a grant from the DFG. This project is an interdisciplinary effort to monitor near-surface conditions in the Ammer Valley just west of Tuebingen. Measurement stations have been placed at five locations in the valley have. These sites were chosen for their soil type and land usage, and together they form a representative group for the Ammer Valley. The measurements are of sub-surface temperature and moisture, at 5 levels to a maximum depth of 1.5m. At the surface, rain and soil heat flux, and sunlight. The atmosphere is measured at two levels for temperature, humidity, wind-speed and wind-direction. The initial goal of this project was to provide surface data to validate models of soil water. Since its inception the goal has expanded to include measurements of interest for plant growth, surface energy balance, and energy fluxes in the surface layer of the atmosphere. </p>
+        <img src="../../assets/images/ammertal.png" class="img-responsive">
     </div>
 </div>
 

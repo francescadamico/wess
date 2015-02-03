@@ -2,39 +2,15 @@
 
 angular.module('wessApp')
   .controller('GalleryCtrl', function ($scope, $modal) {
+      /* $scope.firstCall controls the part of the html that has to be loaded:
+       *    when $scope.firstCall == true, the pageStructure is called loading 
+       *    the navigation bar and the left menu. After that pageStructures sets
+       *    $scope.firstCall = "false" and the content is displayed (see html)
+       */
+      $scope.firstCall = "true";
+      
       var num_pics = 41;
-      
       $scope.pictures = [];
-      /*for (var i = 0; i < num_pics; i++)    
-          $scope.pictures.push({});*/
-      
-      // list of the pictures
-     /* $scope.pictures = [
-          {
-              'thumb': '../../assets/images/image1_tn.jpg',
-              'img': '../../assets/images/image1.JPG'
-          }, 
-          {
-              'thumb': '../../assets/images/image2_tn.jpg',
-              'img': '../../assets/images/image2.JPG'
-          },
-          {
-              'thumb': '../../assets/images/image3_tn.jpg',
-              'img': '../../assets/images/image3.JPG'
-          },
-          {
-              'thumb': '../../assets/images/image4_tn.jpg',
-              'img': '../../assets/images/image4.JPG'
-          }, 
-          {
-              'thumb': '../../assets/images/image5_tn.jpg',
-              'img': '../../assets/images/image5.JPG'
-          },
-          {
-              'thumb': '../../assets/images/image6_tn.jpg',
-              'img': '../../assets/images/image6.JPG'
-          }
-    ];*/
       
       for (var i=1; i<num_pics; i++) {
           $scope.pictures.push({

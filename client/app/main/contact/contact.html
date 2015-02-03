@@ -1,12 +1,9 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-
-<div class="container-fluid">
-    <div class="row">
-		<div class="col-xs-12 col-md-3 col-lg-2">
-	        <div ng-include="'components/leftmenu/leftmenu.html'"></div> 
-		</div>
-        <div class="col-xs-12 col-md-9 col-lg-10">
-			<br>
+<div ng-switch="firstCall">
+    <div ng-switch-when="true">
+        <div ng-include="'components/pageStructure/pageStructure.html'"></div>
+    </div>
+    
+    <div ng-switch-when="false">
             <h2>Contacts</h2>
             <div class="col-xs-5">
                 <h3>Joe Smith</h3>
@@ -29,6 +26,5 @@
             <div class="col-xs-7">
                 <img src="../../../assets/images/joe.JPG" class="img-responsive">
             </div>
-        </div>
     </div>
 </div>
