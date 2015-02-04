@@ -1,0 +1,30 @@
+<div ng-switch="firstCall">
+    <div ng-switch-when="true">
+        <div ng-include="'components/pageStructure/pageStructure.html'"></div>
+    </div>
+    <div ng-switch-when="false">
+        <p class="lead">Some measurement plots on the {{day.getDate()-1}} {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
+        <div ng-include="'components/dropdownInterval/dropdownInterval.html'"></div>
+        <div ng-switch="timeInterval">
+            <div ng-switch-when="One day">
+                <div ng-repeat="item in plots">
+                    <p class = lead>{{item.measurement_name}}</p>
+                    <div ng-controller="ParametricplotCtrl">
+                        <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,item.senstypeid,item.measdescr,item.measurement_name,0)" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="One month">
+                <div ng-repeat="item in plots">
+                    <p class = lead>{{item.measurement_name}}</p>
+                    <div ng-controller="ParametricplotCtrl">
+                        <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,item.senstypeid,item.measdescr,item.measurement_name,0)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    	
+    </div>
+</div>
+

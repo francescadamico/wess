@@ -4,6 +4,10 @@ angular.module('wessApp')
   .controller('LeftmenuweatherCtrl', function ($scope, $location) {
     $scope.leftmenuweather = [
       {
+        'title': 'All sites',
+        'link': '/weather/all_sites'
+      },
+      {
         'title': 'Entringen',
         'link': '/weather/entringen'
       },
