@@ -1,19 +1,28 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-switch="firstCall">
+    <div ng-switch-when="true">
+        <div ng-include="'components/pageStructure/pageStructure.html'"></div>
+    </div>
+    
+    <div ng-switch-when="false">
+        <h2>The Ammer Valley Sites</h2>
+        <p class="align-justify">
+            <strong>Entringen:</strong> <br> This site is at one of the wellheads for the Ammerbuch water supply. The immediate surroundings are grass which is enclosed by a fence.
 
-<div class="container">
-    <div class="row">
-        <div ng-include="'components/leftmenu/leftmenu.html'"></div> 
-        <div class="col-xs-9">
-            <p class="lead">The Ammer Valley Sites</p>
-            <p class="align-justify">
-                Entringen: -----
-            </p>
-            <p class="align-justify">
-                Poltringen: -----
-            </p>
-            <p class="align-justify">
-                Tailfingen: -----
-            </p>
-        </div>
+	Because this sites is enclosed by a fence, it was chosen as the field comparison site. It is the location where all atmospheric stations were initially placed during summer 2013, in order to check their operation in a field environment. It also has the benefit of being the closest and easiest to access site from the University.
+
+	note: The key to the fence is in the WESS keybox, just outside of Hermann Rügner's office in the WESS building.
+
+	Because this is a wellhead, in order to protect the water supply, the ground cannot be disturbed. Subsurface instruments were installed in November 2013, after coordinating with Martin Wall, Wassermeister. 
+        </p>
+		<p class="align-justify">
+		    <strong>Poltringen:</strong> <br> This sits about 35-40m above the Ammer River, on a flat region in the middle of the Ammer Valley. It is located next to a glider and private aircraft field to the west, and the town of Poltringen is to the south.
+
+	This site was the first to have sub-surface instrumentation installed, and therefore served as a test site. It was found that digging large pits in the soil, in order to install the instruments, resulted in un acceptable soil disturbance. The sub-surface RS485 hub boxes also suffered from negligence, as some of them were not sealed, thereby allowing water to accumulate inside them for several months before this was discovered. It is assumed that the water and corrosion will eventually lead to premature failure of these boxes.
+
+	Since installation this site has been covered with clover. 
+		</p>
+		<p class="align-justify">
+		    <strong>Tailfingen:</strong>
+		</p>
     </div>
 </div>

@@ -3,7 +3,9 @@
 angular.module('wessApp')
   .controller('WeatherCtrl', function ($scope, $http) {
   
-    $scope.data;
+    $scope.firstCall = "true";
+    
+	$scope.data;
     $scope.isAPICallSuccessful;
     $scope.resultIsEmpty;
   
