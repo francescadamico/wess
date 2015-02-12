@@ -3,8 +3,6 @@
 angular.module('wessApp')
   .controller('WeatherCtrl', function ($scope) {
       
-      $scope.firstCall = "true";
-      
       $scope.data = [
           {x: 0, value: 4, otherValue: 14},
           {x: 1, value: 8, otherValue: 1},

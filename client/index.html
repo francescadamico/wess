@@ -44,10 +44,32 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+ 
+    <!-- This is the html model for all the pages of the website -->
+    <!-- navigation bar --> 
+    <div ng-include="'components/navbar/navbar.html'"></div>
 
-    <!-- Add your site or application content here -->
+    <!-- content structure: 
+            - left menu, depending on the selected section on the navbar;
+            - the content itself, depending on the selected page on the left menu -->
+
+    <!-- container-fluid allows the page content to be displayed full size -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left menu -->
+            <div class="col-xs-12 col-md-3 col-lg-2">
+                <div ng-controller="NavbarCtrl" ng-include="leftMenuPath()"></div>
+            </div>
+            <!-- content -->
+            <div class="col-xs-12 col-md-9 col-lg-10">
+                <br>
+                <!--<div ng-controller= "PagestructureCtrl" ng-include="loadContent()"></div>-->         
+                <!-- Add your site or application content here -->
     <div ng-view=""></div>
-
+            </div>
+        </div>
+    </div>
+      
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -120,7 +142,6 @@
           <script src="components/leftmenuuser/leftmenuuser.controller.js"></script>
           <script src="components/leftmenuweather/leftmenuweather.controller.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
-          <script src="components/pageStructure/pageStructure.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>
