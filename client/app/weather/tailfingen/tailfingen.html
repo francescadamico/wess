@@ -5,12 +5,22 @@
     
     <div ng-switch-when="false">
     	<p class="lead">Some measurement plots on the {{day.getDate()-1}} {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
+        
+        <div ng-include="'components/dropdownInterval/dropdownInterval.html'"></div>
         <div ng-repeat="item in plots">
-        	<p class = lead>{{item.measurement_name}}</p>
-            <div ng-controller="ParametricplotCtrl">
-            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,item.senstypeid,item.measdescr,item.measurement_name,station,item.sensheight)">
+            <p class = lead>{{item.measurement_name}}</p>
+                <div ng-controller="ParametricplotCtrl">
+                    <div ng-switch="timeInterval">
+                        <div ng-switch-default>
+                            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('One day',day,item.senstypeid,item.measdescr,item.measurement_name,station,item.sensheight)" >
+                            </div>
+                        </div>
+                        <div ng-switch-when="One month">
+                            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,item.senstypeid,item.measdescr,item.measurement_name,station,item.sensheight)">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+        </div> 
     </div>
 </div>
