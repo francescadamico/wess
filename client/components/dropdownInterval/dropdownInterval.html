@@ -2,7 +2,7 @@
     
     <div class="btn-group" dropdown is-open="status.isopen" ng-controller="DropdownintervalCtrl">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            Time interval 
+            {{buttonName}}
         </button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <span class="caret"></span>
@@ -12,6 +12,6 @@
                 <a ng-click="timeSelector(choice)">{{choice}}</a>
             </li>
         </ul>
-        
+        <br>
     </div>
 </div>

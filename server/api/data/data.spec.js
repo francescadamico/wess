@@ -107,3 +107,32 @@ describe('GET /api/data/hourlyAvgForDayParametric with invalid day and measdescr
       });
   });
 });
+
+describe('GET /api/data/genericQuery with valid inputs', function() {
+
+  it('should respond with data as JSON array', function(done) {
+    request(app)
+      .get('/api/data/genericQuery?day=2014-03-22T00:00:00.000Z&station=1&measdescr=avg&senstypeid=7')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+  });
+});
+
+describe('GET /api/data/genericQuery with invalid day and measdescr and senstypeid and station', function() {
+
+  it('should respond with HTTP 400', function(done) {
+    request(app)
+      .get('/api/data/hourlyAvgForDayParametric?day=2014-03-32&measdescr=123&senstypeid=abc&station=abc&')
+      .expect(400)
+      .expect('Content-Type', /text/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        done()
+      });
+  });
+});
