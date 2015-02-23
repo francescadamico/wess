@@ -5,7 +5,7 @@
             <li class="title" ng-controller="NavbarCtrl">
                 {{addTitleToLeftMenu()}}
             </li>
-            <li ng-repeat="item in leftmenu" class="disabled"><!--ng-class="{active:isActive(item.link)}"-->
+            <li ng-repeat="item in leftmenu" ng-class="{active:isActive(item.link)}">
                 <a ng-href="{{item.link}}">{{item.title}}</a> 
             </li>
         </ul>
