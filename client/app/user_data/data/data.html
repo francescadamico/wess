@@ -1,2 +1,79 @@
 <!-- Content of the central part of the page, the navigation bar and left menu are called in the index.html-->
-<p class="lead">Data</p>
+<div id="big-form" class="well auth-box">
+    <form>
+        <fieldset>
+            
+            <!-- Form Name -->
+            <legend>Select data</legend>
+            
+            <!-- Dates selection -->
+            <div class="row">
+                <div class="col-xs-2">
+                    <label class=" control-label" for="textinput">From</label> 
+                    <div class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" show-button-bar="false" name="from" ng-model="formData_from" is-open="datepickers.from" min-date="minDate_from" max-date="maxDate_from" datepicker-options="dateOptions" ng-required="true" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event,'from')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <label class=" control-label" for="textinput">To</label> 
+                    <div class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" show-button-bar="false" name="to" ng-model="formData_to" is-open="datepickers.to" min-date="minDate_to" max-date="maxDate_to" datepicker-options="dateOptions" ng-required="true" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event,'to')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+            <!-- Site selection -->
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+                <label class="control-label" for="checkboxes">Sites</label>
+                <div ng-repeat="site in sites">
+                    <div class="checkbox">
+                        <input ng_model="site.status" type="checkbox">
+                        {{site.label}}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plots selection -->
+            <div class="row">
+                <div class="col-xs-4">
+                    <accordion close-others="oneAtATime">
+                        <accordion-group heading="{{item.type}}" ng-repeat="item in typeMeas">
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                                <div ng_repeat="plot in item.plots">
+                                    <div class="checkbox">
+                                        <input ng-model="plot.status" type="checkbox">
+                                        {{plot.label}}
+                                    </div>
+                                </div>
+                            </div>
+                        </accordion-group>
+                    </accordion>
+                </div>
+                <div class="col-xs-offset-8"></div> 
+            </div>
+            <!-- plot button -->
+            <!--<button type="button" class="btn btn-default" ng-click="showPlots = 'true'">
+                Show plots
+            </button>-->
+        </fieldset>
+    </form>
+</div>
+
+<!-- Show plots -->
+<!--<div ng-switch="showPlots">
+    <div ng-switch-when="true">
+        <div ng-controller="ParametricplotCtrl">
+            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,formData_from,senstypeid,measdescr,measurement_name,1)"></div>
+        </div>
+    </div>
+</div>-->
+    
