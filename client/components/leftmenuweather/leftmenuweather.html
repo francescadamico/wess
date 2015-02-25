@@ -1,13 +1,7 @@
-<div class="container">
-    <div class="leftmenu-wrapper" ng-controller="LeftmenuweatherCtrl">
-        <ul class="nav nav-pills leftMenu-nav-pills nav-stacked">
-             <!-- Title for the left menu --> 
-            <li class="title" ng-controller="NavbarCtrl">
-                {{addTitleToLeftMenu()}}
-            </li>
-            <li ng-repeat="item in leftmenuweather" ng-class="{active:isActive(item.link)}"> 
-                <a ng-href="{{item.link}}">{{item.title}}</a> 
-            </li>
-        </ul>
-    </div>
+<div class="nav nav-stacked" ng-controller="LeftmenuweatherCtrl">
+    <li ng-repeat="item in leftmenuweather">
+        <a ng-href="{{item.link}}">{{item.title}}</a> 
+    </li>
 </div>
+
+    

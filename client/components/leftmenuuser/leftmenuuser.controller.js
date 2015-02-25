@@ -2,7 +2,7 @@
 
 angular.module('wessApp')
   .controller('LeftmenuuserCtrl', function ($scope, $location) {
-    $scope.leftmenu = [
+    $scope.leftmenuuser = [
         {
             'title': 'Blog',
             'link': '/user_data'///blog'

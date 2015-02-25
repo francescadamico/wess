@@ -18,16 +18,17 @@
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
-    <link rel="stylesheet" href="app/app.css">
+    <!--<link rel="stylesheet" href="app/app.css">-->
+      <link rel="stylesheet" href="app/styles.css">
       <!-- injector:css -->
       <link rel="stylesheet" href="app/about/about.css">
-      <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/main/contact/contact.css">
       <link rel="stylesheet" href="app/main/gallery/gallery.css">
       <link rel="stylesheet" href="app/main/gallery/picModal/picModal.css">
       <link rel="stylesheet" href="app/main/goals/goals.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="app/main/sites/sites.css">
+      <link rel="stylesheet" href="app/styles.css">
       <link rel="stylesheet" href="app/user_data/blog/blog.css">
       <link rel="stylesheet" href="app/user_data/data/data.css">
       <link rel="stylesheet" href="app/user_data/post/post.css">
@@ -53,20 +54,25 @@
     <!-- content structure: 
             - left menu, depending on the selected section on the navbar;
             - the content itself, depending on the selected page on the left menu -->
-
-    <!-- container-fluid allows the page content to be displayed full size -->
-    <div class="container-fluid">
+      
+    <div class="container">
         <div class="row">
             <!-- left menu -->
-            <div class="col-xs-12 col-md-3 col-lg-2">
-                <div ng-controller="NavbarCtrl" ng-include="leftMenuPath()"></div>
+  			<div class="col col-sm-3">
+              	<div id="sidebar">
+                    <ul class="nav nav-stacked">
+                        <li><h3 class="highlight" ng-controller="NavbarCtrl">
+                            {{addTitleToLeftMenu()}} <i class="pull-right glyphicon" ng-class="{'glyphicon-home': addTitleToLeftMenu()=='Home','glyphicon-cloud': addTitleToLeftMenu()=='Weather','glyphicon-circle-arrow-down': addTitleToLeftMenu()=='User data'}"></i></h3>
+                        </li>
+                        <div ng-controller="NavbarCtrl" ng-include="leftMenuPath()"></div>
+                    </ul>
+                </div>  
             </div>
             <!-- content -->
-            <div class="col-xs-12 col-md-9 col-lg-10">
-                <br>
-                <!--<div ng-controller= "PagestructureCtrl" ng-include="loadContent()"></div>-->         
-                <!-- Add your site or application content here -->
-    <div ng-view=""></div>
+            <div class="col col-sm-9">
+                <div class="panel">
+                    <div ng-view=""></div>
+                </div>
             </div>
         </div>
     </div>
