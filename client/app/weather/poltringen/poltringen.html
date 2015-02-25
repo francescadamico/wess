@@ -1,2 +1,21 @@
 <!-- Content of the central part of the page, the navigation bar and left menu are called in the index.html-->
-<p class="lead">This is the Poltringen view.</p>
+<p class="lead">Some measurement plots on the {{day.getDate()-1}} {{monthNames[day.getMonth()]}} {{day.getFullYear()}}</p>
+        
+<div ng-include="'components/dropdownInterval/dropdownInterval.html'"></div>
+<br>
+<div ng-repeat="item in plots">
+	<br>
+    <p class = lead>{{item.measurement_name}}</p>
+    <div ng-controller="ParametricplotCtrl">
+    	<div ng-switch="timeInterval">
+        	<div ng-switch-default>
+            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('One day',day,item.senstypeid,item.measdescr,item.measurement_name,station,item.sensheight)" >
+                </div>
+            </div>
+            <div ng-switch-when="One month">
+            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,item.senstypeid,item.measdescr,item.measurement_name,station,item.sensheight)">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

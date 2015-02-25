@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    
+    <div class="btn-group" dropdown is-open="status.isopen" ng-controller="DropdownintervalCtrl">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            {{buttonName}}
+        </button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="choice in timeItems">
+                <a ng-click="timeSelector(choice)">{{choice}}</a>
+            </li>
+        </ul>
+        <br>
+    </div>
+</div>
