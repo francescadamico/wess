@@ -1,5 +1,5 @@
 <div class="nav nav-stacked" ng-controller="LeftmenuCtrl">
-    <li ng-repeat="item in leftmenu">
+    <li ng-repeat="item in leftmenu" ng-class="{active:isActive(item.link)}">
         <a ng-href="{{item.link}}">{{item.title}}</a> 
     </li>
 </div>
