@@ -17,7 +17,9 @@
     "method-override": "~1.0.0",
     "morgan": "~1.0.0",
     "pg": "^3.4.1",
+    "pg-hstore": "^2.3.1",
     "pg-query": "^0.10.1",
+    "sequelize": "^2.0.4",
     "static-favicon": "~1.0.1"
   },
   "devDependencies": {

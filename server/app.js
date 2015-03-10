@@ -8,7 +8,24 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSER, process.env.PGPASSWORD, {
+  dialect: "postgres",
+  port: process.env.PGPORT
+});
 var config = require('./config/environment');
+
+// Connect to the database
+sequelize
+  .authenticate()
+  .complete(function(err) {
+    if (!!err) {
+      console.log('Unable to connect to database:', err);
+    } else {
+      console.log('Database connection established successfully');
+    }
+  });
+
 // Setup server
 var app = express();
 var server = require('http').createServer(app);
