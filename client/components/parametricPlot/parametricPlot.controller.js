@@ -50,7 +50,27 @@ angular.module('wessApp')
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
           else
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
-          $http.get('/api/data/genericQuery', {params: {timeInterval:timeInterval, day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})
+          
+          $http.get('/api/data/testQuery')
+              .success(function(result) {
+              //to check whether the query result is empty or not
+              if (result.length === 0){
+                  $scope.resultIsEmpty = true;
+                  $scope.isAPICallSuccessful = true;
+              }
+              else {
+                  $scope.data = result;
+                  $scope.resultIsEmpty = false;
+                  $scope.isAPICallSuccessful = true;
+              }
+          })
+              .error(function(data, status, headers,config) {
+              $scope.isAPICallSuccessful = false;
+              console.log(data);
+          });
+                      
+          
+          /*$http.get('/api/data/genericQuery', {params: {timeInterval:timeInterval, day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})
               .success(function(result) { 
                   //to check whether the query result is empty or not 
                   if (result.length === 0){
@@ -68,10 +88,10 @@ angular.module('wessApp')
                               };
                           });
                           /* the two other series have to be added to the default one */
-                          $scope.options.series[1] = {y: 'value2', color: 'red', thickness: '2px', striped: true, label: 'Tailfingen'};
+                         /* $scope.options.series[1] = {y: 'value2', color: 'red', thickness: '2px', striped: true, label: 'Tailfingen'};
                           $scope.options.series[2] = {y: 'value3', color: 'green', thickness: '2px', striped: true, label: 'Poltringen'};
                           /* the first series label has to be added */
-                          $scope.options.series[0].label = 'Entringen';
+                         /* $scope.options.series[0].label = 'Entringen';
                           $scope.resultIsEmpty = false;
                           $scope.isAPICallSuccessful = true;
                       }
@@ -84,7 +104,7 @@ angular.module('wessApp')
                           });
                           /* the first series label has to be added and its value is taken from the query itself
                            */
-                          $scope.options.series[0].label = String(result[1].senstypedescr);
+                         /* $scope.options.series[0].label = String(result[1].senstypedescr);
                           $scope.resultIsEmpty = false;
                           $scope.isAPICallSuccessful = true;
                       }
@@ -94,6 +114,6 @@ angular.module('wessApp')
                     $scope.isAPICallSuccessful = false;
                     console.log(data);
               });
-          
+        */  
       };
   });

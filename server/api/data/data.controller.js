@@ -448,3 +448,26 @@ GROUP BY 1
     
     
  }; 
+
+/*****************************************************************************/
+/******************************* new database queries ************************/
+/*****************************************************************************/
+
+/* a simple example to test the db connection */
+exports.testQuery = function(req,res) {
+    query("SELECT channel as value \
+from channels join chns using (channel_id) join stations using (station_id) join sites using (site_id) join sensors using (chn_id) join instruments using (instrument_id) join models using (model_id) \
+where height_instrument = -10 \
+and statistic = 'Smp' \
+and channel like '%SoilTemp%' \
+and site = 'Poltringen' \
+order by height_instrument desc", function (err, rows, result){ 
+         //checks errors in the connection to the db
+         if(!err){
+             res.json(rows);
+         } else {
+            res.status(503).send(err);
+         }
+     });
+};
+
