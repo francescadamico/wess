@@ -5,6 +5,7 @@ angular.module('wessApp')
     $routeProvider
       .when('/user_data', {
         templateUrl: 'app/user_data/user_data.html',
-        controller: 'UserDataCtrl'
+        controller: 'UserDataCtrl',
+        authenticate: true
       });
   });

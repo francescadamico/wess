@@ -5,6 +5,7 @@ angular.module('wessApp')
     $routeProvider
       .when('/user_data/blog', {
         templateUrl: 'app/user_data/blog/blog.html',
-        controller: 'BlogCtrl'
+        controller: 'BlogCtrl',
+        authenticate: true
       });
   });

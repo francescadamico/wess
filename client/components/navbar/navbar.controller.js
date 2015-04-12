@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wessApp')
-  .controller('NavbarCtrl', function ($scope, $location) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
         {
             'title': 'Home',
@@ -21,9 +21,12 @@ angular.module('wessApp')
     ];
 
     $scope.isCollapsed = true;
-
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.getCurrentUser = Auth.getCurrentUser;
+    
     //this method is used to apply the active class to our navigation elements defined in $scope.menu
-    $scope.isActive = function(route) {         
+    $scope.isActive = function(route) {
         //check on which hierarchy level we currently are
         if ($location.path().split("/").length > 2) {
             /* in here we are at least 1 level below top-level
@@ -39,7 +42,7 @@ angular.module('wessApp')
                 return "/" + $location.path().split("/")[1] === "/main";
             }
             else {
-                /* for our other top-level navigation elements 
+                /* for our other top-level navigation elements
                  * we simply compare the top-level part of the path
                  * to the top-level navgition element's route
                  */
@@ -47,7 +50,7 @@ angular.module('wessApp')
             }
         }
         else {
-            /* in here we are on the top-level 
+            /* in here we are on the top-level
              * so we just compare the current path to the route
              */
             return route === $location.path();
@@ -58,7 +61,7 @@ angular.module('wessApp')
       */
       $scope.addTitleToLeftMenu = function() {
           /* Home has to be hand written because the url of the parent page
-           * is different from the url of the children 
+           * is different from the url of the children
            */
           if ($location.path().split("/")[1] === "main") {
               return "Home";
@@ -71,7 +74,7 @@ angular.module('wessApp')
               }
           }
       };
-      
+
       /* method to give the right leftMenu to the page */
       $scope.leftMenuPath = function() {
           if ($location.path().split("/")[1] === "main") {

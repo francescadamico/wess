@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
     <!-- header -->
-    <!-- the class container_fluid creates a grid 
+    <!-- the class container_fluid creates a grid
     <div class="container_fluid">-->
         <!-- grid row -->
         <div class="row">
@@ -26,14 +26,19 @@ xs stands for extra small screen, so it keeps the row allingment even though the
         </div>
     <!--</div>-->
 
-    
+
 	<!-- navigation bar-->
 	<div class="navbar-wrapper" ng-controller="NavbarCtrl">
 		<ul class="nav nav-pills mainMenu-nav-pills">
 			<li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
 				<a ng-href="{{item.link}}">{{item.title}}</a>
 			</li>
+      <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+      <li ng-show="isAdmin()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
+      <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+      <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p></li>
+      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+      <li ng-show="isLoggedIn()"><a href="/logout">Logout</a></li>
 		</ul>
 	</div>
 </div>
-

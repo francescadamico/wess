@@ -5,6 +5,7 @@ angular.module('wessApp')
     $routeProvider
       .when('/user_data/wikipage', {
         templateUrl: 'app/user_data/wikipage/wikipage.html',
-        controller: 'WikipageCtrl'
+        controller: 'WikipageCtrl',
+        authenticate: true
       });
   });
