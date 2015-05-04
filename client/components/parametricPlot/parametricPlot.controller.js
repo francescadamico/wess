@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('wessApp')
-  .controller('ParametricplotCtrl', function ($scope, $http) {
-      $scope.data;
+  .controller('ParametricplotCtrl', function ($scope, $http, $q) {
+      //$scope.data;
       $scope.count;
       $scope.isAPICallSuccessful;
+    $scope.prova;
       
       /* loadPlot function:
        * it draws a plot with the result of the parametric query to the database
@@ -20,7 +21,7 @@ angular.module('wessApp')
        *        0 has to be chosen to query all the stations at the same time;
        * - (Number) sensheight: optional input; height or depth of the instrument. 
        */
-      $scope.loadPlot = function(timeInterval,day,senstypeid,measdescr,measname,station,sensheight){ 
+      $scope.loadPlot = function(timeInterval,day,site,channel,statistic){ 
 
           //day,station,senstypeid,measdescr,sensheight1,sensheight2,measname,sitesnum
           
@@ -50,8 +51,59 @@ angular.module('wessApp')
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
           else
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
+        
           
-          $http.get('/api/data/testQuery')
+          /* get needed channel id numbers */
+          $http.get('/api/data/chnId',{params: {site:site, channel:channel, statistic:statistic}})
+              .success(function(result) {
+                  //to check whether the query result is empty or not
+                  if (result.length === 0){
+                      $scope.resultIsEmpty = true;
+                      $scope.isAPICallSuccessful = true;
+                  }
+                  else {
+                      // all the found channels are put into the chn array and passed to the data query
+                      var chn = [];
+                      var i_chn = 0;
+                      angular.forEach(result, function(){
+                          chn[i_chn] = result[i_chn].chn_id; 
+                          i_chn++;
+                      });
+                      /* set to 0 all the reamining channels up to 10, 
+                       * i.e. there is no chn_id=0, in this way there is a common expression 
+                       * even when the number of channels to be queried is different */
+                      for (var i_null=chn.length; i_null<10; i_null++){
+                          chn[i_null] = 0;
+                      };
+                      $http.get('/api/data/dataQuery',{params: {day:newDay, chn:chn, timeInterval:timeInterval, channel:channel}})
+                          .success(function(response) {
+                              if (response.length === 0){
+                                  $scope.resultIsEmpty = true;
+                                  $scope.isAPICallSuccessful = true;
+                              }
+                              else {
+                                  $scope.data = response.map(function(datum) {
+                                      return {
+                                          value1: Number(datum.value),
+                                          tick: Date.parse(datum.tick)
+                                      };
+                                  });
+                                  $scope.resultIsEmpty = false;
+                                  $scope.isAPICallSuccessful = true;
+                              }
+                      })
+                          .error(function(data, status, headers,config) {
+                              console.log(data);
+                      });
+                      $scope.resultIsEmpty = false; 
+                      $scope.isAPICallSuccessful = true;
+                  }
+          })
+              .error(function(data, status, headers,config) {
+                    console.log(data);
+          });
+     
+          /*$http.get('/api/data/testQuery')
               .success(function(result) {
               //to check whether the query result is empty or not
               if (result.length === 0){
@@ -67,7 +119,7 @@ angular.module('wessApp')
               .error(function(data, status, headers,config) {
               $scope.isAPICallSuccessful = false;
               console.log(data);
-          });
+          });*/
                       
           
           /*$http.get('/api/data/genericQuery', {params: {timeInterval:timeInterval, day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})

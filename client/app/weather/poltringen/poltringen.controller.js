@@ -2,42 +2,44 @@
 
 angular.module('wessApp')
   .controller('PoltringenCtrl', function ($scope, $http) {
-
-      $scope.day = new Date(Date.UTC(2014, 2, 25, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
+    $scope.day = new Date();
+    var date = $scope.day.getDate()-20; 
+    $scope.day.setDate(date);
+      //$scope.day = new Date(Date.UTC(2015, 1, 21, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
       $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
       
       $scope.timeInterval = 'One day';
-      $scope.station = 3;
+      $scope.site = 'Poltringen';
       $scope.plots = [
           {
               measurement_name:'Atmospheric Temperature',
-              senstypeid: 7,
-              measdescr:'avg'
+              channel: 'AirTemp__',
+              statistic: 'Avg'
           },
           {
               measurement_name:'Atmospheric Humidity',
-              senstypeid: 6,
-              measdescr:'avg'
+              channel: 'RH__',
+              statistic: 'Avg'
           },
           {
               measurement_name:'Wind Speed',
-              senstypeid: 4,
-              measdescr:'avg'
+              channel:'WindSpd__',
+              statistic: 'Avg'
           },
           {
               measurement_name:'Incoming Short-Wave Radiation',
-              senstypeid: 10,
-              measdescr:'avg'
+              channel: 'SR01Up',
+              statistic: 'Avg'
           },
           {
               measurement_name:'Cumulative Rain',
-              senstypeid: 14,
-              measdescr:'tot'
+              channel: 'Rain_mm',
+              statistic: 'Tot'
           },
           {
               measurement_name:'Soil Temperature',
-              senstypeid: 3,
-              measdescr:'sample'
+              channel: 'SoilTemp__',
+              statistic: 'Avg'
           }
       ];
       

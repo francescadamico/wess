@@ -454,14 +454,131 @@ GROUP BY 1
 /*****************************************************************************/
 
 /* a simple example to test the db connection */
-exports.testQuery = function(req,res) {
-    query("SELECT channel as value \
-from channels join chns using (channel_id) join stations using (station_id) join sites using (site_id) join sensors using (chn_id) join instruments using (instrument_id) join models using (model_id) \
-where height_instrument = -10 \
-and statistic = 'Smp' \
-and channel like '%SoilTemp%' \
-and site = 'Poltringen' \
-order by height_instrument desc", function (err, rows, result){ 
+exports.chnId = function(req,res) {
+    req.checkQuery('site', 'Invalid site namer!').isAlpha(); 
+    //req.checkQuery('channel', 'Invalid channel name!').isAlpha();
+    req.checkQuery('statistic', 'Invalid statistic!').isAlpha(); 
+
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
+    var site = req.query.site;
+    var channel = req.query.channel;
+    var statistic = req.query.statistic;
+
+    
+    query("SELECT chn_id \
+from channels join chns using (channel_id) join stations using (station_id) join sites using (site_id) join sensors using (chn_id) \
+where site = $1::text \
+and channel like $2::text \
+and statistic = $3::text", [site, channel, statistic], function (err, rows, result){ 
+         //checks errors in the connection to the db
+         if(!err){
+             res.json(rows);
+         } else {
+            res.status(503).send(err);
+         }
+     });
+};
+
+
+exports.dataQuery = function(req,res) {
+    /* Possible ISSUES: the array approach leads to a problem due to the fact that passing arrays as 
+     * GET query parameter is not really standardized and so I don't know how to to the 
+     * parameters validation: the following doesn't work */
+    /* req.checkQuery('chn[0]', 'Invalid channel number!').isInt();
+    req.checkQuery('chn[1]', 'Invalid channel number!').isInt(); 
+    req.checkQuery('chn[2]', 'Invalid channel number!').isInt();
+    req.checkQuery('chn[3]', 'Invalid channel number!').isInt(); */
+    req.checkQuery('day', 'Invalid date!').isDate(); 
+    req.checkQuery('timeInterval', 'Invalid time interval!').isText;
+    req.checkQuery('channel', 'Invalid channel!').isText;
+    
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
+    var timeInterval = req.query.timeInterval;
+    var day = req.query.day;
+    var channel = req.query.channel;
+    var chn = [];
+    chn = req.query.chn;
+    var queryText;
+
+    var dateTrunc_chosen;
+    var dateTrunc_1day = "date_trunc('day', ts) ";
+    var dateTrunc_1h = "date_trunc('hour', ts) ";
+    var dateTrunc_2h = "date_trunc('day', ts) + \
+    INTERVAL '1 hour' * round(extract('hour' from ts) / 2) * 2 ";
+    var dateTrunc_15m = "date_trunc('hour', ts) + \
+    INTERVAL '1 minute' * round(extract('minute' from ts) / 15) * 15 ";
+    
+    // time interval selection
+    var timeInterval_chosen;
+    var timeInterval_oneDay = " - interval '1 day' ";
+    var timeInterval_oneMonth = " - interval '1 month'";
+    
+    if (timeInterval == "One day") {
+        dateTrunc_chosen = dateTrunc_15m;
+        timeInterval_chosen = timeInterval_oneDay;
+    } else { // timeInterval == "One month"
+        dateTrunc_chosen = dateTrunc_2h;//dateTrunc_2h;
+        timeInterval_chosen = timeInterval_oneMonth;
+    };
+    
+    // single station query parts
+    var selectOneStation = "SELECT " + dateTrunc_chosen + " as tick, avg(val) as value ";
+    var fromOneStation = "from dat join tss Using (ts_id) ";
+    var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp \
+and chn_id IN ($2::int, $3::int, $4::int, $5::int, $6::int, $7::int, $8::int, $9::int, $10::int, $11::int) ";
+    var groupByOneStation = " GROUP BY tick ";
+    var orderByOneStation = "ORDER BY tick "; 
+    var queryOneStation = selectOneStation + fromOneStation + whereOneStation + groupByOneStation + orderByOneStation;
+    // cumulative rain
+    var selectOneStation_cumulativeRain = "SELECT tick, sum(value) OVER (ORDER BY tick) as value \
+FROM( ";
+    var groupByOneStation_cumulativeRain = ")t \
+GROUP BY tick, value ";
+    var queryOneStation_cumulativeRain = selectOneStation_cumulativeRain + queryOneStation + groupByOneStation_cumulativeRain + orderByOneStation;
+    /*SELECT tick, sum(value) OVER (ORDER BY tick) as value
+FROM(
+SELECT date_trunc('hour', ts) as tick, avg(val) as value
+from dat join tss Using (ts_id)
+where ts between '2015-02-20 00:00:00' AND '2015-02-20 23:59:00'
+and chn_id IN (10054)
+GROUP BY tick 
+)t
+GROUP BY tick, value
+ORDER BY tick;*/
+
+    if (channel === 'Rain_mm') // cumulative rain
+        queryText = queryOneStation_cumulativeRain;
+    else // standard queries*/
+        queryText = queryOneStation;
+    
+    /***********************************************************************************/
+    /***********************************************************************************/
+    /***********************************************************************************/
+    /*"SELECT " + dateTrunc_chosen + " as tick, avg(val) as value \
+from dat join tss Using (ts_id) \
+where ts between $1::timestamp " + timeInterval_chosen + "AND $1::timestamp \
+and chn_id IN ($2::int, $3::int, $4::int, $5::int, $6::int, $7::int, $8::int, $9::int, $10::int, $11::int) \
+GROUP BY tick \
+ORDER BY tick"*/
+
+    
+    /***********************************************************************************/
+    /***********************************************************************************/
+    /***********************************************************************************/    
+    
+
+    
+    
+    query(queryText, [day, chn[0], chn[1], chn[2], chn[3], chn[4], chn[5], chn[6], chn[7], chn[8], chn[9]]
+        , function (err, rows, result){ 
          //checks errors in the connection to the db
          if(!err){
              res.json(rows);

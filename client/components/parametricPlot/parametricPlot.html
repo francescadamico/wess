@@ -1,8 +1,8 @@
 <div ng-switch="isAPICallSuccessful">
     <div ng-switch-when="true">
         <div class="plot_container" ng-switch="resultIsEmpty">
-            <!--<linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>-->
-            <p ng-switch-when='false'>{{data}}</p>
+            <linechart data="data" options="options" mode="" ng-switch-when="false"></linechart>
+            <!--<p ng-switch-when='false'>{{data}}</p>-->
             <p ng-switch-when="true">No data was found for the specified sensor and day.</p>
         </div>
     </div>
