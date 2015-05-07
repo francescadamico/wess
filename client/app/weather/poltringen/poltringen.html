@@ -9,11 +9,11 @@
     <div ng-controller="ParametricplotCtrl">
     	<div ng-switch="timeInterval">
         	<div ng-switch-default>
-            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('One day',day,site,item.channel,item.statistic)" >
+            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('One day',day,station,item.channel,item.statistic)" >
                 </div>
             </div>
             <div ng-switch-when="One month">
-            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,site,item.channel,item.statistic)">
+            	<div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,day,station,item.channel,item.statistic)">
                 </div>
             </div>
         </div>

@@ -1,12 +1,9 @@
 'use strict';
 
 angular.module('wessApp')
-  .controller('ParametricplotCtrl', function ($scope, $http, $q) {
-      //$scope.data;
-      $scope.count;
+  .controller('ParametricplotCtrl', function ($scope, $http) {
       $scope.isAPICallSuccessful;
-    $scope.prova;
-      
+    $scope.test;
       /* loadPlot function:
        * it draws a plot with the result of the parametric query to the database
        * INPUTS: 
@@ -21,9 +18,7 @@ angular.module('wessApp')
        *        0 has to be chosen to query all the stations at the same time;
        * - (Number) sensheight: optional input; height or depth of the instrument. 
        */
-      $scope.loadPlot = function(timeInterval,day,site,channel,statistic){ 
-
-          //day,station,senstypeid,measdescr,sensheight1,sensheight2,measname,sitesnum
+      $scope.loadPlot = function(timeInterval,day,station,channel,statistic){ 
           
           $scope.options = {
               axes: {
@@ -51,121 +46,89 @@ angular.module('wessApp')
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
           else
               var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
-        
+
+          var ii;
           
           /* get needed channel id numbers */
-          $http.get('/api/data/chnId',{params: {site:site, channel:channel, statistic:statistic}})
-              .success(function(result) {
-                  //to check whether the query result is empty or not
-                  if (result.length === 0){
-                      $scope.resultIsEmpty = true;
-                      $scope.isAPICallSuccessful = true;
-                  }
-                  else {
-                      // all the found channels are put into the chn array and passed to the data query
-                      var chn = [];
-                      var i_chn = 0;
-                      angular.forEach(result, function(){
-                          chn[i_chn] = result[i_chn].chn_id; 
-                          i_chn++;
-                      });
-                      /* set to 0 all the reamining channels up to 10, 
-                       * i.e. there is no chn_id=0, in this way there is a common expression 
-                       * even when the number of channels to be queried is different */
-                      for (var i_null=chn.length; i_null<10; i_null++){
-                          chn[i_null] = 0;
-                      };
-                      $http.get('/api/data/dataQuery',{params: {day:newDay, chn:chn, timeInterval:timeInterval, channel:channel}})
-                          .success(function(response) {
+              $http.get('/api/data/chnId',{params: {station:station, channel:channel, statistic:statistic}})
+                  .success(function(result) {
+                      //to check whether the query result is empty or not
+                      if (result.length === 0){
+                          $scope.resultIsEmpty = true;
+                          $scope.isAPICallSuccessful = true;
+                      }
+                      else {
+                          var config;
+                          // all the found channels are put into the chn array and passed to the data query
+                          if (station === 'all') {
+                              
+                              $scope.chn_polt = [];
+                              $scope.chn_ent = [];
+                              $scope.chn_tail = [];
+                              for (var i_chn=0; i_chn < result.length; i_chn++) {
+                                   if (result[i_chn].chn_id_polt !== null)
+                                      $scope.chn_polt.push(parseInt(result[i_chn].chn_id_polt)); 
+                                   if (result[i_chn].chn_id_ent !== null)
+                                      $scope.chn_ent.push(parseInt(result[i_chn].chn_id_ent));
+                                   if (result[i_chn].chn_id_tail !== null)
+                                      $scope.chn_tail.push(parseInt(result[i_chn].chn_id_tail));
+                              };
+                              
+                              config = {params: {day:newDay, chn_polt:$scope.chn_polt, chn_ent:$scope.chn_ent, chn_tail:$scope.chn_tail, timeInterval:timeInterval, channel:channel, station:station}};
+                              
+                          }
+                          else { // only one station
+                              
+                              $scope.chn = [];
+                              for (i_chn=0; i_chn<result.length; i_chn++)
+                                    $scope.chn.push(result[i_chn].chn_id);
+                              
+                              config = {params: {day:newDay, chn:$scope.chn, timeInterval:timeInterval, channel:channel, station:station}};
+                          };
+                          
+                          $http.get('/api/data/dataQuery',config)
+                              .success(function(response) {
                               if (response.length === 0){
                                   $scope.resultIsEmpty = true;
                                   $scope.isAPICallSuccessful = true;
                               }
                               else {
-                                  $scope.data = response.map(function(datum) {
+                                  if (station !== 'all') {
+                                      $scope.data = response.map(function(datum) {
                                       return {
                                           value1: Number(datum.value),
                                           tick: Date.parse(datum.tick)
                                       };
-                                  });
-                                  $scope.resultIsEmpty = false;
-                                  $scope.isAPICallSuccessful = true;
-                              }
-                      })
-                          .error(function(data, status, headers,config) {
-                              console.log(data);
-                      });
-                      $scope.resultIsEmpty = false; 
-                      $scope.isAPICallSuccessful = true;
-                  }
-          })
-              .error(function(data, status, headers,config) {
-                    console.log(data);
-          });
-     
-          /*$http.get('/api/data/testQuery')
-              .success(function(result) {
-              //to check whether the query result is empty or not
-              if (result.length === 0){
-                  $scope.resultIsEmpty = true;
-                  $scope.isAPICallSuccessful = true;
-              }
-              else {
-                  $scope.data = result;
-                  $scope.resultIsEmpty = false;
-                  $scope.isAPICallSuccessful = true;
-              }
-          })
-              .error(function(data, status, headers,config) {
-              $scope.isAPICallSuccessful = false;
-              console.log(data);
-          });*/
-                      
-          
-          /*$http.get('/api/data/genericQuery', {params: {timeInterval:timeInterval, day:newDay, senstypeid:senstypeid, measdescr:measdescr, station:station}})
-              .success(function(result) { 
-                  //to check whether the query result is empty or not 
-                  if (result.length === 0){
-                      $scope.resultIsEmpty = true;
-                      $scope.isAPICallSuccessful = true;
-                  }
-                  else {
-                      if(station == 0) { // all the 3 sites
-                          $scope.data = result.map(function(datum) {
-                              return {
-                                  value1: Number(datum.value1),
-                                  value2: Number(datum.value2),
-                                  value3: Number(datum.value3),
-                                  tick: Date.parse(datum.tick)
+                                      });
+                                      $scope.options.series[0].label = station;
+                                  }
+                                  else {
+                                      $scope.data = response.map(function(datum) {
+                                          return {
+                                              value1: Number(datum.val_polt),
+                                              value2: Number(datum.val_ent),
+                                              value3: Number(datum.val_tail),
+                                              tick: Date.parse(datum.tick)
+                                          };
+                                      });
+                                      $scope.options.series[0].label = 'Poltringen';
+                                      $scope.options.series[1] = {y: 'value2', color: 'red', thickness: '2px', striped: true, label:'Entringen'};
+                                      $scope.options.series[2] = {y: 'value3', color: 'green', thickness: '2px', striped: true, label: 'Tailfingen'};
+                                  };
                               };
+                              $scope.resultIsEmpty = false;
+                              $scope.isAPICallSuccessful = true;
+                          })
+                              .error(function(data, status, headers,config) {
+                                  console.log(data);
                           });
-                          /* the two other series have to be added to the default one */
-                         /* $scope.options.series[1] = {y: 'value2', color: 'red', thickness: '2px', striped: true, label: 'Tailfingen'};
-                          $scope.options.series[2] = {y: 'value3', color: 'green', thickness: '2px', striped: true, label: 'Poltringen'};
-                          /* the first series label has to be added */
-                         /* $scope.options.series[0].label = 'Entringen';
-                          $scope.resultIsEmpty = false;
+                          $scope.resultIsEmpty = false; 
                           $scope.isAPICallSuccessful = true;
                       }
-                      else {//station != 0
-                          $scope.data = result.map(function(datum) {
-                              return {
-                                  value1: Number(datum.value),
-                                  tick: Date.parse(datum.tick)
-                              };
-                          });
-                          /* the first series label has to be added and its value is taken from the query itself
-                           */
-                         /* $scope.options.series[0].label = String(result[1].senstypedescr);
-                          $scope.resultIsEmpty = false;
-                          $scope.isAPICallSuccessful = true;
-                      }
-                  }
               })
-              .error(function(data, status, headers,config) {
-                    $scope.isAPICallSuccessful = false;
-                    console.log(data);
+                  .error(function(data, status, headers,config) {
+                        console.log(data);
               });
-        */  
+
       };
   });
