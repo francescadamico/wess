@@ -3,7 +3,6 @@
 angular.module('wessApp')
   .controller('ParametricplotCtrl', function ($scope, $http) {
       $scope.isAPICallSuccessful;
-    $scope.test;
       /* loadPlot function:
        * it draws a plot with the result of the parametric query to the database
        * INPUTS: 
