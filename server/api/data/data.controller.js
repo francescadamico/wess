@@ -534,12 +534,37 @@ exports.dataQuery = function(req,res) {
     var day = req.query.day;
     var channel = req.query.channel;
     var station = req.query.station;
-    if (station !== 'all') 
-        var chn = req.query.chn;
+    if (station !== 'all') { 
+        var chn = [];
+        var temp = [];
+        temp = req.query.chn;
+        /* if chn has only one value it has to be put into the chn array,
+        on the contrary, if chn is an array, it has to be pushed in chn */
+        if (typeof temp === 'object')
+            chn = temp;
+        else
+            chn.push(temp);
+    }
     else {
-        var chn_polt = req.query.chn_polt;
-        var chn_ent = req.query.chn_ent;
-        var chn_tail = req.query.chn_tail;
+        var chn_polt = [];
+        var chn_ent = [];
+        var chn_tail = [];
+        var temp = [];
+        temp = req.query.chn_polt;
+        if (typeof temp === 'object')
+            chn_polt = temp;
+        else
+            chn_polt.push(temp);
+        temp = req.query.chn_ent;
+        if (typeof temp === 'object')
+            chn_ent = temp;
+        else
+            chn_ent.push(temp);
+        temp = req.query.chn_tail;
+        if (typeof temp === 'object')
+            chn_tail = temp;
+        else
+            chn_tail.push(temp);
     }
 
     var queryText;
@@ -564,7 +589,7 @@ exports.dataQuery = function(req,res) {
         dateTrunc_chosen = dateTrunc_15m;
         timeInterval_chosen = timeInterval_oneDay;
     } else { // timeInterval == "One month"
-        dateTrunc_chosen = dateTrunc_12h;//dateTrunc_2h;
+        dateTrunc_chosen = dateTrunc_2h;//dateTrunc_12h;
         timeInterval_chosen = timeInterval_oneMonth;
     };
     
@@ -574,42 +599,25 @@ exports.dataQuery = function(req,res) {
     var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
     
     if (station !== 'all') {
-        var whereChn_id = " and chn_id IN ($2::int";
-        if (channel !== "Rain_mm" && channel !== "SR01Up") {
-             /* in case the returned chn_id is only one, 
-            as for the Rain_mm and SR01UP, chn has cannot be treated as an array,
-            therefor chn.length doesn't return what is expected
-            --still not clear why-- */
-            for (var ch_ix=3; ch_ix<chn.length+2; ch_ix++)
-                whereChn_id += ", $"+ch_ix+"::int"; 
-        };
+        var whereChn_id = " and chn_id IN ($2::int"
+        for (var ch_ix=3; ch_ix<chn.length+2; ch_ix++)
+            whereChn_id += ", $"+ch_ix+"::int"; 
         whereChn_id += ") ";
     }
     else {
-        if (channel !== "Rain_mm" && channel !== "SR01Up") {
-            var ch_ix;
-            var whereChn_id_polt = " and chn_id IN ($2::int";
-                for (ch_ix=3; ch_ix<(chn_polt.length+2); ch_ix++)
-                    whereChn_id_polt += ", $"+ch_ix+"::int"; 
-            var whereChn_id_ent = " and chn_id IN ($"+(chn_polt.length+2)+"::int";
-                for (ch_ix=(chn_polt.length+2+1); ch_ix<(chn_polt.length+2+chn_ent.length); ch_ix++)
-                    whereChn_id_ent += ", $"+ch_ix+"::int"; 
-            var whereChn_id_tail = " and chn_id IN ($"+(chn_polt.length+2+chn_ent.length)+"::int";
-                for (ch_ix=(chn_polt.length+2+chn_ent.length+1); ch_ix<(chn_polt.length+2+chn_ent.length+chn_tail.length); ch_ix++)
-                    whereChn_id_tail += ", $"+ch_ix+"::int"; 
-            whereChn_id_polt += ") ";
-            whereChn_id_ent += ") ";
-            whereChn_id_tail += ") ";
-        }
-        else {
-            /* in case the returned chn_id is only one, 
-            as for the Rain_mm and SR01UP, chn has cannot be treated as an array,
-            therefor chn.length doesn't return what is expected
-            --still not clear why-- */
-            var whereChn_id_polt = " and chn_id IN ($2::int) ";
-            var whereChn_id_ent = " and chn_id IN ($3::int) ";
-            var whereChn_id_tail = " and chn_id IN ($4::int) ";
-        }
+        var ch_ix;
+        var whereChn_id_polt = " and chn_id IN ($2::int";
+            for (ch_ix=3; ch_ix<(chn_polt.length+2); ch_ix++)
+                whereChn_id_polt += ", $"+ch_ix+"::int"; 
+        var whereChn_id_ent = " and chn_id IN ($"+(chn_polt.length+2)+"::int";
+            for (ch_ix=(chn_polt.length+2+1); ch_ix<(chn_polt.length+2+chn_ent.length); ch_ix++)
+                whereChn_id_ent += ", $"+ch_ix+"::int"; 
+        var whereChn_id_tail = " and chn_id IN ($"+(chn_polt.length+2+chn_ent.length)+"::int";
+            for (ch_ix=(chn_polt.length+2+chn_ent.length+1); ch_ix<(chn_polt.length+2+chn_ent.length+chn_tail.length); ch_ix++)
+                whereChn_id_tail += ", $"+ch_ix+"::int"; 
+        whereChn_id_polt += ") ";
+        whereChn_id_ent += ") ";
+        whereChn_id_tail += ") ";
     };
     
     var groupByOneStation = " GROUP BY tick ";
@@ -669,33 +677,16 @@ SELECT " + dateTrunc_chosen + "as tick, avg(val) as val_polt, null::numeric as v
 
     var params = [day];
     if (station !== 'all') {
-        if (channel !== "Rain_mm" && channel !== "SR01Up") {
-            for (var i_chn=0; i_chn<chn.length; i_chn++)
-            params.push(chn[i_chn]);
-        }
-        /* in case the returned chn_id is only one, 
-            as for the Rain_mm and SR01UP, chn has cannot be treated as an array
-            --still not clear why-- */
-        else
-            params.push(chn);
+        for (var i_chn=0; i_chn<chn.length; i_chn++)
+        params.push(chn[i_chn]);
     }
     else { // station == all
-            if (channel !== "Rain_mm" && channel !== "SR01Up") {
-                for (var i_chn=0; i_chn<chn_polt.length; i_chn++)
-                    params.push(chn_polt[i_chn]);
-                for (var i_chn=0; i_chn<chn_ent.length; i_chn++)
-                    params.push(chn_ent[i_chn]);
-                for (var i_chn=0; i_chn<chn_tail.length; i_chn++)
-                    params.push(chn_tail[i_chn]);
-            }
-        /* in case the returned chn_id is only one, 
-            as for the Rain_mm and SR01UP, chn has cannot be treated as an array
-            --still not clear why-- */
-            else {
-                params.push(chn_polt);
-                params.push(chn_ent);
-                params.push(chn_tail);
-            }
+        for (var i_chn=0; i_chn<chn_polt.length; i_chn++)
+            params.push(chn_polt[i_chn]);
+        for (var i_chn=0; i_chn<chn_ent.length; i_chn++)
+            params.push(chn_ent[i_chn]);
+        for (var i_chn=0; i_chn<chn_tail.length; i_chn++)
+            params.push(chn_tail[i_chn]);
     }
     query(queryText, params
         , function (err, rows, result){ 
