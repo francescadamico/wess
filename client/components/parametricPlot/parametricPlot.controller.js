@@ -29,9 +29,9 @@ angular.module('wessApp')
                   {y: 'value1', color: 'steelblue', thickness: '2px', striped: true}
               ], 
               tooltip: {
-                  mode: "scrubber",
+                  mode: 'scrubber',
                   formatter: function (x, y, series) {
-                      return moment(x).format("MMMM Do YYYY, h:mm:ss a") + ' : ' + y;
+                      return moment(x).format('MMMM Do YYYY, h:mm:ss a') + ' : ' + y;
                   }
               },
               lineMode: 'linear',
@@ -41,12 +41,15 @@ angular.module('wessApp')
           };
           
           // the data to display are from the day before
-          if (day.getHours < 12)
-              var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
-          else
-              var newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
+          var newDay;
+          if (day.getHours < 12) {
+              newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()-1, 11, 52, 59));
+          }
+          else {
+              newDay = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate(), 11, 52, 59));
+          }
 
-          var ii;
+
           
           /* get needed channel id numbers */
               $http.get('/api/data/chnId',{params: {station:station, channel:channel, statistic:statistic}})
@@ -59,19 +62,23 @@ angular.module('wessApp')
                       else {
                           var config;
                           // all the found channels are put into the chn array and passed to the data query
+                          var i_chn;
                           if (station === 'all') {
                               
                               $scope.chn_polt = [];
                               $scope.chn_ent = [];
                               $scope.chn_tail = [];
-                              for (var i_chn=0; i_chn < result.length; i_chn++) {
-                                   if (result[i_chn].chn_id_polt !== null)
+                              for (i_chn=0; i_chn < result.length; i_chn++) {
+                                   if (result[i_chn].chn_id_polt !== null) {
                                       $scope.chn_polt.push(parseInt(result[i_chn].chn_id_polt)); 
-                                   if (result[i_chn].chn_id_ent !== null)
+                                   }
+                                   if (result[i_chn].chn_id_ent !== null) {
                                       $scope.chn_ent.push(parseInt(result[i_chn].chn_id_ent));
-                                   if (result[i_chn].chn_id_tail !== null)
+                                   }
+                                   if (result[i_chn].chn_id_tail !== null) {
                                       $scope.chn_tail.push(parseInt(result[i_chn].chn_id_tail));
-                              };
+                                   }
+                              }
                               
                               config = {params: {day:newDay, chn_polt:$scope.chn_polt, chn_ent:$scope.chn_ent, chn_tail:$scope.chn_tail, timeInterval:timeInterval, channel:channel, station:station}};
                               
@@ -83,7 +90,7 @@ angular.module('wessApp')
                                     $scope.chn.push(result[i_chn].chn_id);
                               
                               config = {params: {day:newDay, chn:$scope.chn, timeInterval:timeInterval, channel:channel, station:station}};
-                          };
+                          }
                           
                           $http.get('/api/data/dataQuery',config)
                               .success(function(response) {
@@ -113,8 +120,8 @@ angular.module('wessApp')
                                       $scope.options.series[0].label = 'Poltringen';
                                       $scope.options.series[1] = {y: 'value2', color: 'red', thickness: '2px', striped: true, label:'Entringen'};
                                       $scope.options.series[2] = {y: 'value3', color: 'green', thickness: '2px', striped: true, label: 'Tailfingen'};
-                                  };
-                              };
+                                  }
+                              }
                               $scope.resultIsEmpty = false;
                               $scope.isAPICallSuccessful = true;
                           })

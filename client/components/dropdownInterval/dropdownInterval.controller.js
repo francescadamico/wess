@@ -22,6 +22,6 @@ angular.module('wessApp')
           // when choice is selected from the dropdown menu a message "timeSelector" is produced and its value is passed to the listener of "timeSelector" message -in all_sites.controller-
           $scope.buttonName = choice;
           $scope.status.isopen = !$scope.status.isopen;
-          $scope.$emit("timeSelector",choice);
+          $scope.$emit('timeSelector',choice);
       };
   });

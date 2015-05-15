@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('wessApp')
-  .controller('AllSitesCtrl', function ($scope, $http) {
+  .controller('AllSitesCtrl', function ($scope) {
       
     $scope.day = new Date();
-    var date = $scope.day.getDate()-25; 
+    var date = $scope.day.getDate()-100; 
     $scope.day.setDate(date);
       //$scope.day = new Date(Date.UTC(2015, 1, 21, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
       $scope.station = 'all';
-      $scope.monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+      $scope.monthNames = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
       
       $scope.plots = [
       {
@@ -35,7 +35,7 @@ angular.module('wessApp')
       
 
       // listener to the "timeSelector" message 
-      $scope.$on("timeSelector", function(eventContext, timeInterval){
+      $scope.$on('timeSelector', function(eventContext, timeInterval){
           $scope.timeInterval = timeInterval;
           // React to the event.
       });

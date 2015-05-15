@@ -7,5 +7,5 @@ angular.module('wessApp')
        *    the navigation bar and the left menu. After that pageStructures sets
        *    $scope.firstCall = "false" and the content is displayed (see html)
        */
-      $scope.firstCall = "true";
+      $scope.firstCall = 'true';
   });
