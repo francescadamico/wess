@@ -4,6 +4,7 @@ var should = require('should');
 var app = require('../../app');
 var request = require('supertest');
 
+/*
 describe('GET /api/data', function() {
 
   it('should respond with count property', function(done) {
@@ -128,6 +129,66 @@ describe('GET /api/data/genericQuery with invalid day and measdescr and senstype
   it('should respond with HTTP 400', function(done) {
     request(app)
       .get('/api/data/hourlyAvgForDayParametric?day=2014-03-32&measdescr=123&senstypeid=abc&station=abc&')
+      .expect(400)
+      .expect('Content-Type', /text/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        done()
+      });
+  });
+});
+*/
+
+
+describe('GET /api/data/chnId with valid inputs', function() {
+
+  it('should respond with data as JSON array', function(done) {
+    request(app)
+      .get('/api/data/chnId?channel=Tensio01&station=tail&statistic=Avg')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+  });
+});
+
+describe('GET /api/data/chnId with invalid channel and station and statistic', function() {
+
+  it('should respond with HTTP 400', function(done) {
+    request(app)
+      .get('/api/data/chnId?channel=123&station=123&statistic=123')
+      .expect(400)
+      .expect('Content-Type', /text/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        done()
+      });
+  });
+});
+
+describe('GET /api/data/dataQuery with valid inputs', function() {
+
+  it('should respond with data as JSON array', function(done) {
+    request(app)
+      .get('/api/data/dataQuery?timeInterval=One day,day=2014-03-01,channel=Tensio01,station=tail')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+  });
+});
+
+describe('GET /api/data/dataQuery with invalid day and measdescr and senstypeid and station', function() {
+
+  it('should respond with HTTP 400', function(done) {
+    request(app)
+      .get('/api/data/dataQuery?timeInterval=123,day=2014-03-32,channel=123,station=123')
       .expect(400)
       .expect('Content-Type', /text/)
       .end(function(err, res) {

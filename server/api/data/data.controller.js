@@ -455,9 +455,11 @@ GROUP BY 1
 
 /* a simple example to test the db connection */
 exports.chnId = function(req,res) {
+    // 'station' and 'channel' cannot be checked as isAlpha because they always contain "_" that is not recognized as a pure string
     //req.checkQuery('station', 'Invalid station name!').isAlpha(); 
     //req.checkQuery('channel', 'Invalid channel name!').isAlpha();
     req.checkQuery('statistic', 'Invalid statistic!').isAlpha(); 
+    
 
     var errors = req.validationErrors();
     if (errors) {

@@ -140,101 +140,33 @@ Running "mochaTest:src" (mochaTest) task
 
 
 Express server listening on 9000, in test mode
-  GET /api/data
-GET /api/data 503 13ms - 146b
-[2K[0G    1) should respond with count property
+  GET /api/data/chnId with valid inputs
+GET /api/data/chnId?channel=Tensio01&station=tail&statistic=Avg 200 16ms - 2b
+[2K[0G    ✓ should respond with data as JSON array 
 
-  GET /api/data/hourlyAvgForDay with valid inputs
-GET /api/data/hourlyAvgForDay?day=2014-03-22T00%3A00%3A00.000Z&station=1&height=250&measdescr=avg&senstypedescr=temperature 503 9ms - 146b
-[2K[0G    2) should respond with data as JSON array
-
-  GET /api/data/hourlyAvgForDay with invalid day and sensorid
-GET /api/data/hourlyAvgForDay?day=2014-03-32&station=abc&height=abc&measdescr=123&senstypedescr=123 400 2ms - 322b
+  GET /api/data/chnId with invalid channel and station and statistic
+GET /api/data/chnId?channel=123&station=123&statistic=123 400 2ms - 102b
 [2K[0G    ✓ should respond with HTTP 400 
 
-  GET /api/data/hourlyAvgForDay3Sites with valid inputs
-GET /api/data/hourlyAvgForDay3Sites?day=2014-03-22T00%3A00%3A00.000Z&measdescr=avg&senstypedescr=temperature 400 1ms - 129b
-[2K[0G    3) should respond with data as JSON array
+  GET /api/data/dataQuery with valid inputs
+GET /api/data/dataQuery?timeInterval=One%20day%2Cday%3D2014-03-01%2Cchannel%3DTensio01%2Cstation%3Dtail 400 1ms - 95b
+[2K[0G    1) should respond with data as JSON array
 
-  GET /api/data/hourlyAvgForDay3Sites with invalid day and sensorid
-GET /api/data/hourlyAvgForDay3Sites?day=2014-03-32&measdescr=123&senstypedescr=123 400 1ms - 192b
-[2K[0G    ✓ should respond with HTTP 400 
-
-  GET /api/data/hourlyAvgForDayParametric with valid inputs
-GET /api/data/hourlyAvgForDayParametric?day=2014-03-22T00%3A00%3A00.000Z&station=1&measdescr=avg&senstypeid=7&sensheight1=187&sensheight2=287 503 6ms - 147b
-[2K[0G    4) should respond with data as JSON array
-
-  GET /api/data/hourlyAvgForDayParametric with invalid day and measdescr and senstypeid and sensheight1 and sensheight2
-GET /api/data/hourlyAvgForDayParametric?day=2014-03-32&measdescr=123&senstypeid=abc&sensheight1=abc&sensheight2=abc 400 0ms - 261b
-[2K[0G    ✓ should respond with HTTP 400 
-
-  GET /api/data/genericQuery with valid inputs
-GET /api/data/genericQuery?day=2014-03-22T00%3A00%3A00.000Z&station=1&measdescr=avg&senstypeid=7 503 7ms - 147b
-[2K[0G    5) should respond with data as JSON array
-
-  GET /api/data/genericQuery with invalid day and measdescr and senstypeid and station
-GET /api/data/hourlyAvgForDayParametric?day=2014-03-32&measdescr=123&senstypeid=abc&station=abc 400 1ms - 257b
+  GET /api/data/dataQuery with invalid day and measdescr and senstypeid and station
+GET /api/data/dataQuery?timeInterval=123%2Cday%3D2014-03-32%2Cchannel%3D123%2Cstation%3D123 400 1ms - 95b
 [2K[0G    ✓ should respond with HTTP 400 
 
   GET /api/things
-GET /api/things 200 0ms - 946b
+GET /api/things 200 1ms - 946b
 [2K[0G    ✓ should respond with JSON array 
 
 
-  5 passing (85ms)
-  5 failing
+  4 passing (49ms)
+  1 failing
 
-  1) GET /api/data should respond with count property:
-     Error: expected 200 "OK", got 503 "Service Unavailable"
-      at Test.assert (/home/francesca/project/wess/node_modules/supertest/lib/test.js:197:15)
-      at /home/francesca/project/wess/node_modules/supertest/lib/test.js:125:10
-      at Test.Request.callback (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:660:30)
-      at Test.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:132:10)
-      at Test.emit (events.js:95:17)
-      at IncomingMessage.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:818:12)
-      at IncomingMessage.emit (events.js:117:20)
-      at _stream_readable.js:929:16
-      at process._tickDomainCallback (node.js:463:13)
-
-  2) GET /api/data/hourlyAvgForDay with valid inputs should respond with data as JSON array:
-     Error: expected 200 "OK", got 503 "Service Unavailable"
-      at Test.assert (/home/francesca/project/wess/node_modules/supertest/lib/test.js:197:15)
-      at /home/francesca/project/wess/node_modules/supertest/lib/test.js:125:10
-      at Test.Request.callback (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:660:30)
-      at Test.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:132:10)
-      at Test.emit (events.js:95:17)
-      at IncomingMessage.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:818:12)
-      at IncomingMessage.emit (events.js:117:20)
-      at _stream_readable.js:929:16
-      at process._tickDomainCallback (node.js:463:13)
-
-  3) GET /api/data/hourlyAvgForDay3Sites with valid inputs should respond with data as JSON array:
+  1) GET /api/data/dataQuery with valid inputs should respond with data as JSON array:
      Error: expected "Content-Type" matching /json/, got "text/html; charset=utf-8"
       at Test.assert (/home/francesca/project/wess/node_modules/supertest/lib/test.js:188:25)
-      at /home/francesca/project/wess/node_modules/supertest/lib/test.js:125:10
-      at Test.Request.callback (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:660:30)
-      at Test.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:132:10)
-      at Test.emit (events.js:95:17)
-      at IncomingMessage.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:818:12)
-      at IncomingMessage.emit (events.js:117:20)
-      at _stream_readable.js:929:16
-      at process._tickDomainCallback (node.js:463:13)
-
-  4) GET /api/data/hourlyAvgForDayParametric with valid inputs should respond with data as JSON array:
-     Error: expected 200 "OK", got 503 "Service Unavailable"
-      at Test.assert (/home/francesca/project/wess/node_modules/supertest/lib/test.js:197:15)
-      at /home/francesca/project/wess/node_modules/supertest/lib/test.js:125:10
-      at Test.Request.callback (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:660:30)
-      at Test.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:132:10)
-      at Test.emit (events.js:95:17)
-      at IncomingMessage.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:818:12)
-      at IncomingMessage.emit (events.js:117:20)
-      at _stream_readable.js:929:16
-      at process._tickDomainCallback (node.js:463:13)
-
-  5) GET /api/data/genericQuery with valid inputs should respond with data as JSON array:
-     Error: expected 200 "OK", got 503 "Service Unavailable"
-      at Test.assert (/home/francesca/project/wess/node_modules/supertest/lib/test.js:197:15)
       at /home/francesca/project/wess/node_modules/supertest/lib/test.js:125:10
       at Test.Request.callback (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:660:30)
       at Test.<anonymous> (/home/francesca/project/wess/node_modules/supertest/node_modules/superagent/lib/node/index.js:132:10)
@@ -277,7 +209,7 @@ WARN [watcher]: Pattern "/home/francesca/project/wess/client/components/**/*.cof
 WARN [watcher]: Pattern "/home/francesca/project/wess/client/components/**/*.jade" does not match any file.
 WARN [watcher]: Pattern "/home/francesca/project/wess/client/app/**/*.coffee" does not match any file.
 WARN [watcher]: Pattern "/home/francesca/project/wess/client/app/**/*.jade" does not match any file.
-INFO [PhantomJS 1.9.8 (Linux)]: Connected on socket OJtRIEU2fnG7dazgHjOF with id 29539925
+INFO [PhantomJS 1.9.8 (Linux)]: Connected on socket AXwFn4AmS8jcwbGLUTie with id 96674474
 PhantomJS 1.9.8 (Linux): Executed 0 of 17 SUCCESS (0 secs / 0 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: AboutCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
@@ -310,7 +242,7 @@ PhantomJS 1.9.8 (Linux): Executed 0 of 17 SUCCESS (0 secs / 0 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 1 of 17 (1 FAILED) (0 secs / 0.008 secs)
+PhantomJS 1.9.8 (Linux): Executed 1 of 17 (1 FAILED) (0 secs / 0.011 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: ContactCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -342,7 +274,7 @@ PhantomJS 1.9.8 (Linux): Executed 1 of 17 (1 FAILED) (0 secs / 0.008 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 2 of 17 (2 FAILED) (0 secs / 0.01 secs)
+PhantomJS 1.9.8 (Linux): Executed 2 of 17 (2 FAILED) (0 secs / 0.013 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: GalleryCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -374,7 +306,7 @@ PhantomJS 1.9.8 (Linux): Executed 2 of 17 (2 FAILED) (0 secs / 0.01 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 3 of 17 (3 FAILED) (0 secs / 0.012 secs)
+PhantomJS 1.9.8 (Linux): Executed 3 of 17 (3 FAILED) (0 secs / 0.015 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: PicmodalCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -406,7 +338,7 @@ PhantomJS 1.9.8 (Linux): Executed 3 of 17 (3 FAILED) (0 secs / 0.012 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 4 of 17 (4 FAILED) (0 secs / 0.014 secs)
+PhantomJS 1.9.8 (Linux): Executed 4 of 17 (4 FAILED) (0 secs / 0.017 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: GoalsCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -568,7 +500,7 @@ PhantomJS 1.9.8 (Linux): Executed 8 of 17 (8 FAILED) (0 secs / 0.025 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 9 of 17 (9 FAILED) (0 secs / 0.027 secs)
+PhantomJS 1.9.8 (Linux): Executed 9 of 17 (9 FAILED) (0 secs / 0.03 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: PostCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -600,7 +532,7 @@ PhantomJS 1.9.8 (Linux): Executed 9 of 17 (9 FAILED) (0 secs / 0.027 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 10 of 17 (10 FAILED) (0 secs / 0.028 secs)
+PhantomJS 1.9.8 (Linux): Executed 10 of 17 (10 FAILED) (0 secs / 0.032 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: UserDataCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -632,7 +564,7 @@ PhantomJS 1.9.8 (Linux): Executed 10 of 17 (10 FAILED) (0 secs / 0.028 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 11 of 17 (11 FAILED) (0 secs / 0.03 secs)
+PhantomJS 1.9.8 (Linux): Executed 11 of 17 (11 FAILED) (0 secs / 0.034 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: WikipageCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -664,7 +596,7 @@ PhantomJS 1.9.8 (Linux): Executed 11 of 17 (11 FAILED) (0 secs / 0.03 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 12 of 17 (12 FAILED) (0 secs / 0.032 secs)
+PhantomJS 1.9.8 (Linux): Executed 12 of 17 (12 FAILED) (0 secs / 0.036 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: AllSitesCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -696,7 +628,7 @@ PhantomJS 1.9.8 (Linux): Executed 12 of 17 (12 FAILED) (0 secs / 0.032 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 13 of 17 (13 FAILED) (0 secs / 0.034 secs)
+PhantomJS 1.9.8 (Linux): Executed 13 of 17 (13 FAILED) (0 secs / 0.038 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: EntringenCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -728,7 +660,7 @@ PhantomJS 1.9.8 (Linux): Executed 13 of 17 (13 FAILED) (0 secs / 0.034 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 14 of 17 (14 FAILED) (0 secs / 0.036 secs)
+PhantomJS 1.9.8 (Linux): Executed 14 of 17 (14 FAILED) (0 secs / 0.04 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: PoltringenCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -760,7 +692,7 @@ PhantomJS 1.9.8 (Linux): Executed 14 of 17 (14 FAILED) (0 secs / 0.036 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 15 of 17 (15 FAILED) (0 secs / 0.038 secs)
+PhantomJS 1.9.8 (Linux): Executed 15 of 17 (15 FAILED) (0 secs / 0.042 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: TailfingenCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -792,7 +724,7 @@ PhantomJS 1.9.8 (Linux): Executed 15 of 17 (15 FAILED) (0 secs / 0.038 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 16 of 17 (16 FAILED) (0 secs / 0.04 secs)
+PhantomJS 1.9.8 (Linux): Executed 16 of 17 (16 FAILED) (0 secs / 0.044 secs)
 [1A[2KPhantomJS 1.9.8 (Linux) Controller: WeatherCtrl should ... FAILED
 	Error: [$injector:modulerr] Failed to instantiate module wessApp due to:
 	Error: [$injector:modulerr] Failed to instantiate module n3-line-chart due to:
@@ -824,8 +756,8 @@ PhantomJS 1.9.8 (Linux): Executed 16 of 17 (16 FAILED) (0 secs / 0.04 secs)
 	    at loadModules (/home/francesca/project/wess/client/bower_components/angular/angular.js:4141)
 	    at createInjector (/home/francesca/project/wess/client/bower_components/angular/angular.js:4025)
 	    at workFn (/home/francesca/project/wess/client/bower_components/angular-mocks/angular-mocks.js:2425)
-PhantomJS 1.9.8 (Linux): Executed 17 of 17 (17 FAILED) (0 secs / 0.045 secs)
-[1A[2KPhantomJS 1.9.8 (Linux): Executed 17 of 17 (17 FAILED) ERROR (0.783 secs / 0.045 secs)
+PhantomJS 1.9.8 (Linux): Executed 17 of 17 (17 FAILED) (0 secs / 0.046 secs)
+[1A[2KPhantomJS 1.9.8 (Linux): Executed 17 of 17 (17 FAILED) ERROR (0.754 secs / 0.046 secs)
 Warning: Task "karma:unit" failed. Used --force, continuing.
 
 Running "clean:dist" (clean) task
@@ -835,16 +767,18 @@ Cleaning dist/server...OK
 
 Running "concurrent:dist" (concurrent) task
 
+Running "imagemin:dist" (imagemin) task
+
 Running "svgmin:dist" (svgmin) task
 Total saved: 0 B
 
 Done, without errors.
 
 
-Execution Time (2015-05-15 10:28:28 UTC)
-loading tasks  112ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 77%
-svgmin:dist     33ms  ▇▇▇▇▇▇▇▇▇▇▇ 23%
-Total 145ms
+Execution Time (2015-05-15 11:24:12 UTC)
+loading tasks  114ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 65%
+svgmin:dist     60ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34%
+Total 175ms
 
     
     Grunt and task output will also be logged to "./logs/grunt.log"
@@ -855,13 +789,11 @@ Total 145ms
     Done, without errors.
     
     
-    Execution Time (2015-05-15 10:28:28 UTC)
-    loading tasks  112ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 77%
-    svgmin:dist     33ms  ▇▇▇▇▇▇▇▇▇▇▇ 23%
-    Total 145ms
-    
-Running "imagemin:dist" (imagemin) task
-✔ client/assets/images/WESS_banner_scale.png (saved 4.8 kB - 54%)
+    Execution Time (2015-05-15 11:24:12 UTC)
+    loading tasks  114ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 65%
+    svgmin:dist     60ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34%
+    Total 175ms
+    ✔ client/assets/images/WESS_banner_scale.png (saved 4.8 kB - 54%)
 ✔ client/assets/images/WESS_banner_white.png (saved 4.83 kB - 55%)
 ✔ client/assets/images/Site_cross_section.png (saved 29.37 kB - 28%)
 ✔ client/assets/images/fg-tower-8m_1kpx.jpg (saved 5.27 kB - 4%)
@@ -922,8 +854,8 @@ Minified 56 images (saved 190.68 kB)
 Done, without errors.
 
 
-Execution Time (2015-05-15 10:28:28 UTC)
-loading tasks  215ms  ▇▇ 4%
+Execution Time (2015-05-15 11:24:12 UTC)
+loading tasks  225ms  ▇▇ 4%
 imagemin:dist   5.5s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 96%
 Total 5.7s
 
@@ -992,8 +924,8 @@ Total 5.7s
     Done, without errors.
     
     
-    Execution Time (2015-05-15 10:28:28 UTC)
-    loading tasks  215ms  ▇▇ 4%
+    Execution Time (2015-05-15 11:24:12 UTC)
+    loading tasks  225ms  ▇▇ 4%
     imagemin:dist   5.5s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 96%
     Total 5.7s
     
@@ -1259,14 +1191,14 @@ Update the JS to reference our revved images
 Done, but with warnings.
 
 
-Execution Time (2015-05-15 10:28:25 UTC)
-mochaTest:src     284ms  ▇ 1%
-karma:unit           2s  ▇▇▇▇▇▇▇ 9%
-concurrent:dist      6s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 27%
-concat:generated  592ms  ▇▇▇ 3%
-ngAnnotate:dist    1.2s  ▇▇▇▇▇ 6%
-copy:dist         566ms  ▇▇ 3%
-cdnify:dist        4.7s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 21%
-uglify:generated   5.6s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 25%
-Total 22.3s
+Execution Time (2015-05-15 11:24:08 UTC)
+mochaTest:src      243ms  ▇ 1%
+autoprefixer:dist  214ms  ▇ 1%
+karma:unit            2s  ▇▇▇▇▇▇▇ 9%
+concurrent:dist       6s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 28%
+ngAnnotate:dist     1.4s  ▇▇▇▇▇ 6%
+copy:dist          567ms  ▇▇ 3%
+cdnify:dist         4.4s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 20%
+uglify:generated    5.5s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 26%
+Total 21.4s
 
