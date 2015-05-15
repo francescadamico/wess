@@ -8,7 +8,7 @@ angular.module('wessApp')
             'link': '/main/sites'
         },
         {
-            'title': 'Goals',
+            'title': 'Research',
             'link': '/main/goals'
         },
         {

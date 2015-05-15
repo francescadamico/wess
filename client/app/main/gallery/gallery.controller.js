@@ -7,7 +7,7 @@ angular.module('wessApp')
        *    the navigation bar and the left menu. After that pageStructures sets
        *    $scope.firstCall = "false" and the content is displayed (see html)
        */
-      $scope.firstCall = "true";
+      $scope.firstCall = 'true';
       
       var num_pics = 41;
       $scope.pictures = [];
@@ -16,8 +16,8 @@ angular.module('wessApp')
           $scope.pictures.push({
               'thumb': '../../assets/images/image'+i+'_tn.jpg',
               'img': '../../assets/images/image'+i+'.JPG'
-          })
-      };
+          });
+      }
       
       /* function to set the image path to a certain path given from the html, in this case it is
        * taken as pic in $scope.pictures, so it is one of the path given above */
@@ -30,7 +30,7 @@ angular.module('wessApp')
        * Using resolve, the mainImageUrl is passed to the PicmodalCtrl allowing it to be
        * visible in that $scope as well */
       $scope.open = function (templateUrl) {
-          var modalInstance = $modal.open({
+          $modal.open({
               templateUrl: templateUrl,
               controller: 'PicmodalCtrl',
               resolve: {

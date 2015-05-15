@@ -448,3 +448,256 @@ GROUP BY 1
     
     
  }; 
+
+/*****************************************************************************/
+/******************************* new database queries ************************/
+/*****************************************************************************/
+
+/* a simple example to test the db connection */
+exports.chnId = function(req,res) {
+    // 'station' and 'channel' cannot be checked as isAlpha because they always contain "_" that is not recognized as a pure string
+    //req.checkQuery('station', 'Invalid station name!').isAlpha(); 
+    //req.checkQuery('channel', 'Invalid channel name!').isAlpha();
+    req.checkQuery('statistic', 'Invalid statistic!').isAlpha(); 
+    
+
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
+    var station = req.query.station;
+    var channel = req.query.channel;
+    var statistic = req.query.statistic;
+
+    if(station !== 'all') {
+        query("SELECT chn_id \
+    from channels join chns using (channel_id) join stations using (station_id) \
+    where station = $1::text \
+    and channel like $2::text \
+    and statistic = $3::text", [station, channel, statistic], function (err, rows, result){ 
+             //checks errors in the connection to the db
+             if(!err){
+                 res.json(rows);
+             } else {
+                res.status(503).send(err);
+             }
+         });
+    }
+    else {
+        query("SELECT chn_id_polt, chn_id_ent, chn_id_tail \
+FROM( \
+SELECT chn_id as chn_id_polt, null::numeric as chn_id_ent,  null::numeric as chn_id_tail \
+from channels join chns using (channel_id) join stations using (station_id) \
+where station = 'polt' \
+and channel like $1::text \
+and statistic = $2::text \
+UNION SELECT null::numeric as chn_id_polt, chn_id as chn_id_ent, null::numeric as chn_id_tail \
+from channels join chns using (channel_id) join stations using (station_id) \
+where station = 'ent_perm' \
+and channel like $1::text \
+and statistic = $2::text \
+UNION SELECT null::numeric as chn_id_polt, null::numeric as chn_id_ent, chn_id as chn_id_tail \
+from channels join chns using (channel_id) join stations using (station_id) \
+where station = 'tail' \
+and channel like $1::text \
+and statistic = $2::text )c \
+ORDER BY 1,2,3", [channel, statistic], function (err, rows, result){ 
+             //checks errors in the connection to the db
+             if(!err){
+                 res.json(rows);
+             } else {
+                res.status(503).send(err);
+             }
+         });
+    }
+};
+
+
+exports.dataQuery = function(req,res) {
+    /* Possible ISSUES: the array approach leads to a problem due to the fact that passing arrays as 
+     * GET query parameter is not really standardized and so I don't know how to to the 
+     * parameters validation: the following doesn't work */
+    /* req.checkQuery('chn[0]', 'Invalid channel number!').isInt();
+    req.checkQuery('chn[1]', 'Invalid channel number!').isInt(); 
+    req.checkQuery('chn[2]', 'Invalid channel number!').isInt();
+    req.checkQuery('chn[3]', 'Invalid channel number!').isInt(); */
+    req.checkQuery('day', 'Invalid date!').isDate(); 
+    req.checkQuery('timeInterval', 'Invalid time interval!').isText;
+    req.checkQuery('channel', 'Invalid channel!').isText;
+    req.checkQuery('station', 'Invalid station!').isText;
+    
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send('There have been validation errors: ' + util.inspect(errors), 400);
+    }
+    
+    var timeInterval = req.query.timeInterval;
+    var day = req.query.day;
+    var channel = req.query.channel;
+    var station = req.query.station;
+    if (station !== 'all') { 
+        var chn = [];
+        var temp = [];
+        temp = req.query.chn;
+        /* if chn has only one value it has to be put into the chn array,
+        on the contrary, if chn is an array, it has to be pushed in chn */
+        if (typeof temp === 'object')
+            chn = temp;
+        else
+            chn.push(temp);
+    }
+    else {
+        var chn_polt = [];
+        var chn_ent = [];
+        var chn_tail = [];
+        var temp = [];
+        temp = req.query.chn_polt;
+        if (typeof temp === 'object')
+            chn_polt = temp;
+        else
+            chn_polt.push(temp);
+        temp = req.query.chn_ent;
+        if (typeof temp === 'object')
+            chn_ent = temp;
+        else
+            chn_ent.push(temp);
+        temp = req.query.chn_tail;
+        if (typeof temp === 'object')
+            chn_tail = temp;
+        else
+            chn_tail.push(temp);
+    }
+
+    var queryText;
+
+    // date trunc selection
+    var dateTrunc_chosen;
+    var dateTrunc_1day = "date_trunc('day', ts) ";
+    var dateTrunc_1h = "date_trunc('hour', ts) ";
+    var dateTrunc_2h = "date_trunc('day', ts) + \
+    INTERVAL '1 hour' * round(extract('hour' from ts) / 2) * 2 ";
+    var dateTrunc_12h = "date_trunc('day', ts) + \
+    INTERVAL '1 hour' * round(extract('hour' from ts) / 12) * 12 ";
+    var dateTrunc_15m = "date_trunc('hour', ts) + \
+    INTERVAL '1 minute' * round(extract('minute' from ts) / 15) * 15 ";
+    
+    // time interval selection
+    var timeInterval_chosen;
+    var timeInterval_oneDay = " - interval '1 day' ";
+    var timeInterval_oneMonth = " - interval '1 month'";
+    
+    if (timeInterval == "One day") {
+        dateTrunc_chosen = dateTrunc_15m;
+        timeInterval_chosen = timeInterval_oneDay;
+    } else { // timeInterval == "One month"
+        dateTrunc_chosen = dateTrunc_2h;//dateTrunc_12h;
+        timeInterval_chosen = timeInterval_oneMonth;
+    };
+    
+    // single station query parts
+    var selectOneStation = "SELECT " + dateTrunc_chosen + " as tick, avg(val) as value ";
+    var fromOneStation = "from dat join tss Using (ts_id) ";
+    var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
+    
+    if (station !== 'all') {
+        var whereChn_id = " and chn_id IN ($2::int"
+        for (var ch_ix=3; ch_ix<chn.length+2; ch_ix++)
+            whereChn_id += ", $"+ch_ix+"::int"; 
+        whereChn_id += ") ";
+    }
+    else {
+        var ch_ix;
+        var whereChn_id_polt = " and chn_id IN ($2::int";
+            for (ch_ix=3; ch_ix<(chn_polt.length+2); ch_ix++)
+                whereChn_id_polt += ", $"+ch_ix+"::int"; 
+        var whereChn_id_ent = " and chn_id IN ($"+(chn_polt.length+2)+"::int";
+            for (ch_ix=(chn_polt.length+2+1); ch_ix<(chn_polt.length+2+chn_ent.length); ch_ix++)
+                whereChn_id_ent += ", $"+ch_ix+"::int"; 
+        var whereChn_id_tail = " and chn_id IN ($"+(chn_polt.length+2+chn_ent.length)+"::int";
+            for (ch_ix=(chn_polt.length+2+chn_ent.length+1); ch_ix<(chn_polt.length+2+chn_ent.length+chn_tail.length); ch_ix++)
+                whereChn_id_tail += ", $"+ch_ix+"::int"; 
+        whereChn_id_polt += ") ";
+        whereChn_id_ent += ") ";
+        whereChn_id_tail += ") ";
+    };
+    
+    var groupByOneStation = " GROUP BY tick ";
+    var orderByOneStation = "ORDER BY tick "; 
+    var queryOneStation = selectOneStation + fromOneStation + whereOneStation + whereChn_id + groupByOneStation + orderByOneStation;
+
+    // single station cumulative rain
+    var selectOneStation_cumulativeRain = "SELECT tick, sum(value) OVER (ORDER BY tick) as value \
+FROM( ";
+    var groupByOneStation_cumulativeRain = ")t \
+GROUP BY tick, value ";
+    var queryOneStation_cumulativeRain = selectOneStation_cumulativeRain + queryOneStation + groupByOneStation_cumulativeRain + orderByOneStation;
+    /*SELECT tick, sum(value) OVER (ORDER BY tick) as value
+FROM(
+SELECT date_trunc('hour', ts) as tick, avg(val) as value
+from dat join tss Using (ts_id)
+where ts between '2015-02-20 00:00:00' AND '2015-02-20 23:59:00'
+and chn_id IN (10054)
+GROUP BY tick 
+)t
+GROUP BY tick, value
+ORDER BY tick;*/
+
+    // all stations query parts
+    var selectAllStations = "SELECT tick , sum(val_polt) as val_polt, sum(val_ent) as val_ent, sum(val_tail) as val_tail ";
+    var selectAllStations_cumulativeRain = "SELECT tick , sum(val_polt) OVER (ORDER BY tick) as val_polt, sum(val_ent) OVER (ORDER BY tick) as val_ent, sum(val_tail) OVER (ORDER BY tick) as val_tail ";
+    var fromSelectAllStations_firstStation = "FROM ( \
+SELECT " + dateTrunc_chosen + "as tick, avg(val) as val_polt, null::numeric as val_ent, null::numeric as val_tail ";
+    var fromSelectAllStations_secondStation = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as val_polt, avg(val) as val_ent, null::numeric as val_tail ";
+    var fromSelectAllStations_thirdStation = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as val_polt, null::numeric as val_ent, avg(val) as val_tail ";
+    var groupByAllStations = ")t GROUP BY tick ORDER BY tick ASC";
+    var groupByAllStations_cumulativeRain = ")t GROUP BY tick, val_polt, val_ent, val_tail ORDER BY tick ASC";
+    
+    var queryAllStations;
+    if (channel !== 'Rain_mm')
+        queryAllStations = selectAllStations;
+    else 
+        queryAllStations = selectAllStations_cumulativeRain;
+    
+    queryAllStations +=  fromSelectAllStations_firstStation + fromOneStation + whereOneStation +  whereChn_id_polt + groupByOneStation + 
+            fromSelectAllStations_secondStation + fromOneStation + whereOneStation +  whereChn_id_ent + groupByOneStation +
+            fromSelectAllStations_thirdStation + fromOneStation + whereOneStation +  whereChn_id_tail + groupByOneStation;
+    if (channel !== 'Rain_mm')
+        queryAllStations += groupByAllStations;
+    else 
+        queryAllStations += groupByAllStations_cumulativeRain;
+    
+    if (station !== 'all') {
+        if (channel === 'Rain_mm') // cumulative rain
+            queryText = queryOneStation_cumulativeRain;
+        else // standard queries
+            queryText = queryOneStation;
+    }
+    else {
+        queryText = queryAllStations;
+    }
+
+    var params = [day];
+    if (station !== 'all') {
+        for (var i_chn=0; i_chn<chn.length; i_chn++)
+        params.push(chn[i_chn]);
+    }
+    else { // station == all
+        for (var i_chn=0; i_chn<chn_polt.length; i_chn++)
+            params.push(chn_polt[i_chn]);
+        for (var i_chn=0; i_chn<chn_ent.length; i_chn++)
+            params.push(chn_ent[i_chn]);
+        for (var i_chn=0; i_chn<chn_tail.length; i_chn++)
+            params.push(chn_tail[i_chn]);
+    }
+    query(queryText, params
+        , function (err, rows, result){ 
+         //checks errors in the connection to the db
+         if(!err){
+             res.json(rows);
+         } else {
+            res.status(503).send(err);
+         }
+     });
+};
+

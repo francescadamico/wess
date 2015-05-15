@@ -1,39 +1,77 @@
+<nav class="navbar navbar-static">
+    <div class="container">
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+        <div class="nav-collapse collase">
+            <ul class="nav navbar-nav" ng-controller="NavbarCtrl">  
+                <li ng-repeat="item in menu">
+                    <a ng-href="{{item.link}}">{{item.title}}</a>
+                </li>
+            </ul>
+        <!--<ul class="nav navbar-right navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+            <ul class="dropdown-menu" style="padding:12px;">
+                <form class="form-inline">
+     				<button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+                </form>
+              </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">About</a></li>
+             </ul>
+          </li>  
+        </ul>-->
+      </div>		
+    </div>
+</nav><!-- /.navbar -->
 
-<div class="container-fluid">
-    <!-- header -->
-    <!-- the class container_fluid creates a grid 
-    <div class="container_fluid">-->
-        <!-- grid row -->
+<header class="masthead">
+    <div class="container"> 
         <div class="row">
-        <!-- grid columns: the max cols number per row is 12 => col-3 means a col that is 1/4th of 12.
-xs stands for extra small screen, so it keeps the row allingment even though the browser is reduced (instead of sm, md, lg)-->
-            <div class="col-xs-6 col-sm-3">
-                <img src="../../assets/images/image8.JPG" width="190">
-
+            <div class="col col-sm-6">
+                <h1><a>The Ammertal Network</a>
+                <p class="lead">A surface measurement network in the Ammer valley</p></h1>
             </div>
-            <div class="col-xs-6 col-sm-7">
-                <div class="text-center">
-                    <h2><strong>The Ammertal Network</strong></h2>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-2">
-                <div class="pull-right">
-                    <a href="http://www.wess.info/typo3/index.php?id=5"><img height="40" src="../../assets/images/WESS_banner_white.png"></a>
-                    <br>
-                    <a href="http://www.geo.uni-tuebingen.de/arbeitsgruppen/angewandte-geowissenschaften/forschungsbereich/umweltphysik/arbeitsgruppe.html"><img height="45" src="../../assets/images/umphy_logo_green.png"></a>
+            <div class="col col-sm-6">
+                <div class="well pull-right">
+                    <img src="../../assets/images/image8.JPG" width="220">
                 </div>
             </div>
         </div>
-    <!--</div>-->
-
+    </div>
     
-	<!-- navigation bar-->
-	<div class="navbar-wrapper" ng-controller="NavbarCtrl">
-		<ul class="nav nav-pills mainMenu-nav-pills">
-			<li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-				<a ng-href="{{item.link}}">{{item.title}}</a>
-			</li>
-		</ul>
-	</div>
-</div>
+    <!--<div class="container">
+        <div class="row">
+            <div class="col col-sm-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        News: we are working to make the service better
+                        <!--<a href="http://www.wess.info/typo3/index.php?id=5"><img height="40" src="../../assets/images/WESS_banner_white.png"></a>
+                        <a href="http://www.geo.uni-tuebingen.de/arbeitsgruppen/angewandte-geowissenschaften/forschungsbereich/umweltphysik/arbeitsgruppe.html"><img height="45" src="../../assets/images/umphy_logo_green.png"></a>-->
+           <!--         </div>
+                </div>
+            </div>
+        </div>
+  </div>-->
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
