@@ -597,7 +597,7 @@ exports.dataQuery = function(req,res) {
     
     // single station query parts
     var selectOneStation = "SELECT " + dateTrunc_chosen + " as tick, avg(val) as value ";
-    var fromOneStation = "from dat join tss Using (ts_id) ";
+    var fromOneStation = "from dat_new "; //join tss Using (ts_id) 
     var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
     
     if (station !== 'all') {

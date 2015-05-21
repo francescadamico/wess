@@ -4,7 +4,7 @@ angular.module('wessApp')
   .controller('AllSitesCtrl', function ($scope) {
       
     $scope.day = new Date();
-    var date = $scope.day.getDate()-100; 
+    var date = $scope.day.getDate()-1; 
     $scope.day.setDate(date);
       //$scope.day = new Date(Date.UTC(2015, 1, 21, 12, 0, 0)); //it creates a UTC date to be given to the server for the query, data start at midday
       $scope.station = 'all';
