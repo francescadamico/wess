@@ -67,7 +67,7 @@ angular.module('wessApp')
                               $scope.chn_tail.push(parseInt(result[i_chn].chn_id_tail));
                       };
 
-                      config = {params: {day: newDay, chn_polt:$scope.chn_polt, chn_ent:$scope.chn_ent, chn_tail:$scope.chn_tail, timeInterval:timeInterval, channel:channel, station:station}};
+                      config = {params: {chn_polt:$scope.chn_polt, chn_ent:$scope.chn_ent, chn_tail:$scope.chn_tail, timeInterval:timeInterval, channel:channel, station:station}};
                       // the parameter day: newDay will be added after the lastTs query
                   }
                   else { // only one station

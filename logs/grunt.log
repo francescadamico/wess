@@ -1947,3 +1947,71 @@ wait          1.5s  ▇▇▇ 4%
 watch        38.7s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 94%
 Total 41.1s
 
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 22ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 40ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 26ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 26ms
+GET /api/data/lastTs 200 199ms - 35b
+GET /api/data/lastTs 304 190ms
+GET /api/data/lastTs 304 297ms
+GET /api/data/lastTs 304 370ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 865ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1135ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1170ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 900ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 304 4ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 304 3ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 304 5ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 304 6ms
+GET /api/data/lastTs 304 161ms
+GET /api/data/lastTs 304 175ms
+GET /api/data/lastTs 304 283ms
+GET /api/data/lastTs 304 400ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1328ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1966ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1908ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1754ms
+
+
+Execution Time (2015-05-26 11:40:57 UTC)
+wait          1.5s  ▇▇▇ 5%
+open:server  391ms  ▇ 1%
+watch        30.9s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 93%
+Total 33.3s
+
