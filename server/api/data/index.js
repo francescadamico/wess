@@ -12,6 +12,7 @@ router.get('/hourlyAvgForDay3SitesParametric', controller.hourlyAvgForDay3SitesP
 router.get('/hourlyAvgForDayParametric', controller.hourlyAvgForDayParametric);
 router.get('/hourlyCumulativeRainForDay',controller.hourlyCumulativeRainForDay);
 router.get('/genericQuery',controller.genericQuery);
+router.get('/lastTs', controller.lastTs);
 router.get('/chnId',controller.chnId);
 router.get('/dataQuery',controller.dataQuery); 
 module.exports = router;

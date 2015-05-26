@@ -1792,3 +1792,158 @@ Execution Time (2015-05-21 13:33:32 UTC)
 watch            59m 21s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
 Total 59m 23.4s
 
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 291ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 297ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 298ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 310ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 5ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 6ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 4ms - 65b
+GET /api/data/lastTs 200 206ms - 35b
+GET /api/data/lastTs 304 209ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 262ms
+GET /api/data/lastTs 304 270ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 287ms
+GET /api/data/lastTs 304 202ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 268ms
+GET /api/data/lastTs 304 235ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 261ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 165ms
+GET /api/data/lastTs 304 194ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 202ms
+GET /api/data/chnId?channel=AirTemp__&station=polt&statistic=Avg 200 1ms - 137b
+GET /api/data/chnId?channel=RH__&station=polt&statistic=Avg 200 1ms - 137b
+GET /api/data/chnId?channel=WindSpd__&station=polt&statistic=Avg 200 1ms - 137b
+GET /api/data/chnId?channel=SR01Up&station=polt&statistic=Avg 200 7ms - 18b
+GET /api/data/chnId?channel=Rain_mm&station=polt&statistic=Tot 200 6ms - 18b
+GET /api/data/chnId?channel=SoilTemp__&station=polt&statistic=Avg 200 5ms - 35b
+GET /api/data/lastTs 304 161ms
+GET /api/data/lastTs 304 185ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=10038&chn=10042&chn=10138&chn=10142&chn=10238&chn=10242&chn=10338&chn=10342&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 315ms
+GET /api/data/lastTs 304 283ms
+GET /api/data/dataQuery?channel=RH__&chn=10040&chn=10044&chn=10140&chn=10144&chn=10240&chn=10244&chn=10340&chn=10344&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 323ms
+GET /api/data/lastTs 304 214ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=10027&chn=10033&chn=10127&chn=10133&chn=10227&chn=10233&chn=10327&chn=10333&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 334ms
+GET /api/data/lastTs 304 266ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=10057&chn=10060&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 267ms
+GET /api/data/dataQuery?channel=SR01Up&chn=10004&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 200ms
+GET /api/data/lastTs 304 216ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=10054&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 164ms
+GET /api/data/chnId?channel=AirTemp__&station=tail&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=RH__&station=tail&statistic=Avg 200 3ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=tail&statistic=Avg 200 13ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=tail&statistic=Avg 200 7ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=tail&statistic=Tot 200 3ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=tail&statistic=Avg 200 4ms - 33b
+GET /api/data/lastTs 200 168ms - 35b
+GET /api/data/lastTs 304 186ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=6038&chn=6042&chn=6138&chn=6142&chn=6238&chn=6242&chn=6338&chn=6342&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 368ms
+GET /api/data/lastTs 304 291ms
+GET /api/data/dataQuery?channel=RH__&chn=6040&chn=6044&chn=6140&chn=6144&chn=6240&chn=6244&chn=6340&chn=6344&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 356ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=6054&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 299ms
+GET /api/data/lastTs 304 311ms
+GET /api/data/lastTs 304 214ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=6027&chn=6033&chn=6127&chn=6133&chn=6227&chn=6233&chn=6327&chn=6333&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 297ms
+GET /api/data/dataQuery?channel=SR01Up&chn=6004&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 264ms
+GET /api/data/lastTs 304 271ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=6057&chn=6060&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 201ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 10ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 14ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 12ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 10ms
+
+
+Execution Time (2015-05-26 11:26:01 UTC)
+wiredep:target   2.4s  ▇▇ 4%
+express:dev      1.7s  ▇▇ 3%
+wait             1.5s  ▇▇ 3%
+open:server      2.9s  ▇▇▇ 5%
+watch           51.9s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+Total 1m 1s
+
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 16ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 36ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 18ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 23ms
+
+
+Execution Time (2015-05-26 11:27:05 UTC)
+wait          1.5s  ▇▇▇ 4%
+watch        38.7s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 94%
+Total 41.1s
+
