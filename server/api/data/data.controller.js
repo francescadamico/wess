@@ -453,6 +453,26 @@ GROUP BY 1
 /******************************* new database queries ************************/
 /*****************************************************************************/
 
+
+
+exports.lastTs = function(req,res) {
+    query("SELECT ts from dat_new where chn_id = 8001 order by ts desc limit 1", function (err, rows, result){ 
+             //checks errors in the connection to the db
+             if(!err){
+                 res.json(rows);
+             } else {
+                res.status(503).send(err);
+             }
+         });
+};
+
+/*function(){
+    query.first.bind(query, "SELECT ts from dat_new order by ts desc limit 1");
+};*/
+    
+    
+  
+
 /* a simple example to test the db connection */
 exports.chnId = function(req,res) {
     //req.checkQuery('station', 'Invalid station name!').isAlpha(); 
@@ -595,7 +615,7 @@ exports.dataQuery = function(req,res) {
     
     // single station query parts
     var selectOneStation = "SELECT " + dateTrunc_chosen + " as tick, avg(val) as value ";
-    var fromOneStation = "from dat join tss Using (ts_id) ";
+    var fromOneStation = "from dat_new "; //join tss Using (ts_id) 
     var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
     
     if (station !== 'all') {
