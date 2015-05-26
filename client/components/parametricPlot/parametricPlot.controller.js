@@ -9,7 +9,6 @@ angular.module('wessApp')
       /* loadPlot function:
        * it draws a plot with the result of the parametric query to the database
        * INPUTS: 
-       * - (Date) day: the day to query;
        * - (Number) senstypeid: the corresponding sensor_type.sensor_type_id in the
        *        database
        * - (String) measdescr: description of the kind of measure; 
@@ -20,7 +19,7 @@ angular.module('wessApp')
        *        0 has to be chosen to query all the stations at the same time;
        * - (Number) sensheight: optional input; height or depth of the instrument. 
        */
-      $scope.loadPlot = function(timeInterval,day,station,channel,statistic){ 
+      $scope.loadPlot = function(timeInterval,station,channel,statistic){ 
           
           $scope.options = {
               axes: {
@@ -71,7 +70,7 @@ angular.module('wessApp')
                       };
 
                       config = {params: {chn_polt:$scope.chn_polt, chn_ent:$scope.chn_ent, chn_tail:$scope.chn_tail, timeInterval:timeInterval, channel:channel, station:station}};
-                      // the parameter day: newDay will be added after the lastTs query
+                      // the parameter day: will be added after the lastTs query
                   }
                   else { // only one station
                               
