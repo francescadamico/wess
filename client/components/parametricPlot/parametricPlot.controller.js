@@ -3,6 +3,7 @@
 angular.module('wessApp')
   .controller('ParametricplotCtrl', function ($scope, $http) {
       $scope.isAPICallSuccessful;
+    var monthNames = ['Jenuary', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
       /* loadPlot function:
        * it draws a plot with the result of the parametric query to the database
        * INPUTS: 
@@ -36,7 +37,7 @@ angular.module('wessApp')
               lineMode: 'linear',
               tension: 0.7,
               drawLegend: true,
-              drawDots: true
+              drawDots: false//true
           };
           
           /* The $hhtp.get are performed one inside the other in order to get the queries answer in the right order, i.e. if each of them is inside a function that is called from the main code, they are called async, not allowing the dataQuery to use the result of the other two queries */
@@ -99,7 +100,7 @@ angular.module('wessApp')
                               lastTimestamp_from.setDate(lastTimestamp.getDate() -30);
 
                           // string to display the date, e.g. "26 April 2015 -- 26 May 2015"
-                          $scope.dateString = lastTimestamp_from.getDate() + " " + $scope.monthNames[lastTimestamp_from.getMonth()] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + $scope.monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
+                          $scope.dateString = lastTimestamp_from.getDate() + " " + monthNames[lastTimestamp_from.getMonth()] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
 
                           config.params.day = lastTimestamp;
                           
