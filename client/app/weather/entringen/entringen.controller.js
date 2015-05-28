@@ -6,32 +6,33 @@ angular.module('wessApp')
     $scope.station = 'ent_perm';
     $scope.plots = [
         {
-            measurement_name:'Atmospheric Temperature',
+            measurement_name:'Atmospheric Temperature (°C)',
             channel: 'AirTemp__',
             statistic: 'Avg'
         },
         {
-            measurement_name:'Atmospheric Humidity',
+            measurement_name:'Atmospheric Humidity (%)',
             channel: 'RH__',
             statistic: 'Avg'
         },
         {
-            measurement_name:'Wind Speed',
+            measurement_name:'Wind Speed (m/s)',
             channel:'WindSpd__',
             statistic: 'Avg'
         },
         {
-            measurement_name:'Incoming Short-Wave Radiation',
+            // \u00B2 corresponds to ^2
+            measurement_name:'Incoming Short-Wave Radiation (W/m\u00B2)',
             channel: 'SR01Up',
             statistic: 'Avg'
         },
         {
-            measurement_name:'Cumulative Rain',
+            measurement_name:'Cumulative Rain (L/m\u00B2)',
             channel: 'Rain_mm',
             statistic: 'Tot'
         },
         {
-            measurement_name:'Soil Temperature',
+            measurement_name:'Soil Temperature (°C)',
             channel: 'SoilTemp__',
             statistic: 'Avg'
         }

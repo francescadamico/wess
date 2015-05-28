@@ -35,6 +35,16 @@ body {
   background-color:#EFEACC;
 }
 
+p,h1,h2,h3,h4,ul,button {
+    font-family: Helvetica Narrow, sans-serif;
+} 
+
+.lead {
+  font-weight: normal;
+}
+
+
+
 a,a:hover {
 	color:#4E2008;
   	text-decoration:none;

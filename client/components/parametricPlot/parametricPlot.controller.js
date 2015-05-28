@@ -31,7 +31,7 @@ angular.module('wessApp')
               tooltip: {
                   mode: 'scrubber',
                   formatter: function (x, y, series) {
-                      return moment(x).format('MMMM Do YYYY, h:mm:ss a') + ' : ' + y;
+                      return moment(x).format('DD MMMM YYYY, h:mm a') + ' : ' + Math.round(y*100)/100;
                   }
               },
               lineMode: 'linear',

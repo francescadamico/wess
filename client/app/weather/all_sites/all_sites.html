@@ -1,11 +1,15 @@
 <!-- Content of the central part of the page, the navigation bar and left menu are called in the index.html-->
-<h4 class = lead>Select 'One day' to display the last available day of data, 'One month' for the last month. <br>
-You can hide/show a series by clicking on its description on the legend.</h4>
-<div ng-include="'components/dropdownInterval/dropdownInterval.html'"></div>
 <br>
+<div class="col col-sm-4">
+    <div ng-include="'components/dropdownInterval/dropdownInterval.html'"></div>
+</div>
+<div class="col col-sm-4"></div>
+<div class="col col-sm-4">
+    <div class="well"><p>All the timestamps are in UTC!</p></div>
+</div>
 <div ng-repeat="item in plots">
     <br>
-    <p class = lead>{{item.measurement_name}}</p>
+    <p class=lead>{{item.measurement_name}}</p>
     <div ng-controller="ParametricplotCtrl">
         <div ng-switch="timeInterval">
             <div ng-switch-default>
