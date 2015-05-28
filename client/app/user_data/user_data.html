@@ -1,4 +1,25 @@
 <!-- Content of the central part of the page, the navigation bar and left menu are called in the index.html-->
-<div ng-switch-when="false">
+<div>
     <p class="lead">Coming soon...</p>
+    <p> In this section there will soon be a tool to select the data you are interested into for displaying and/or downloading.<br> In the meantime you can <a href="../main/contact/contact.html"> contact us </a> and we will be happy to provide you directly with the needed data. </p>
 </div>
+<br>
+<!-- Carousel module -->
+<div>
+    <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+            <div class="col col-sm-2"></div>
+            <div class="col col-sm-8">
+            <p><b>User:</b> {{slide.name}} ({{slide.affiliation}})</p>
+            <p><b>Project description:</b> {{slide.description}}</p>
+            </div>
+            <div class="col col-sm-2"></div>
+        <!--<img ng-src="{{slide.image}}" style="margin:auto;">-->
+        <!--<div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>-->
+        </slide>
+    </carousel>
+</div>
+<br>

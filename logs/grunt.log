@@ -8352,3 +8352,467 @@ Execution Time (2015-05-28 07:47:19 UTC)
 watch             5h 33m 2.4s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
 Total 5h 33m 11s
 
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:33:49 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 8ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:36:23 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 7ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:36:32 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:37:06 GMT+0200 (CEST) - Waiting...
+GET /main/contact 200 5ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:37:18 GMT+0200 (CEST) - Waiting...
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:37:30 GMT+0200 (CEST) - Waiting...
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:37:41 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 3ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:38:48 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 3ms
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:39:15 GMT+0200 (CEST) - Waiting...
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:40:25 GMT+0200 (CEST) - Waiting...
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:40:45 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:43:24 GMT+0200 (CEST) - Waiting...
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:53:43 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:53:56 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 13:57:36 UTC)
+loading tasks     87ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 74%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇ 25%
+Total 117ms
+
+Completed in 0.355s at Thu May 28 2015 15:57:36 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 15:58:36 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:01:32 UTC)
+loading tasks     80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 71%
+injector:scripts  31ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 28%
+Total 112ms
+
+Completed in 0.319s at Thu May 28 2015 16:01:32 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 16:02:23 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 6ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 16:02:43 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 16:02:48 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 3ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 16:03:06 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 5ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 16:03:22 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.html" changed.
+Completed in 0.000s at Thu May 28 2015 16:06:47 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:10:26 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 76%
+injector:css   24ms  ▇▇▇▇▇▇▇▇▇▇▇ 23%
+Total 103ms
+
+Completed in 0.405s at Thu May 28 2015 16:10:26 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:11:09 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.300s at Thu May 28 2015 16:11:09 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:22:22 UTC)
+loading tasks  89ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   15ms  ▇▇▇▇▇▇▇ 14%
+Total 104ms
+
+Completed in 0.351s at Thu May 28 2015 16:22:23 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:23:38 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 92ms
+
+Completed in 0.304s at Thu May 28 2015 16:23:38 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:24:30 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 98ms
+
+Completed in 0.306s at Thu May 28 2015 16:24:30 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:24:40 UTC)
+loading tasks  84ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 99ms
+
+Completed in 0.346s at Thu May 28 2015 16:24:41 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:29:49 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.306s at Thu May 28 2015 16:29:49 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:29:55 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 93ms
+
+Completed in 0.301s at Thu May 28 2015 16:29:55 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:30:38 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.392s at Thu May 28 2015 16:30:38 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:30:43 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.357s at Thu May 28 2015 16:30:43 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:30:51 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.322s at Thu May 28 2015 16:30:51 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:31:18 UTC)
+loading tasks  86ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 101ms
+
+Completed in 0.366s at Thu May 28 2015 16:31:18 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:31:30 UTC)
+loading tasks  86ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 83%
+injector:css   17ms  ▇▇▇▇▇▇▇▇ 17%
+Total 103ms
+
+Completed in 0.338s at Thu May 28 2015 16:31:30 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:32:29 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.306s at Thu May 28 2015 16:32:29 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:33:22 UTC)
+loading tasks  91ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   14ms  ▇▇▇▇▇▇▇ 13%
+Total 106ms
+
+Completed in 0.435s at Thu May 28 2015 16:33:23 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:33:44 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.308s at Thu May 28 2015 16:33:44 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:34:53 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.304s at Thu May 28 2015 16:34:54 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:35:12 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.392s at Thu May 28 2015 16:35:12 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:37:22 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.310s at Thu May 28 2015 16:37:22 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-05-28 14:37:55 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 16%
+Total 96ms
+
+Completed in 0.411s at Thu May 28 2015 16:37:55 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+
+
+Execution Time (2015-05-28 13:27:48 UTC)
+watch               1h 18m 26.9s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+Total 1h 18m 37.5s
+
