@@ -171,6 +171,11 @@ h3.highlight  {
 .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next {
     color: #A23607;
 }
+
+.well {
+    background-color: white;
+}
+
 /* end theme */
 
 

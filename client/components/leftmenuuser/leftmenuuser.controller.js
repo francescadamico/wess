@@ -3,7 +3,7 @@
 angular.module('wessApp')
   .controller('LeftmenuuserCtrl', function ($scope, $location) {
     $scope.leftmenuuser = [
-        {
+        /*{
             'title': 'Blog',
             'link': '/user_data'///blog'
         },
@@ -18,7 +18,7 @@ angular.module('wessApp')
         {
             'title': 'Wiki page',
             'link': '/user_data'///wikipage'
-        }
+        }*/
     ];
       
     $scope.isActive = function(route) {
