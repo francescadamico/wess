@@ -100,7 +100,7 @@ angular.module('wessApp')
                               lastTimestamp_from.setDate(lastTimestamp.getDate() -30);
 
                           // string to display the date, e.g. "26 April 2015 -- 26 May 2015"
-                          $scope.dateString = lastTimestamp_from.getDate() + " " + monthNames[lastTimestamp_from.getMonth()] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
+                          $scope.dateString = lastTimestamp_from.getDate() + " " + monthNames[lastTimestamp_from.getMonth()-1] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
 
                           config.params.day = lastTimestamp;
                           
