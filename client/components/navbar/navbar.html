@@ -3,9 +3,9 @@
         <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
             <span class="glyphicon glyphicon-chevron-down"></span>
         </a>
-        <div class="nav-collapse collase">
+        <div class="nav-collapse">
             <ul class="nav navbar-nav" ng-controller="NavbarCtrl">  
-                <li ng-repeat="item in menu">
+                <li ng-repeat="item in menu" ng-class="{active:isActive(item.link)}">
                     <a ng-href="{{item.link}}">{{item.title}}</a>
                 </li>
             </ul>
@@ -36,11 +36,11 @@
     <div class="container"> 
         <div class="row">
             <div class="col col-sm-4">
-                <h1><a>The Ammertal Network</a>
+                <h1 id='title'>The Ammertal Network
                 <p class="lead">A surface measurement network in the Ammer valley</p></h1>
             </div>
             <div class="col col-sm-4">
-                <div class="well"><p class=lead>Our data are now available! For more info <a href="../user_data"> click here</a></p></div>
+                <div class="well" id="avail_data" ><p class=lead>Our data are now available! For more info <a href="../user_data"> click here</a></p></div>
             </div>
             <div class="col col-sm-4">
                 <div class="well pull-right">

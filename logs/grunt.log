@@ -10345,3 +10345,1818 @@ Execution Time (2015-06-01 08:14:37 UTC)
 watch           5m 34.6s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%
 Total 5m 36.9s
 
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:24:15 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.391s at Mon Jun 01 2015 10:24:15 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:25:36 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 97ms
+
+Completed in 0.340s at Mon Jun 01 2015 10:25:36 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:26:11 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.297s at Mon Jun 01 2015 10:26:11 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:26:37 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 97ms
+
+Completed in 0.303s at Mon Jun 01 2015 10:26:37 GMT+0200 (CEST) - Waiting...
+GET /main/contact 200 9ms
+>> File "client/components/navbar/navbar.html" changed.
+Completed in 0.000s at Mon Jun 01 2015 10:28:30 GMT+0200 (CEST) - Waiting...
+>> File "client/components/navbar/navbar.html" changed.
+Completed in 0.000s at Mon Jun 01 2015 10:29:20 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:30:18 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.302s at Mon Jun 01 2015 10:30:18 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:30:29 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 97ms
+
+Completed in 0.303s at Mon Jun 01 2015 10:30:29 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:31:03 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 16%
+Total 95ms
+
+Completed in 0.311s at Mon Jun 01 2015 10:31:03 GMT+0200 (CEST) - Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 13ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 28ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 21ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 21ms
+GET /api/data/lastTs 200 203ms - 35b
+GET /api/data/lastTs 304 209ms
+GET /api/data/lastTs 304 223ms
+GET /api/data/lastTs 304 387ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 912ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1311ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1280ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1062ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 3ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 2ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 3ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 4ms
+GET /api/data/lastTs 200 162ms - 35b
+GET /api/data/lastTs 304 169ms
+GET /api/data/lastTs 304 331ms
+GET /api/data/lastTs 304 273ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1145ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1850ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1579ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1533ms
+>> File "client/components/navbar/navbar.html" changed.
+Completed in 0.000s at Mon Jun 01 2015 10:33:05 GMT+0200 (CEST) - Waiting...
+GET /weather/all_sites 200 1ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 14ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 22ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 16ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 11ms
+GET /api/data/lastTs 200 206ms - 35b
+GET /api/data/lastTs 304 218ms
+GET /api/data/lastTs 304 258ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 880ms
+GET /api/data/lastTs 304 383ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1198ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1258ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 948ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:34:01 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.372s at Mon Jun 01 2015 10:34:01 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:34:24 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 93ms
+
+Completed in 0.375s at Mon Jun 01 2015 10:34:24 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:34:51 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   13ms  ▇▇▇▇▇▇▇ 14%
+Total 94ms
+
+Completed in 0.296s at Mon Jun 01 2015 10:34:51 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:35:07 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 92ms
+
+Completed in 0.301s at Mon Jun 01 2015 10:35:07 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:35:14 UTC)
+loading tasks  88ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 103ms
+
+Completed in 0.312s at Mon Jun 01 2015 10:35:14 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:35:44 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 98ms
+
+Completed in 0.301s at Mon Jun 01 2015 10:35:44 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:35:54 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.309s at Mon Jun 01 2015 10:35:54 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:35:59 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.307s at Mon Jun 01 2015 10:35:59 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:36:05 UTC)
+loading tasks  89ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   15ms  ▇▇▇▇▇▇▇ 14%
+Total 104ms
+
+Completed in 0.313s at Mon Jun 01 2015 10:36:05 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:36:38 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.320s at Mon Jun 01 2015 10:36:38 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:37:04 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.402s at Mon Jun 01 2015 10:37:04 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:37:53 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.298s at Mon Jun 01 2015 10:37:53 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:45:00 UTC)
+loading tasks  94ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   14ms  ▇▇▇▇▇▇▇ 13%
+Total 109ms
+
+Completed in 0.397s at Mon Jun 01 2015 10:45:00 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:45:24 UTC)
+loading tasks  116ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 89%
+injector:css    14ms  ▇▇▇▇▇▇ 11%
+Total 130ms
+
+Completed in 0.375s at Mon Jun 01 2015 10:45:24 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:45:36 UTC)
+loading tasks  84ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 98ms
+
+Completed in 0.310s at Mon Jun 01 2015 10:45:36 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:46:01 UTC)
+loading tasks  84ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 98ms
+
+Completed in 0.314s at Mon Jun 01 2015 10:46:01 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:46:19 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.330s at Mon Jun 01 2015 10:46:19 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:46:28 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 98ms
+
+Completed in 0.305s at Mon Jun 01 2015 10:46:28 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:46:39 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 16%
+Total 96ms
+
+Completed in 0.310s at Mon Jun 01 2015 10:46:39 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:46:46 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 98ms
+
+Completed in 0.357s at Mon Jun 01 2015 10:46:46 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:47:06 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.316s at Mon Jun 01 2015 10:47:06 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:47:14 UTC)
+loading tasks  86ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇ 15%
+Total 102ms
+
+Completed in 0.318s at Mon Jun 01 2015 10:47:14 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:47:51 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 98ms
+
+Completed in 0.311s at Mon Jun 01 2015 10:47:52 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:48:41 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 98ms
+
+Completed in 0.304s at Mon Jun 01 2015 10:48:41 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:48:54 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 97ms
+
+Completed in 0.333s at Mon Jun 01 2015 10:48:54 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:49:25 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 16%
+Total 96ms
+
+Completed in 0.376s at Mon Jun 01 2015 10:49:25 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:49:35 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   13ms  ▇▇▇▇▇▇▇ 14%
+Total 96ms
+
+Completed in 0.299s at Mon Jun 01 2015 10:49:36 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:49:40 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.362s at Mon Jun 01 2015 10:49:40 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:49:45 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 16%
+Total 96ms
+
+Completed in 0.319s at Mon Jun 01 2015 10:49:45 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:49:49 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 96ms
+
+Completed in 0.390s at Mon Jun 01 2015 10:49:50 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:49:59 UTC)
+loading tasks  86ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 101ms
+
+Completed in 0.395s at Mon Jun 01 2015 10:49:59 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:50:13 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 97ms
+
+Completed in 0.329s at Mon Jun 01 2015 10:50:14 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:50:25 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.306s at Mon Jun 01 2015 10:50:25 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:51:08 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 92ms
+
+Completed in 0.321s at Mon Jun 01 2015 10:51:09 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:52:17 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.303s at Mon Jun 01 2015 10:52:17 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:55:14 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 16%
+Total 94ms
+
+Completed in 0.377s at Mon Jun 01 2015 10:55:14 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:56:09 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.315s at Mon Jun 01 2015 10:56:09 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 08:56:33 UTC)
+loading tasks  85ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 99ms
+
+Completed in 0.314s at Mon Jun 01 2015 10:56:33 GMT+0200 (CEST) - Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 27ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 34ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 26ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 25ms
+GET /api/data/lastTs 200 233ms - 35b
+GET /api/data/lastTs 304 210ms
+GET /api/data/lastTs 304 238ms
+GET /api/data/lastTs 304 383ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 924ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1467ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1405ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1077ms
+>> File "client/components/navbar/navbar.html" changed.
+Completed in 0.000s at Mon Jun 01 2015 11:03:38 GMT+0200 (CEST) - Waiting...
+GET /weather 200 3ms
+>> File "client/components/navbar/navbar.html" changed.
+Completed in 0.000s at Mon Jun 01 2015 11:03:49 GMT+0200 (CEST) - Waiting...
+GET /weather 200 3ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:05:58 UTC)
+loading tasks  86ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇ 15%
+Total 102ms
+
+Completed in 0.387s at Mon Jun 01 2015 11:05:58 GMT+0200 (CEST) - Waiting...
+GET /weather 200 1ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:06:26 UTC)
+loading tasks  84ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 99ms
+
+Completed in 0.309s at Mon Jun 01 2015 11:06:26 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:06:30 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 98ms
+
+Completed in 0.371s at Mon Jun 01 2015 11:06:30 GMT+0200 (CEST) - Waiting...
+GET /weather 200 2ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:06:58 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 98ms
+
+Completed in 0.409s at Mon Jun 01 2015 11:06:58 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:07:57 UTC)
+loading tasks  88ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇ 14%
+Total 104ms
+
+Completed in 0.330s at Mon Jun 01 2015 11:07:57 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 4ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 56ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 56ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 55ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 54ms
+GET /api/data/lastTs 200 191ms - 35b
+GET /api/data/lastTs 304 234ms
+GET /api/data/lastTs 304 324ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 9ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 1ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 1ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 2ms - 65b
+GET /api/data/lastTs 304 402ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1095ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1398ms
+GET /api/data/lastTs 304 444ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1529ms
+GET /api/data/lastTs 304 355ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 453ms
+GET /api/data/lastTs 304 412ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 389ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1335ms
+GET /api/data/lastTs 304 230ms
+GET /api/data/lastTs 304 149ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 362ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 264ms
+GET /api/data/lastTs 304 218ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 207ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 265ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:08:20 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 97ms
+
+Completed in 0.367s at Mon Jun 01 2015 11:08:20 GMT+0200 (CEST) - Waiting...
+GET /weather/entringen 200 1ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 3ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 3ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 3ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 2ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 1ms - 65b
+GET /api/data/lastTs 200 166ms - 35b
+GET /api/data/lastTs 304 208ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 283ms
+GET /api/data/lastTs 304 239ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 259ms
+GET /api/data/lastTs 304 211ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 288ms
+GET /api/data/lastTs 304 240ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 354ms
+GET /api/data/lastTs 304 274ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 301ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 168ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:08:38 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 99ms
+
+Completed in 0.309s at Mon Jun 01 2015 11:08:38 GMT+0200 (CEST) - Waiting...
+GET /weather/entringen 200 2ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 1ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 1ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 1ms - 65b
+GET /api/data/lastTs 200 139ms - 35b
+GET /api/data/lastTs 304 172ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 284ms
+GET /api/data/lastTs 304 211ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 316ms
+GET /api/data/lastTs 304 232ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 326ms
+GET /api/data/lastTs 304 223ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 226ms
+GET /api/data/lastTs 304 183ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 210ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 198ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 3ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 3ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 4ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 3ms
+GET /api/data/lastTs 200 146ms - 35b
+GET /api/data/lastTs 304 215ms
+GET /api/data/lastTs 304 298ms
+GET /api/data/lastTs 304 414ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1095ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1323ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1326ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1004ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:11:15 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.399s at Mon Jun 01 2015 11:11:15 GMT+0200 (CEST) - Waiting...
+GET /weather/all_sites 200 6ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 7ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 2ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 6ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 7ms
+GET /api/data/lastTs 200 203ms - 35b
+GET /api/data/lastTs 304 190ms
+GET /api/data/lastTs 304 315ms
+GET /api/data/lastTs 304 308ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 934ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1133ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1097ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 910ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:12:05 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 97ms
+
+Completed in 0.305s at Mon Jun 01 2015 11:12:06 GMT+0200 (CEST) - Waiting...
+GET /weather/all_sites 200 3ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 16ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 22ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 18ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 17ms
+GET /api/data/lastTs 200 196ms - 35b
+GET /api/data/lastTs 304 182ms
+GET /api/data/lastTs 304 307ms
+GET /api/data/lastTs 304 355ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 851ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1200ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1230ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 986ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:12:25 UTC)
+loading tasks  82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 14%
+Total 97ms
+
+Completed in 0.318s at Mon Jun 01 2015 11:12:25 GMT+0200 (CEST) - Waiting...
+GET /weather/all_sites 200 4ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 9ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 6ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 7ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 13ms
+GET /api/data/lastTs 200 182ms - 35b
+GET /api/data/lastTs 304 188ms
+GET /api/data/lastTs 304 229ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 789ms
+GET /api/data/lastTs 304 431ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1261ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1165ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 969ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:12:37 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 94ms
+
+Completed in 0.298s at Mon Jun 01 2015 11:12:37 GMT+0200 (CEST) - Waiting...
+GET /weather/all_sites 200 5ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 6ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 3ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 22ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 4ms
+GET /api/data/lastTs 200 212ms - 35b
+GET /api/data/lastTs 304 174ms
+GET /api/data/lastTs 304 292ms
+GET /api/data/lastTs 304 344ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1026ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1272ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1214ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 992ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 09:13:08 UTC)
+loading tasks  83ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇▇ 15%
+Total 98ms
+
+Completed in 0.322s at Mon Jun 01 2015 11:13:09 GMT+0200 (CEST) - Waiting...
+GET /weather/all_sites 200 2ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 2ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 5ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 18ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 18ms
+GET /api/data/lastTs 200 192ms - 35b
+GET /api/data/lastTs 304 174ms
+GET /api/data/lastTs 304 253ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 730ms
+GET /api/data/lastTs 304 375ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1200ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1205ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 990ms
+>> File "client/components/navbar/navbar.html" changed.
+Completed in 0.000s at Mon Jun 01 2015 11:16:15 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 3ms
+GET /main/sites 200 3ms
+
+
+Execution Time (2015-06-01 08:23:41 UTC)
+watch          52m 45.6s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+Total 52m 48s
+
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 25ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 12ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 22ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 22ms
+GET /api/data/lastTs 200 203ms - 35b
+GET /api/data/lastTs 304 194ms
+GET /api/data/lastTs 304 394ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 12ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 7ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 1ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 4ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 5ms - 65b
+GET /api/data/lastTs 304 415ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1086ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1307ms
+GET /api/data/lastTs 304 285ms
+GET /api/data/lastTs 304 462ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 449ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1553ms
+GET /api/data/lastTs 304 259ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 514ms
+GET /api/data/lastTs 304 378ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1444ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 428ms
+GET /api/data/lastTs 304 197ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 205ms
+GET /api/data/lastTs 304 185ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 226ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 195ms
+GET /weather/entringen 200 1ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 5ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 4ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 9ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 2ms - 65b
+GET /api/data/lastTs 200 170ms - 35b
+GET /api/data/lastTs 304 168ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 244ms
+GET /api/data/lastTs 304 235ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 278ms
+GET /api/data/lastTs 304 200ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 294ms
+GET /api/data/lastTs 304 184ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 210ms
+GET /api/data/lastTs 304 169ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 181ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 188ms
+GET /api/data/chnId?channel=AirTemp__&station=polt&statistic=Avg 200 5ms - 137b
+GET /api/data/chnId?channel=RH__&station=polt&statistic=Avg 200 3ms - 137b
+GET /api/data/chnId?channel=WindSpd__&station=polt&statistic=Avg 200 6ms - 137b
+GET /api/data/chnId?channel=Rain_mm&station=polt&statistic=Tot 200 7ms - 18b
+GET /api/data/chnId?channel=SR01Up&station=polt&statistic=Avg 200 10ms - 18b
+GET /api/data/chnId?channel=SoilTemp__&station=polt&statistic=Avg 200 12ms - 35b
+GET /api/data/lastTs 200 161ms - 35b
+GET /api/data/lastTs 304 186ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=10038&chn=10042&chn=10138&chn=10142&chn=10238&chn=10242&chn=10338&chn=10342&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 272ms
+GET /api/data/lastTs 304 262ms
+GET /api/data/lastTs 304 287ms
+GET /api/data/dataQuery?channel=RH__&chn=10040&chn=10044&chn=10140&chn=10144&chn=10240&chn=10244&chn=10340&chn=10344&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 292ms
+GET /api/data/dataQuery?channel=SR01Up&chn=10004&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 684ms
+GET /api/data/lastTs 304 234ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=10027&chn=10033&chn=10127&chn=10133&chn=10227&chn=10233&chn=10327&chn=10333&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 336ms
+GET /api/data/lastTs 304 273ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=10054&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 284ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=10057&chn=10060&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 274ms
+GET /api/data/chnId?channel=AirTemp__&station=tail&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=RH__&station=tail&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=tail&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=tail&statistic=Avg 200 3ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=tail&statistic=Avg 200 3ms - 33b
+GET /api/data/chnId?channel=Rain_mm&station=tail&statistic=Tot 200 4ms - 17b
+GET /api/data/lastTs 304 171ms
+GET /api/data/lastTs 304 208ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=6038&chn=6042&chn=6138&chn=6142&chn=6238&chn=6242&chn=6338&chn=6342&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 278ms
+GET /api/data/lastTs 304 267ms
+GET /api/data/dataQuery?channel=RH__&chn=6040&chn=6044&chn=6140&chn=6144&chn=6240&chn=6244&chn=6340&chn=6344&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 312ms
+GET /api/data/lastTs 304 217ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=6027&chn=6033&chn=6127&chn=6133&chn=6227&chn=6233&chn=6327&chn=6333&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 379ms
+GET /api/data/lastTs 304 521ms
+GET /api/data/lastTs 304 205ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=6054&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 169ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=6057&chn=6060&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 499ms
+GET /api/data/dataQuery?channel=SR01Up&chn=6004&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+day 200 1078ms
+GET /api/data/chnId?channel=AirTemp__&station=tail&statistic=Avg 304 1ms
+GET /api/data/chnId?channel=RH__&station=tail&statistic=Avg 304 2ms
+GET /api/data/chnId?channel=WindSpd__&station=tail&statistic=Avg 304 2ms
+GET /api/data/chnId?channel=SR01Up&station=tail&statistic=Avg 304 7ms
+GET /api/data/chnId?channel=Rain_mm&station=tail&statistic=Tot 304 7ms
+GET /api/data/chnId?channel=SoilTemp__&station=tail&statistic=Avg 304 12ms
+GET /api/data/lastTs 200 173ms - 35b
+GET /api/data/lastTs 304 172ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=6038&chn=6042&chn=6138&chn=6142&chn=6238&chn=6242&chn=6338&chn=6342&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+month 200 422ms
+GET /api/data/lastTs 304 310ms
+GET /api/data/dataQuery?channel=RH__&chn=6040&chn=6044&chn=6140&chn=6144&chn=6240&chn=6244&chn=6340&chn=6344&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+month 200 613ms
+GET /api/data/lastTs 304 339ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=6027&chn=6033&chn=6127&chn=6133&chn=6227&chn=6233&chn=6327&chn=6333&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+month 200 615ms
+GET /api/data/dataQuery?channel=SR01Up&chn=6004&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+month 200 304ms
+GET /api/data/lastTs 304 343ms
+GET /api/data/lastTs 304 204ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=6057&chn=6060&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+month 200 337ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=6054&day=2015-05-26T03:05:00.000Z&station=tail&timeInterval=One+month 200 214ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 6ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 2ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 3ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 11ms
+GET /api/data/lastTs 200 197ms - 35b
+GET /api/data/lastTs 304 252ms
+GET /api/data/lastTs 304 339ms
+GET /api/data/lastTs 304 308ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1374ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1120ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1284ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1083ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 8ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 10ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 5ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 304 3ms
+GET /api/data/lastTs 200 268ms - 35b
+GET /api/data/lastTs 200 268ms - 35b
+GET /api/data/lastTs 200 272ms - 35b
+GET /api/data/lastTs 304 303ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1279ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1639ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1622ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1690ms
+
+
+Execution Time (2015-06-01 09:16:30 UTC)
+watch               4h 40m 31s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+Total 4h 40m 33.3s
+
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 15ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 35ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 26ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 27ms
+GET /api/data/lastTs 200 206ms - 35b
+GET /api/data/lastTs 304 195ms
+GET /api/data/lastTs 304 294ms
+GET /api/data/lastTs 304 403ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 970ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 1ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 4ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 2ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 1ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 1ms - 65b
+GET /api/data/lastTs 304 356ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1621ms
+GET /api/data/lastTs 304 373ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 516ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1760ms
+GET /api/data/lastTs 304 396ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 533ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1713ms
+GET /api/data/lastTs 304 342ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 357ms
+GET /api/data/lastTs 304 160ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 164ms
+GET /api/data/lastTs 304 193ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 222ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 202ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 7ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 5ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 6ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 8ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 9ms - 65b
+GET /api/data/lastTs 200 168ms - 35b
+GET /api/data/lastTs 304 168ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 239ms
+GET /api/data/lastTs 304 270ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 327ms
+GET /api/data/lastTs 304 231ms
+GET /api/data/lastTs 304 204ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 446ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 325ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 233ms
+GET /api/data/lastTs 304 244ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 140ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 4ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 3ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 9ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 4ms
+GET /api/data/lastTs 304 176ms
+GET /api/data/lastTs 304 213ms
+GET /api/data/lastTs 304 269ms
+GET /api/data/lastTs 304 338ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 947ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1207ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1314ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1126ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 304 4ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 304 4ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 304 5ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 304 6ms
+GET /api/data/lastTs 304 159ms
+GET /api/data/lastTs 304 171ms
+GET /api/data/lastTs 304 281ms
+GET /api/data/lastTs 304 334ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1324ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1616ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1638ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+month 200 1541ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:13:41 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.303s at Mon Jun 01 2015 16:13:41 GMT+0200 (CEST) - Waiting...
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 8ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 3ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 6ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 7ms
+GET /api/data/lastTs 200 188ms - 35b
+GET /api/data/lastTs 304 198ms
+GET /api/data/lastTs 304 292ms
+GET /api/data/lastTs 304 414ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1003ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1052ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 947ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1365ms
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 6ms - 129b
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 2ms - 129b
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 6ms - 129b
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 200 12ms - 17b
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 200 14ms - 17b
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 200 14ms - 65b
+GET /api/data/lastTs 304 199ms
+GET /api/data/lastTs 304 205ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 262ms
+GET /api/data/lastTs 304 257ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 325ms
+GET /api/data/lastTs 304 195ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 349ms
+GET /api/data/lastTs 304 219ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 252ms
+GET /api/data/lastTs 304 214ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 214ms
+GET /api/data/chnId?channel=AirTemp__&station=polt&statistic=Avg 200 5ms - 137b
+GET /api/data/chnId?channel=RH__&station=polt&statistic=Avg 200 4ms - 137b
+GET /api/data/chnId?channel=WindSpd__&station=polt&statistic=Avg 200 5ms - 137b
+GET /api/data/chnId?channel=Rain_mm&station=polt&statistic=Tot 200 7ms - 18b
+GET /api/data/chnId?channel=SoilTemp__&station=polt&statistic=Avg 200 8ms - 35b
+GET /api/data/chnId?channel=SR01Up&station=polt&statistic=Avg 200 12ms - 18b
+GET /api/data/lastTs 304 158ms
+GET /api/data/lastTs 304 207ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-05-26T03:05:00.000Z&station=ent_perm&timeInterval=One+day 200 342ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=10038&chn=10042&chn=10138&chn=10142&chn=10238&chn=10242&chn=10338&chn=10342&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 373ms
+GET /api/data/lastTs 304 255ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=10027&chn=10033&chn=10127&chn=10133&chn=10227&chn=10233&chn=10327&chn=10333&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 448ms
+GET /api/data/lastTs 304 325ms
+GET /api/data/dataQuery?channel=RH__&chn=10040&chn=10044&chn=10140&chn=10144&chn=10240&chn=10244&chn=10340&chn=10344&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 382ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=10054&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 225ms
+GET /api/data/lastTs 304 239ms
+GET /api/data/lastTs 304 214ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=10057&chn=10060&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 273ms
+GET /api/data/dataQuery?channel=SR01Up&chn=10004&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 187ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:23:00 UTC)
+loading tasks  86ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   15ms  ▇▇▇▇▇▇▇ 15%
+Total 101ms
+
+Completed in 0.319s at Mon Jun 01 2015 16:23:01 GMT+0200 (CEST) - Waiting...
+GET /weather/poltringen 200 2ms
+GET /api/data/chnId?channel=AirTemp__&station=polt&statistic=Avg 200 22ms - 137b
+GET /api/data/chnId?channel=RH__&station=polt&statistic=Avg 200 22ms - 137b
+GET /api/data/chnId?channel=WindSpd__&station=polt&statistic=Avg 200 20ms - 137b
+GET /api/data/chnId?channel=SR01Up&station=polt&statistic=Avg 200 21ms - 18b
+GET /api/data/chnId?channel=Rain_mm&station=polt&statistic=Tot 200 14ms - 18b
+GET /api/data/chnId?channel=SoilTemp__&station=polt&statistic=Avg 200 8ms - 35b
+GET /api/data/lastTs 200 214ms - 35b
+GET /api/data/lastTs 304 194ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=10027&chn=10033&chn=10127&chn=10133&chn=10227&chn=10233&chn=10327&chn=10333&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 362ms
+GET /api/data/lastTs 304 314ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=10038&chn=10042&chn=10138&chn=10142&chn=10238&chn=10242&chn=10338&chn=10342&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 394ms
+GET /api/data/lastTs 304 265ms
+GET /api/data/dataQuery?channel=RH__&chn=10040&chn=10044&chn=10140&chn=10144&chn=10240&chn=10244&chn=10340&chn=10344&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 344ms
+GET /api/data/dataQuery?channel=SR01Up&chn=10004&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 240ms
+GET /api/data/lastTs 304 264ms
+GET /api/data/lastTs 304 187ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=10054&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 193ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=10057&chn=10060&day=2015-05-26T03:05:00.000Z&station=polt&timeInterval=One+day 200 198ms
+
+
+Execution Time (2015-06-01 14:08:27 UTC)
+watch            14m 47.9s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+Total 14m 50.2s
+
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:24:10 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.305s at Mon Jun 01 2015 16:24:10 GMT+0200 (CEST) - Waiting...
+
+
+Execution Time (2015-06-01 14:23:18 UTC)
+wait            1.5s  ▇▇ 2%
+watch          58.9s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 96%
+Total 1m 1.3s
+
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:25:22 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 93ms
+
+Completed in 0.373s at Mon Jun 01 2015 16:25:22 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:26:34 UTC)
+loading tasks  78ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 92ms
+
+Completed in 0.298s at Mon Jun 01 2015 16:26:34 GMT+0200 (CEST) - Waiting...
+
+
+Execution Time (2015-06-01 14:24:20 UTC)
+wait              1.5s  ▇ 1%
+watch         2m 20.7s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 98%
+Total 2m 23s
+
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:27:29 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   13ms  ▇▇▇▇▇▇▇ 14%
+Total 94ms
+
+Completed in 0.295s at Mon Jun 01 2015 16:27:29 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 3ms
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 27ms
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 10ms - 182b
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 18ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 17ms
+GET /api/data/lastTs 200 208ms - 35b
+GET /api/data/lastTs 304 202ms
+GET /api/data/lastTs 304 239ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 867ms
+GET /api/data/lastTs 304 440ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1368ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1274ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1027ms
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:29:30 UTC)
+loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   13ms  ▇▇▇▇▇▇▇ 14%
+Total 94ms
+
+Completed in 0.306s at Mon Jun 01 2015 16:29:30 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:30:22 UTC)
+loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇▇ 15%
+Total 93ms
+
+Completed in 0.303s at Mon Jun 01 2015 16:30:23 GMT+0200 (CEST) - Waiting...
+>> File "client/app/styles.css" changed.
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-01 14:32:10 UTC)
+loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+injector:css   14ms  ▇▇▇▇▇▇▇ 15%
+Total 95ms
+
+Completed in 0.401s at Mon Jun 01 2015 16:32:10 GMT+0200 (CEST) - Waiting...
+GET /api/data/chnId?channel=Rain_mm&station=all&statistic=Tot 200 16ms - 182b
+GET /api/data/chnId?channel=AirTemp__&station=all&statistic=Avg 200 21ms
+GET /api/data/chnId?channel=RH__&station=all&statistic=Avg 200 18ms
+GET /api/data/chnId?channel=WindSpd__&station=all&statistic=Avg 200 15ms
+GET /api/data/lastTs 200 214ms - 35b
+GET /api/data/lastTs 304 227ms
+GET /api/data/lastTs 304 283ms
+GET /api/data/lastTs 304 400ms
+GET /api/data/dataQuery?channel=Rain_mm&chn_ent=8054&chn_polt=10054&chn_tail=6054&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1025ms
+GET /api/data/dataQuery?channel=WindSpd__&chn_ent=8027&chn_ent=8033&chn_ent=8127&chn_ent=8133&chn_ent=8227&chn_ent=8233&chn_ent=8327&chn_ent=8333&chn_polt=10027&chn_polt=10033&chn_polt=10127&chn_polt=10133&chn_polt=10227&chn_polt=10233&chn_polt=10327&chn_polt=10333&chn_tail=6027&chn_tail=6033&chn_tail=6127&chn_tail=6133&chn_tail=6227&chn_tail=6233&chn_tail=6327&chn_tail=6333&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1347ms
+GET /api/data/dataQuery?channel=RH__&chn_ent=8040&chn_ent=8044&chn_ent=8140&chn_ent=8144&chn_ent=8240&chn_ent=8244&chn_ent=8340&chn_ent=8344&chn_polt=10040&chn_polt=10044&chn_polt=10140&chn_polt=10144&chn_polt=10240&chn_polt=10244&chn_polt=10340&chn_polt=10344&chn_tail=6040&chn_tail=6044&chn_tail=6140&chn_tail=6144&chn_tail=6240&chn_tail=6244&chn_tail=6340&chn_tail=6344&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1323ms
+GET /api/data/dataQuery?channel=AirTemp__&chn_ent=8038&chn_ent=8042&chn_ent=8138&chn_ent=8142&chn_ent=8238&chn_ent=8242&chn_ent=8338&chn_ent=8342&chn_polt=10038&chn_polt=10042&chn_polt=10138&chn_polt=10142&chn_polt=10238&chn_polt=10242&chn_polt=10338&chn_polt=10342&chn_tail=6038&chn_tail=6042&chn_tail=6138&chn_tail=6142&chn_tail=6238&chn_tail=6242&chn_tail=6338&chn_tail=6342&day=2015-05-26T03:05:00.000Z&station=all&timeInterval=One+day 200 1073ms
+
+
+Execution Time (2015-06-01 14:26:44 UTC)
+watch           6m 17.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%
+Total 6m 19.4s
+
