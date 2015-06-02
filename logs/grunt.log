@@ -12160,3 +12160,113 @@ Execution Time (2015-06-01 14:26:44 UTC)
 watch           6m 17.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%
 Total 6m 19.4s
 
+
+Running "serve" task
+
+Running "clean:server" (clean) task
+
+Running "env:all" (env) task
+
+Running "concurrent:server" (concurrent) task
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "express:dev" (express) task
+Starting background Express server
+debugger listening on port 5858
+Express server listening on 9000, in development mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "watch" task
+Waiting...
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-02 13:41:46 UTC)
+loading tasks     79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 73%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 27%
+Total 108ms
+
+Completed in 0.315s at Tue Jun 02 2015 15:41:46 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 5ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-02 13:44:46 UTC)
+loading tasks     82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 73%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 26%
+Total 112ms
+
+Completed in 0.324s at Tue Jun 02 2015 15:44:46 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-02 13:46:57 UTC)
+loading tasks     79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 73%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 27%
+Total 108ms
+
+Completed in 0.321s at Tue Jun 02 2015 15:46:58 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Done, without errors.
+
+
+Execution Time (2015-06-02 13:48:08 UTC)
+loading tasks     85ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 71%
+injector:scripts  33ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 28%
+Total 119ms
+
+Completed in 0.347s at Tue Jun 02 2015 15:48:08 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+
+
+Execution Time (2015-06-02 13:26:59 UTC)
+watch            22m 46.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%
+Total 22m 54.8s
+
