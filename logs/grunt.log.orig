@@ -12196,6 +12196,9 @@ Running "open:server" (open) task
 
 Running "watch" task
 Waiting...
+<<<<<<< HEAD
+>> File "client/app/user_data/user_data.controller.js" changed.
+=======
 GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 200 27ms - 129b
 GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 200 22ms - 129b
 GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 200 36ms - 129b
@@ -12248,12 +12251,30 @@ Running "clean:server" (clean) task
 Running "env:all" (env) task
 
 Running "concurrent:server" (concurrent) task
+>>>>>>> master
 
 Running "injector:scripts" (injector) task
 Missing option `template`, using `dest` as template instead
 Injecting js files (40 files)
 >> Nothing changed
 
+<<<<<<< HEAD
+Done, without errors.
+
+
+Execution Time (2015-06-02 13:41:46 UTC)
+loading tasks     79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 73%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 27%
+Total 108ms
+
+Completed in 0.315s at Tue Jun 02 2015 15:41:46 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 5ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+=======
 Running "injector:css" (injector) task
 Missing option `template`, using `dest` as template instead
 Injecting css files (18 files)
@@ -12367,11 +12388,26 @@ Completed in 0.000s at Tue Jun 02 2015 09:59:14 GMT+0200 (CEST) - Waiting...
 Running "injector:css" (injector) task
 Missing option `template`, using `dest` as template instead
 Injecting css files (18 files)
+>>>>>>> master
 >> Nothing changed
 
 Done, without errors.
 
 
+<<<<<<< HEAD
+Execution Time (2015-06-02 13:44:46 UTC)
+loading tasks     82ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 73%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 26%
+Total 112ms
+
+Completed in 0.324s at Tue Jun 02 2015 15:44:46 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+=======
 Execution Time (2015-06-02 08:00:01 UTC)
 loading tasks  80ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
 injector:css   14ms  ▇▇▇▇▇▇▇ 15%
@@ -12383,11 +12419,26 @@ Completed in 0.337s at Tue Jun 02 2015 10:00:01 GMT+0200 (CEST) - Waiting...
 Running "injector:css" (injector) task
 Missing option `template`, using `dest` as template instead
 Injecting css files (18 files)
+>>>>>>> master
 >> Nothing changed
 
 Done, without errors.
 
 
+<<<<<<< HEAD
+Execution Time (2015-06-02 13:46:57 UTC)
+loading tasks     79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 73%
+injector:scripts  29ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 27%
+Total 108ms
+
+Completed in 0.321s at Tue Jun 02 2015 15:46:58 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 1ms
+>> File "client/app/user_data/user_data.controller.js" changed.
+
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+=======
 Execution Time (2015-06-02 08:00:39 UTC)
 loading tasks  81ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
 injector:css   14ms  ▇▇▇▇▇▇▇ 15%
@@ -12405,11 +12456,26 @@ Completed in 0.000s at Tue Jun 02 2015 10:03:15 GMT+0200 (CEST) - Waiting...
 Running "injector:css" (injector) task
 Missing option `template`, using `dest` as template instead
 Injecting css files (18 files)
+>>>>>>> master
 >> Nothing changed
 
 Done, without errors.
 
 
+<<<<<<< HEAD
+Execution Time (2015-06-02 13:48:08 UTC)
+loading tasks     85ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 71%
+injector:scripts  33ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 28%
+Total 119ms
+
+Completed in 0.347s at Tue Jun 02 2015 15:48:08 GMT+0200 (CEST) - Waiting...
+GET /user_data 200 2ms
+
+
+Execution Time (2015-06-02 13:26:59 UTC)
+watch            22m 46.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%
+Total 22m 54.8s
+=======
 Execution Time (2015-06-02 08:03:40 UTC)
 loading tasks  79ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 84%
 injector:css   14ms  ▇▇▇▇▇▇▇ 15%
@@ -12469,4 +12535,5 @@ GET /user_data 200 1ms
 Execution Time (2015-06-02 07:22:36 UTC)
 watch            42m 54.5s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
 Total 42m 56.9s
+>>>>>>> master
 
