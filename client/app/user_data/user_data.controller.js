@@ -25,6 +25,12 @@ I will try to define and quantify parameters that influence the starting time of
             name: 'Bachelor\'s students',
             affiliation: 'Environmental Physics, University of Tübingen',
             description: 'During the two-weeks summer field campaign students in their 4th semester of the Bachelor’s program Umweltnaturwissenschaften at the ZAG (Zentrum für angewandte Geowissenschaften) of the University of Tübingen measure physical and chemical parameters in a local stream. The overall goal is to practice field work techniques and to develop a model of the different processes occurring in a section of the stream, like chemical depletion, diffusion processes or heat flux.  For the energy budget calculations students of the past two years used solar and infrared radiation data measured by the net radiometers of the Ammertal Network ground stations. With this data the students were able to compute the net heat flux into the water body.'
+        },
+        {
+            name: 'Jan Prosi',
+            affiliation: 'BSc. Environmental Physics, University of Tübingen',
+            description: 'The aim of my thesis is to determine and optimise the calculations of momentum, sensitive and latent heat flux using data from a Flux Gradient tower. \n\
+The direct measures provided by a Flux Gradient tower of the Ammertal Network located in Entringen are horizontal wind speed and direction, as well as temperature and humidity at 2 m and 7.8 m. Through the flux-gradient similarity method, the Flux Gradient tower will be calibrated using the Eddy Covariance station located at the same site. The EC station provides 3D wind measurements, an open-path gas analyser and, through further calculations, measures of momentum and heat fluxes.'
         }
     ]
   });
