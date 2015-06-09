@@ -15,7 +15,7 @@ angular.module('wessApp')
       for (var i=1; i<num_pics; i++) {
           $scope.pictures.push({
               'thumb': '../../assets/images/image'+i+'_tn.jpg',
-              'img': '../../assets/images/image'+i+'.JPG'
+              'img': '../../assets/images/image'+i+'.jpg'
           });
       }
       
