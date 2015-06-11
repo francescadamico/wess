@@ -17,7 +17,7 @@ angular.module('wessApp')
        *        0 has to be chosen to query all the stations at the same time;
        * - (Number) sensheight: optional input; height or depth of the instrument. 
        */
-      $scope.loadPlot = function(timeInterval,station,channel,statistic){ 
+      $scope.loadPlot = function(timeInterval,station,channel,statistic){
           
           $scope.options = {
               axes: {
@@ -39,6 +39,7 @@ angular.module('wessApp')
               drawLegend: true,
               drawDots: false//true
           };
+          
           
           /* The $hhtp.get are performed one inside the other in order to get the queries answer in the right order, i.e. if each of them is inside a function that is called from the main code, they are called async, not allowing the dataQuery to use the result of the other two queries */
           
@@ -134,6 +135,20 @@ angular.module('wessApp')
                                       $scope.options.series[1] = {y: 'value2', color: 'red', thickness: '2px', striped: true, label:'Entringen'};
                                       $scope.options.series[2] = {y: 'value3', color: 'green', thickness: '2px', striped: true, label: 'Tailfingen'};
                                   };
+                                  /* to avoid the resize of y-axis under a certain value, to avoid that the y axis disappears in case of a plot function y=0 */
+                                  var someUsualValue = 1;
+                                  var usualMax = d3.max($scope.data, function(d){ 
+                                      var maxValue;
+                                      if (d.value2 != null) {
+                                          maxValue = Math.max(d.value1,d.value2,d.value3);
+                                          return maxValue+1 || someUsualValue;
+                                      }
+                                      else {
+                                          return d.value1+1 || someUsualValue;
+                                      }
+                                  });
+                                  $scope.options.axes.y.max = usualMax;
+                                  
                               };
                               // ... continue dataQuery 
                               $scope.resultIsEmpty = false;
