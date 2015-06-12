@@ -3,6 +3,8 @@
 angular.module('wessApp')
   .controller('DataCtrl', function ($scope) {
       
+    
+    //$scope.showPlots = 1;
       /* Calendar directives*/
       $scope.datepickers = {
           from : false,
@@ -12,9 +14,9 @@ angular.module('wessApp')
       $scope.maxDate_from = null;
 
       $scope.today = function() {
-          $scope.formData_from = new Date(Date.UTC(2014, 3, 31, 12, 0, 0));
-          $scope.formData_to = new Date(Date.UTC(2014, 3, 31, 12, 0, 0));
-          $scope.todayDate = new Date(Date.UTC(2014, 3, 31, 12, 0, 0));
+          $scope.formData_from = new Date;//(Date.UTC(2014, 3, 31, 12, 0, 0));
+          $scope.formData_to = new Date(Date.UTC(2015, 3, 30, 12, 0, 0)); //new Date;
+          $scope.todayDate = new Date;//(Date.UTC(2014, 3, 31, 12, 0, 0));
       };
       $scope.today();
 
@@ -33,8 +35,8 @@ angular.module('wessApp')
        * the absolut max date or the selected 'to' date
        */
       $scope.toggleMax = function() {
-          $scope.maxDate_from = $scope.maxDate_from ? null : new Date(Date.UTC(2014, 3, 31, 12, 0, 0));
-          $scope.maxDate_to = new Date(Date.UTC(2014, 3, 31, 12, 0, 0));
+          $scope.maxDate_from = $scope.maxDate_from ? null : new Date(Date.UTC(2015, 4, 31, 12, 0, 0));
+          $scope.maxDate_to = new Date(Date.UTC(2015, 4, 31, 12, 0, 0));
       };
       $scope.toggleMax();
       
@@ -61,98 +63,135 @@ angular.module('wessApp')
       /* handle formData_from, formData_to */
       /*****************************************************/
       
-      /* andle sites */
-      $scope.sites = [
-          {
-              status: 'false',
-              label: 'Entringen'
-          },
-          {
-              status: 'false',
-              label: 'Poltringen'
-          },
-          {
-              status: 'false',
-              label: 'Tailfingen'
-          }
-      ];
-      
+      /* handle sites */
+          
+    $scope.sites = [
+        { label: 'Entringen', selected: false, atmo_station: 'ent_perm', subsurf_station: 'uit_1'},
+        { label: 'Poltringen', selected: false, atmo_station: 'polt', subsurf_station: 'uit_3'},
+        { label: 'Tailfingen', selected: false, atmo_station: 'tail', subsurf_station: 'uit_2'}
+    ];
+    
+    // selected site
+    $scope.selectionS = [];
+    //$scope.selectionS;
+    
+    // helper method to get selected sites
+    $scope.selectedSites = function selectedSites() {
+        return filterFilter($scope.sites, { selected: true});
+    };
+    
+    // watch sites for changes
+    $scope.$watch('sites|filter:{selected:true}', function(nv) {
+        $scope.selectionS = nv.map(function (site) {
+            // at this point of the selection the whole site has to be selected because we still don't know whether the atmo_station or the subsurf_station will be needed
+            //document.getElementById("plotBtn").disabled = true;
+            return site;//site.atmo_station;
+        });
+    }, true);
+    
+        
       /* Type of measurements directive */
-      $scope.typeMeas = [
-          {
-              type: 'Atmospheric',
-              plots: [
-                  {
-                      status: false,
-                      name: 't_windspeed',
-                      label: 'Time/Wind speed'
-                  },
-                  {
-                      status: false,
-                      name: 't_winddir',
-                      label: 'Time/Wind direction'
-                  },
-                  {
-                      status: false,
-                      name: 't_temp',
-                      label: 'Time/Temperature',
-                  },
-                  {
-                      status: false,
-                      name: 't_hum',
-                      label: 'Time/Humidity'
-                  }
-              ],
-          },
-          {
-              type: 'Surface',
-              plots: [
-                  {
-                      status: false,
-                      name: 't_sunlight',
-                      label: 'Time/Sun light (net radiation)' 
-                  },
-                  {
-                      status: false,
-                      name: 't_rain',
-                      label: 'Time/Rain' 
-                  },
-                  {
-                      status: false,
-                      name: 't_soilheat',
-                      label: 'Time/Soil heat flux' 
-                  },
-                  {
-                      status: false,
-                      name: 't_soiltemp',
-                      label: 'Time/Soil temperature' 
-                  },
-                  {
-                      status: false,
-                      name: 't_soilwater',
-                      label: 'Time/Soil water content' 
-                  }
-              ]
-          },
-          {   
-              type: 'Subsurface',
-              plots: [
-                  {
-                      name: 't_temp',
-                      label: 'Time/Temperature'  
-                  },
-                  {
-                      name: 't_water_sub',
-                      label: 'Time/Water'  
-                  },
-                  {
-                      name: 't_tens',
-                      label: 'Time/Tensiometer'  
-                  }
-              ]
-          }
+      $scope.typeMeas = [  
+          { type: 'Atmospheric', selected: false, name: 't_windspeed', label: 'Time/Wind speed', channel: 'WindSpd__', statistic: 'Avg' },
+          { type: 'Atmospheric', selected: false, name: 't_winddir', label: 'Time/Wind direction', channel: 'WindDir__', statistic: 'Avg' },
+          { type: 'Atmospheric', selected: false, name: 't_temp', label: 'Time/Temperature', channel: 'AirTemp__', statistic: 'Avg' },
+          { type: 'Atmospheric', selected: false, name: 't_hum', label: 'Time/Humidity', channel: 'RH__', statistic: 'Avg' },
+          { type: 'Surface', selected: false, name: 't_sunlight', label: 'Time/Sun light (net radiation)', channel: 'NetRs', statistic: 'Avg' }, // NOTE: this is only the net shortwave radiation 
+          { type: 'Surface', selected: false, name: 't_rain', label: 'Time/Rain', channel: 'Rain_mm', statistic: 'Tot' },
+          { type: 'Surface', selected: false, name: 't_soilheat', label: 'Time/Soil heat flux', channel: 'SoilHF__', statistic: 'Avg' },
+          { type: 'Surface', selected: false, name: 't_soiltemp', label: 'Time/Soil temperature', channel: 'SoilTemp__', statistic: 'Avg' },
+          { type: 'Surface', selected: false, name: 't_soilwater', label: 'Time/Soil water content', channel: 'SoilVWC__', statistic: 'Avg' },
+          // for the moment we plot the subsurface measurements at -10cm in one position, but in the future we will have to plot5 lines at 5 different depth averaged in 5 different positions
+          { type: 'Subsurface', selected: false, name: 't_temp', label: 'Time/Temperature', channel: 'SoilTemp01', statistic: 'Smp' },
+          { type: 'Subsurface', selected: false, name: 't_water_sub', label: 'Time/Water', channel: 'SoilPermittivity01', statistic: 'Smp' },
+          { type: 'Subsurface', selected: false, name: 't_tens', label: 'Time/Tensiometer', channel: 'Tensio01', statistic: 'Smp' }
       ];
-      
+    
+    // selected plot
+    $scope.selectionP = [];
+    
+    // helper method to get selected plots
+    $scope.selectedPlots = function selectedPlots() {
+        return filterFilter($scope.typeMeas, { selected: true});
+    };
+    
+    // watch selected plots for changes
+    $scope.$watch('typeMeas|filter:{selected:true}', function(nv) {
+        //document.getElementById("plotBtn").disabled = true;
+        $scope.selectionP = nv.map(function (plot) {
+            return plot;
+        });
+    });
+    
+    // watch if both typeMeas and sites have been selected
+    // NOTE: for the moment it works only for one selected site and typeMeas
+    $scope.watcher;
+    $scope.chosenStation = [];
+    $scope.count = 0;
+    
+/*    $scope.$watch('$scope.selectionS', function(nvS,ovS) {
+        
+        $scope.$watch('$scope.selectionP', function(nvP,ovP) {*/
+/*            
+            $scope.$watchGroup([function(){ return $scope.selectionS; }, function(){ return $scope.selectionP; }], function(nv,ov) {
+            if (nvS!=ovS && nvP!=ovP) {
+            for(var sS=0; sS<nvS.length; sS++) {
+                for(var sP=0; sP<nvP.length; sP++) {
+                    if (nvP[sP].type == 'Atmospheric'||nvP[sP].type == 'Surface') {
+                        $scope.chosenStation.push(nvS[sS].atmo_station);
+                    }
+                    else {
+                        $scope.chosenStation.push(nvS[sS].subsurf_station);
+                    }
+                    $scope.testnv = nvS.length; 
+                    $scope.chosenChannel = nvP[sP].channel;
+                    $scope.chosenStatistic= nvP[sP].statistic;
+                    $scope.testnv[sS] = nvS;
+                    //$scope.testnv = nv[0].length; 
+                    $scope.chosenChannel = nvP[sP].channel;
+                    $scope.chosenStatistic= nvP[sP].statistic;
+                    $scope.count ++;
+                }
+                
+                document.getElementById("plotBtn").disabled = false;
+            }
+            $scope.watcher = 'OK';
+        //}
+        $scope.num_plot = nvS.length * nvP.length;
+            }
+
+   // });
+    });*/
+    $scope.$watchGroup([function(){ return $scope.selectionS; }, function(){ return $scope.selectionP; }], function(nv,ov) {
+        // nv[0] corresponds to selected site; nv[1] to selected plot
+        //if (nv[0]!=ov[0] && nv[1]!=ov[1]) {
+        if (nv[0]!=ov[0] && nv[1]!=ov[1] && nv[0]!= [] && nv[1]!= []) {
+            for(var sS=0; sS<nv[0].length; sS++) {
+                for(var sP=0; sP<nv[1].length; sP++) {
+                    if (nv[1][sP].type == 'Atmospheric'||nv[1][sP].type == 'Surface') {
+                        $scope.chosenStation = nv[0][sS].atmo_station;//.push(nv[0][sS].atmo_station);
+                    }
+                    else {
+                        $scope.chosenStation = nv[0][sS].subsurf_station;//.push(nv[0][sS].subsurf_station);
+                    }
+                    $scope.testnv = nv[0].length; 
+                    $scope.chosenChannel = nv[1][sP].channel;
+                    $scope.chosenStatistic= nv[1][sP].statistic;
+                    $scope.testnv[sS] = nv[0];
+                    //$scope.testnv = nv[0].length; 
+                    $scope.chosenChannel = nv[1][sP].channel;
+                    $scope.chosenStatistic= nv[1][sP].statistic;
+                    $scope.count ++;
+                    $scope.watcher = 'OK';
+                    document.getElementById("plotBtn").disabled = false;
+                }
+            }
+        }
+        $scope.num_plot = nv[0].length * nv[1].length;
+
+    });
+
+    
       $scope.oneAtATime = true;
       $scope.status = {
           isFirstOpen: true,
@@ -160,8 +199,7 @@ angular.module('wessApp')
       };
       
       /* button handler */
-      /*$scope.showPlots = false;
-      $scope.timeInterval = 'One day';
+      /*$scope.timeInterval = 'One day';
       $scope.senstypeid = 7;
       $scope.measdescr = 'avg';
       $scope.measurement_name = 'Atmospheric Temperature';

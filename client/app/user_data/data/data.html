@@ -6,6 +6,7 @@
             <!-- Form Name -->
             <legend>Select data</legend>
             
+            
             <!-- Dates selection -->
             <div class="row">
                 <div class="col-xs-2">
@@ -28,52 +29,66 @@
                 </div>
             </div>
             <br>
+
             
             <!-- Site selection -->
-            <!-- Multiple Checkboxes -->
             <div class="form-group">
                 <label class="control-label" for="checkboxes">Sites</label>
                 <div ng-repeat="site in sites">
-                    <div class="checkbox">
-                        <input ng_model="site.status" type="checkbox">
-                        {{site.label}}
+                    <input type="checkbox" name="selectedSites[]" value="{{site.label}}" ng-model="site.selected"> {{site.label}}
+                </div>
+            
+                {{selectionS}}
+                
+                <!-- Plots selection -->
+                <div class="row">
+                    <div class="col-xs-4">
+                        <!--<accordion close-others="oneAtATime">
+                            <accordion-group heading="{{item.type}}" ng-repeat="item in typeMeas">-->
+                                <!-- Multiple Checkboxes -->
+                                <div class="form-group" ng-repeat="item in typeMeas">
+                                    <input type="checkbox" name="selectedPlot[]" value="{{item.label}}" ng-model="item.selected"> {{item.label}}
+                                </div>
+                            <!--</accordion-group>
+                        </accordion>-->
+                    </div>
+                    <div class="col-xs-offset-8"></div> 
+                </div>
+                
+                {{watcher}} <br>
+                selectionP = {{selectionP}} <br>
+                
+                chosenStation = {{chosenStation}} <br>
+                chosenChannel = {{chosenChannel}} <br>
+                chosenStatistic = {{chosenStatistic}} <br>
+                numPlot = {{num_plot}} <br>
+                nv = {{testnv}} <br>
+                ov = {{testov}} <br>
+                selectionS = {{selectionS}} <br>
+                selectionP = {{selectionP}} <br>
+                count = {{count}} <br>
+                <!-- new_selectionP = {{temp}} <br>
+                temp1 = {{temp1}} <br>-->
+                
+                
+            <!-- plot button -->
+                <button type="button" class="btn btn-default" id="plotBtn" ng-click="showPlots=true" disabled>
+                    Show plots
+                </button>
+                <!-- Show plots -->
+                <div ng-switch="showPlots">
+                    <div ng-switch-when=true>
+                        <div ng-controller="ParametricplotCtrl">
+                            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('One day',formData_to,chosenStation,chosenChannel,chosenStatistic)"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Plots selection -->
-            <div class="row">
-                <div class="col-xs-4">
-                    <accordion close-others="oneAtATime">
-                        <accordion-group heading="{{item.type}}" ng-repeat="item in typeMeas">
-                            <!-- Multiple Checkboxes -->
-                            <div class="form-group">
-                                <div ng_repeat="plot in item.plots">
-                                    <div class="checkbox">
-                                        <input ng-model="plot.status" type="checkbox">
-                                        {{plot.label}}
-                                    </div>
-                                </div>
-                            </div>
-                        </accordion-group>
-                    </accordion>
-                </div>
-                <div class="col-xs-offset-8"></div> 
-            </div>
-            <!-- plot button -->
-            <!--<button type="button" class="btn btn-default" ng-click="showPlots = 'true'">
-                Show plots
-            </button>-->
+            
         </fieldset>
     </form>
 </div>
 
-<!-- Show plots -->
-<!--<div ng-switch="showPlots">
-    <div ng-switch-when="true">
-        <div ng-controller="ParametricplotCtrl">
-            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot(timeInterval,formData_from,senstypeid,measdescr,measurement_name,1)"></div>
-        </div>
-    </div>
-</div>-->
+
     
