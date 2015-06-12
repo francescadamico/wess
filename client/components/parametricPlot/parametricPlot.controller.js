@@ -7,17 +7,18 @@ angular.module('wessApp')
       /* loadPlot function:
        * it draws a plot with the result of the parametric query to the database
        * INPUTS: 
-       * - (Number) senstypeid: the corresponding sensor_type.sensor_type_id in the
-       *        database
-       * - (String) measdescr: description of the kind of measure; 
-       *        it could be 'avg','tot' or 'sample';
-       * - (String) measname: name of the measurement 
-       *        (i.e. "atmospherical temperature");
-       * - (Number) station: the station number (1,2 or 3);
-       *        0 has to be chosen to query all the stations at the same time;
-       * - (Number) sensheight: optional input; height or depth of the instrument. 
+       * - (String) timeinterval: accepted values:
+       *        -> 'One day':   this two are for the non-interactive queries in the weather page
+       *        -> 'One month':
+       *        -> 'free': for the user queries
+       * - (String) station: station name; if its value is 'all', then all the sites have to be plot; 
+       * - (String) channel: partial or complete name of the channel, e.g. 'AirTemp__'; 
+       * - (String) statistics: 'Avg', 'Tot'...
+       * - (Timestamp) ts_start: optional input, it is the starting timestamp of data query. It is used only in the user's queries. 
+       * TODO:
+       * - add the ts_end
        */
-      $scope.loadPlot = function(timeInterval,station,channel,statistic){
+      $scope.loadPlot = function(timeInterval,station,channel,statistic,ts_start){
           
           $scope.options = {
               axes: {
@@ -95,15 +96,18 @@ angular.module('wessApp')
                           // sets the first date to be displayed to:
                           //    - in case of 'One day' -> 1 day before the last timestamp found
                           //    - in case of 'One month' -> 30 days before
-                          if (timeInterval === 'One day')
-                              lastTimestamp_from.setDate(lastTimestamp.getDate()-1);
-                          else
-                              lastTimestamp_from.setDate(lastTimestamp.getDate() -30);
-
-                          // string to display the date, e.g. "26 April 2015 -- 26 May 2015"
-                          $scope.dateString = lastTimestamp_from.getDate() + " " + monthNames[lastTimestamp_from.getMonth()] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
-
-                          config.params.day = lastTimestamp;
+                          if (timeInterval !== 'free') {
+                              if (timeInterval === 'One day')
+                                  lastTimestamp_from.setDate(lastTimestamp.getDate()-1);
+                              else // timeInterval === 'One month'
+                                  lastTimestamp_from.setDate(lastTimestamp.getDate() -30);
+                              // string to display the date, e.g. "26 April 2015 -- 26 May 2015"
+                              $scope.dateString = lastTimestamp_from.getDate() + " " + monthNames[lastTimestamp_from.getMonth()] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
+                              config.params.day = lastTimestamp;   
+                          }
+                          else { //timeInterval === 'free', the lastTimestamp_from and $scope.dateString don't need to be set 
+                              config.params.day = ts_start;
+                          };
                           
                           /* query the desired data */
                           $http.get('/api/data/dataQuery',config)

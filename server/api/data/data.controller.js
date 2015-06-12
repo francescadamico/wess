@@ -607,17 +607,24 @@ exports.dataQuery = function(req,res) {
     var timeInterval_oneDay = " - interval '1 day' ";
     var timeInterval_oneMonth = " - interval '1 month'";
     
-    if (timeInterval == "One day") {
-        dateTrunc_chosen = dateTrunc_15m;
-        timeInterval_chosen = timeInterval_oneDay;
-    } else { // timeInterval == "One month"
+    if (timeInterval == "One month") {
         dateTrunc_chosen = dateTrunc_2h;//dateTrunc_12h;
         timeInterval_chosen = timeInterval_oneMonth;
+    } else { // timeInterval == "One day" or "free"
+        dateTrunc_chosen = dateTrunc_15m;
+        timeInterval_chosen = timeInterval_oneDay;
     };
     
     // single station query parts
     var selectOneStation = "SELECT " + dateTrunc_chosen + " as tick, avg(val) as value ";
-    var fromOneStation = "from dat_new "; //join tss Using (ts_id) 
+    var fromOneStation; 
+    if (timeInterval == "free") {
+        fromOneStation = "from dat join tss Using (ts_id) ";
+    }
+    else {
+        fromOneStation = "from dat_new "; 
+    }
+    
     var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
     
     if (station !== 'all') {

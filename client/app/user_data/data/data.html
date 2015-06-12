@@ -79,7 +79,7 @@
                 <div ng-switch="showPlots">
                     <div ng-switch-when=true>
                         <div ng-controller="ParametricplotCtrl">
-                            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('One day',formData_to,chosenStation,chosenChannel,chosenStatistic)"></div>
+                            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('free',chosenStation,chosenChannel,chosenStatistic,formData_to)"></div>
                         </div>
                     </div>
                 </div>
