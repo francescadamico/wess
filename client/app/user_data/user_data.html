@@ -1,4 +1,40 @@
 <!-- Content of the central part of the page, the navigation bar and left menu are called in the index.html-->
-<div ng-switch-when="false">
+<div>
+    <p class=lead> Our data are now available! </p>
+    <p><a href="../main/contact"> Contact us </a> and we will be happy to provide you directly with the data you need. </p>
+    <ul>
+        <li> 5 stations at 3 different locations: Entringen, Poltringen and Tailfingen. </li>
+        <li> 230 instruments, with 620 data channels (!). </li>
+        <li> Atmospheric measurements: temperature, humidity, wind speed and wind direction measured at two different levels. </li>
+        <li> Surface measurements: rain, soil heat flux, and sunlight. </li>
+        <li> Sub-surface measurements: temperature and moisture, at 5 levels to a maximum depth of 1.5 m. </li>
+    </ul>
+</div>
+<br>
+<div>
+    <p class=lead>How our data are used by the scientific community:</p>
+</div>
+<!-- Carousel module -->
+<div>
+    <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+            <div class="col col-sm-2"></div>
+            <div class="col col-sm-8">
+            <p><b>User:</b> {{slide.name}} ({{slide.affiliation}})</p>
+            <p><b>Project description:</b> {{slide.description}}</p>
+            </div>
+            <div class="col col-sm-2"></div>
+        <!--<img ng-src="{{slide.image}}" style="margin:auto;">-->
+        <!--<div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>-->
+        </slide>
+    </carousel>
+</div>
+<br>
+<br>
+<div>
     <p class="lead">Coming soon...</p>
+    <p> In this section there will soon be a tool to select the data you are interested into for displaying and/or downloading.</p>
 </div>

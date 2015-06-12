@@ -218,8 +218,8 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/public/{,*/}*.js',
             '<%= yeoman.dist %>/public/{,*/}*.css',
-            '<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/public/assets/fonts/*'
+            //'<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            //'<%= yeoman.dist %>/public/assets/fonts/*'
           ]
         }
       }
@@ -249,6 +249,12 @@ module.exports = function (grunt) {
         patterns: {
           js: [
             [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|JPG|png|webp|svg))/gm, 'Update the JS to reference our revved images']
+          ],
+	  // update the ../fonts/ path to ../assets/fonts/
+    	  css: [
+            [/(..\/fonts\/)/g, 'Fix webfonts path', function(match) {
+              return match.replace('../fonts/', '../assets/fonts/');
+            }]
           ]
         }
       }
@@ -353,7 +359,23 @@ module.exports = function (grunt) {
             'package.json',
             'server/**/*'
           ]
-        }]
+        }, {
+          // include font-awesome webfonts
+           expand: true,
+           dot: true,
+           cwd: '<%= yeoman.client %>/bower_components/font-awesome',
+           src: ['fonts/*.*'],
+           dest: '<%= yeoman.dist %>/public/assets'
+        }, {
+           // include bootstrap webfonts
+           expand: true,
+           dot: true,
+           cwd: '<%= yeoman.client %>/bower_components/bootstrap/dist',
+           src: ['fonts/*.*'],
+           dest: '<%= yeoman.dist %>/public/assets'
+        }
+
+]
       },
       styles: {
         expand: true,
