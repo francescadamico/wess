@@ -2,9 +2,7 @@
 
 angular.module('wessApp')
   .controller('DataCtrl', function ($scope) {
-      
     
-    //$scope.showPlots = 1;
       /* Calendar directives*/
       $scope.datepickers = {
           from : false,
@@ -12,11 +10,11 @@ angular.module('wessApp')
       }
       $scope.minDate_to = null;
       $scope.maxDate_from = null;
-
+    
       $scope.today = function() {
-          $scope.formData_from = new Date;//(Date.UTC(2014, 3, 31, 12, 0, 0));
-          $scope.formData_to = new Date(Date.UTC(2015, 3, 30, 12, 0, 0)); //new Date;
-          $scope.todayDate = new Date;//(Date.UTC(2014, 3, 31, 12, 0, 0));
+          $scope.formData_from = new Date;
+          $scope.formData_to = new Date; 
+          $scope.todayDate = new Date;
       };
       $scope.today();
 
@@ -33,10 +31,11 @@ angular.module('wessApp')
       /* the max date of the 'to' datepicker has to be fixed 
        * the max date of the 'from' datepicker has to be either the 
        * the absolut max date or the selected 'to' date
+       * TODO: the max date shouldn't be today, but it should be queried with lastTs
        */
       $scope.toggleMax = function() {
-          $scope.maxDate_from = $scope.maxDate_from ? null : new Date(Date.UTC(2015, 4, 31, 12, 0, 0));
-          $scope.maxDate_to = new Date(Date.UTC(2015, 4, 31, 12, 0, 0));
+          $scope.maxDate_from = $scope.maxDate_from ? null : new Date;
+          $scope.maxDate_to = new Date;
       };
       $scope.toggleMax();
       
@@ -73,7 +72,6 @@ angular.module('wessApp')
     
     // selected site
     $scope.selectionS = [];
-    //$scope.selectionS;
     
     // helper method to get selected sites
     $scope.selectedSites = function selectedSites() {
@@ -84,8 +82,7 @@ angular.module('wessApp')
     $scope.$watch('sites|filter:{selected:true}', function(nv) {
         $scope.selectionS = nv.map(function (site) {
             // at this point of the selection the whole site has to be selected because we still don't know whether the atmo_station or the subsurf_station will be needed
-            //document.getElementById("plotBtn").disabled = true;
-            return site;//site.atmo_station;
+            return site;
         });
     }, true);
     
@@ -117,7 +114,6 @@ angular.module('wessApp')
     
     // watch selected plots for changes
     $scope.$watch('typeMeas|filter:{selected:true}', function(nv) {
-        //document.getElementById("plotBtn").disabled = true;
         $scope.selectionP = nv.map(function (plot) {
             return plot;
         });
@@ -129,50 +125,16 @@ angular.module('wessApp')
     $scope.chosenStation = [];
     $scope.count = 0;
     
-/*    $scope.$watch('$scope.selectionS', function(nvS,ovS) {
-        
-        $scope.$watch('$scope.selectionP', function(nvP,ovP) {*/
-/*            
-            $scope.$watchGroup([function(){ return $scope.selectionS; }, function(){ return $scope.selectionP; }], function(nv,ov) {
-            if (nvS!=ovS && nvP!=ovP) {
-            for(var sS=0; sS<nvS.length; sS++) {
-                for(var sP=0; sP<nvP.length; sP++) {
-                    if (nvP[sP].type == 'Atmospheric'||nvP[sP].type == 'Surface') {
-                        $scope.chosenStation.push(nvS[sS].atmo_station);
-                    }
-                    else {
-                        $scope.chosenStation.push(nvS[sS].subsurf_station);
-                    }
-                    $scope.testnv = nvS.length; 
-                    $scope.chosenChannel = nvP[sP].channel;
-                    $scope.chosenStatistic= nvP[sP].statistic;
-                    $scope.testnv[sS] = nvS;
-                    //$scope.testnv = nv[0].length; 
-                    $scope.chosenChannel = nvP[sP].channel;
-                    $scope.chosenStatistic= nvP[sP].statistic;
-                    $scope.count ++;
-                }
-                
-                document.getElementById("plotBtn").disabled = false;
-            }
-            $scope.watcher = 'OK';
-        //}
-        $scope.num_plot = nvS.length * nvP.length;
-            }
-
-   // });
-    });*/
     $scope.$watchGroup([function(){ return $scope.selectionS; }, function(){ return $scope.selectionP; }], function(nv,ov) {
         // nv[0] corresponds to selected site; nv[1] to selected plot
-        //if (nv[0]!=ov[0] && nv[1]!=ov[1]) {
         if (nv[0]!=ov[0] && nv[1]!=ov[1] && nv[0]!= [] && nv[1]!= []) {
             for(var sS=0; sS<nv[0].length; sS++) {
                 for(var sP=0; sP<nv[1].length; sP++) {
                     if (nv[1][sP].type == 'Atmospheric'||nv[1][sP].type == 'Surface') {
-                        $scope.chosenStation = nv[0][sS].atmo_station;//.push(nv[0][sS].atmo_station);
+                        $scope.chosenStation = nv[0][sS].atmo_station;
                     }
                     else {
-                        $scope.chosenStation = nv[0][sS].subsurf_station;//.push(nv[0][sS].subsurf_station);
+                        $scope.chosenStation = nv[0][sS].subsurf_station;
                     }
                     $scope.testnv = nv[0].length; 
                     $scope.chosenChannel = nv[1][sP].channel;
@@ -190,19 +152,4 @@ angular.module('wessApp')
         $scope.num_plot = nv[0].length * nv[1].length;
 
     });
-
-    
-      $scope.oneAtATime = true;
-      $scope.status = {
-          isFirstOpen: true,
-          isFirstDisabled: false
-      };
-      
-      /* button handler */
-      /*$scope.timeInterval = 'One day';
-      $scope.senstypeid = 7;
-      $scope.measdescr = 'avg';
-      $scope.measurement_name = 'Atmospheric Temperature';
-      $scope.station = 1;*/
-
   });
