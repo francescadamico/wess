@@ -68,10 +68,14 @@
             <div ng-switch="showPlots">
                 <div ng-switch-when=true>
                     <div ng-repeat="iplot in plotItems">
-                        chosenStation = {{iplot.chosenStation}}<br>
+                        <br>
+                        <label>{{iplot.label}}</label>
+                        <!-- debug elements -->
+                        <br>chosenStation = {{iplot.chosenStation}}<br>
                         chosenChannel = {{iplot.chosenChannel}}<br>
                         chosenStatistic = {{iplot.chosenStatistic}}<br>
                         formData_to = {{iplot.formData_to}}<br>
+                        <!-- *************** -->
                         <div ng-controller="ParametricplotCtrl">
                         <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('free',iplot.chosenStation,iplot.chosenChannel,iplot.chosenStatistic,iplot.formData_to)"></div>
                         </div>

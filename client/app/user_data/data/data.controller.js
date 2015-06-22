@@ -12,11 +12,12 @@ angular.module('wessApp')
     } 
     */
     $scope.plotItems = [];
-    function Plot(chosenStation, chosenChannel, chosenStatistic, formData_to) {
-      this.chosenStation = chosenStation;
-      this.chosenChannel = chosenChannel;
-      this.chosenStatistic = chosenStatistic;
-      this.formData_to = formData_to;
+    function Plot(chosenStation, chosenChannel, chosenStatistic, formData_to, label) {
+        this.chosenStation = chosenStation;
+        this.chosenChannel = chosenChannel;
+        this.chosenStatistic = chosenStatistic;
+        this.formData_to = formData_to;
+        this.label = label;
     }
     
     /* Calendar directives*/
@@ -99,6 +100,9 @@ angular.module('wessApp')
         /* enables the "Show plots" button only if at least one value for site and measType have been selected */
         if ($scope.selectionP.length != 0 && $scope.selectionS.length != 0) {
             document.getElementById("plotBtn").disabled = false;
+        }
+        else {
+            document.getElementById("plotBtn").disabled = true;
         };
     }, true);
     
@@ -135,6 +139,9 @@ angular.module('wessApp')
         /* enables the "Show plots" button only if at least one value for site and measType have been selected */
         if ($scope.selectionP.length != 0 && $scope.selectionS.length != 0) {
             document.getElementById("plotBtn").disabled = false;
+        }
+        else {
+            document.getElementById("plotBtn").disabled = true;
         };
     });
     
@@ -149,8 +156,9 @@ angular.module('wessApp')
                 } 
                 $scope.chosenChannel = $scope.selectionP[sP].channel;
                 $scope.chosenStatistic = $scope.selectionP[sP].statistic;
+                $scope.label = $scope.selectionP[sP].label;
                 
-                $scope.plotItems[sP+sS*$scope.selectionP.length] = new Plot($scope.chosenStation, $scope.chosenChannel, $scope.chosenStatistic, $scope.formData_to); 
+                $scope.plotItems[sP+sS*$scope.selectionP.length] = new Plot($scope.chosenStation, $scope.chosenChannel, $scope.chosenStatistic, $scope.formData_to, $scope.label); 
             }
         }
         $scope.showPlots = true;
