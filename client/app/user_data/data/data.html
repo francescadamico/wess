@@ -6,7 +6,6 @@
             <!-- Form Name -->
             <legend>Select data</legend>
             
-            
             <!-- Dates selection -->
             <div class="row">
                 <div class="col-xs-2">
@@ -36,49 +35,45 @@
                 <div ng-repeat="site in sites">
                     <input type="checkbox" name="selectedSites[]" value="{{site.label}}" ng-model="site.selected"> {{site.label}}
                 </div>
+            </div>
             
-                {{selectionS}}
-                
-                <!-- Plots selection -->
-                <div class="row">
-                    <div class="col-xs-4">
-                        <!--<accordion close-others="oneAtATime">
-                            <accordion-group heading="{{item.type}}" ng-repeat="item in typeMeas">-->
-                                <!-- Multiple Checkboxes -->
-                                <div class="form-group" ng-repeat="item in typeMeas">
-                                    <input type="checkbox" name="selectedPlot[]" value="{{item.label}}" ng-model="item.selected"> {{item.label}}
-                                </div>
-                            <!--</accordion-group>
-                        </accordion>-->
-                    </div>
-                    <div class="col-xs-offset-8"></div> 
+            <label class="control-label" for="checkboxes">Measurements</label>    
+            <!-- Plots selection -->
+            <div class="row">
+                <div class="col-xs-4">
+                    <!--<accordion close-others="oneAtATime">
+                        <accordion-group heading="{{item.type}}" ng-repeat="item in typeMeas">-->
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group" ng-repeat="item in typeMeas">
+                                <input type="checkbox" name="selectedPlot[]" value="{{item.label}}" ng-model="item.selected"> {{item.label}}
+                            </div>
+                        <!--</accordion-group>
+                    </accordion>-->
                 </div>
-                
-                {{watcher}} <br>
-                selectionP = {{selectionP}} <br>
-                
-                chosenStation = {{chosenStation}} <br>
-                chosenChannel = {{chosenChannel}} <br>
-                chosenStatistic = {{chosenStatistic}} <br>
-                numPlot = {{num_plot}} <br>
-                nv = {{testnv}} <br>
-                ov = {{testov}} <br>
-                selectionS = {{selectionS}} <br>
-                selectionP = {{selectionP}} <br>
-                count = {{count}} <br>
-                <!-- new_selectionP = {{temp}} <br>
-                temp1 = {{temp1}} <br>-->
-                
+                <div class="col-xs-offset-8"></div> 
+            </div>
+
+            selectionS = {{selectionS}} <br>
+            selectionP = {{selectionP}} <br>
+            plotItems = {{plotItems}} <br>
+            plotItems.length = {{plotItems.length}} <br>
+            <br>
                 
             <!-- plot button -->
-                <button type="button" class="btn btn-default" id="plotBtn" ng-click="showPlots=true" disabled>
-                    Show plots
-                </button>
-                <!-- Show plots -->
-                <div ng-switch="showPlots">
-                    <div ng-switch-when=true>
+            <button type="button" class="btn btn-default" id="plotBtn" ng-click="plotFunct()" disabled>
+                Show plots
+            </button>
+
+            <!-- Show plots -->
+            <div ng-switch="showPlots">
+                <div ng-switch-when=true>
+                    <div ng-repeat="iplot in plotItems">
+                        chosenStation = {{iplot.chosenStation}}<br>
+                        chosenChannel = {{iplot.chosenChannel}}<br>
+                        chosenStatistic = {{iplot.chosenStatistic}}<br>
+                        formData_to = {{iplot.formData_to}}<br>
                         <div ng-controller="ParametricplotCtrl">
-                            <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('free',chosenStation,chosenChannel,chosenStatistic,formData_to)"></div>
+                        <div ng-include src="'components/parametricPlot/parametricPlot.html'" onload="loadPlot('free',iplot.chosenStation,iplot.chosenChannel,iplot.chosenStatistic,iplot.formData_to)"></div>
                         </div>
                     </div>
                 </div>
