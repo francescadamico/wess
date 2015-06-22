@@ -92,7 +92,10 @@ angular.module('wessApp')
     };
     
     // watch sites for changes
-    $scope.$watch('sites|filter:{selected:true}', function(nv) {
+    $scope.$watch('sites|filter:{selected:true}', function(nv,ov) {
+        /* every time a new site is chosen or an already selected value is removed, the existing plots have to be removed */
+        if (!isEqualArray(nv,ov))
+            $scope.showPlots = false;
         $scope.selectionS = nv.map(function (site) {
             // at this point of the selection the whole site has to be selected because we still don't know whether the atmo_station or the subsurf_station will be needed
             return site;
@@ -132,7 +135,10 @@ angular.module('wessApp')
     };
     
     // watch the selected plots for changes
-    $scope.$watch('typeMeas|filter:{selected:true}', function(nv) {
+    $scope.$watch('typeMeas|filter:{selected:true}', function(nv,ov) {
+        /* every time a new measType is chosen or an already selected value is removed, the existing plots have to be removed */
+        if (!isEqualArray(nv,ov))
+            $scope.showPlots = false;
         $scope.selectionP = nv.map(function (plot) {
             return plot;
         });
@@ -146,6 +152,8 @@ angular.module('wessApp')
     });
     
     $scope.plotFunct = function plotFunct() {
+        /* clean $scope.plotItems */
+        $scope.plotItems = [];
         for(var sS=0; sS<$scope.selectionS.length; sS++) {
             for(var sP=0; sP<$scope.selectionP.length; sP++) {
                 if ($scope.selectionP[sP].type == 'Atmospheric'||$scope.selectionP[sP].type == 'Surface') {
@@ -162,5 +170,16 @@ angular.module('wessApp')
             }
         }
         $scope.showPlots = true;
+    };
+    
+    /* util to compare arrays, TODO: it has to be moved to a util file */
+    function isEqualArray(arr1,arr2) {
+        if (arr1.length != arr2.length)
+            return false;
+        for (var ii=0; ii<arr1.length; ii++) {
+             if (arr1[ii] != arr2[ii])
+                 return false;
+        }
+        return true;
     };
 });
