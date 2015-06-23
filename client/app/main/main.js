@@ -3,7 +3,7 @@
 angular.module('wessApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/amnet/', {
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });

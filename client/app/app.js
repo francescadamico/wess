@@ -11,7 +11,7 @@ angular.module('wessApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/amnet'
       });
 
     $locationProvider.html5Mode(true);

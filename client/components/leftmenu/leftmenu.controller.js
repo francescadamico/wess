@@ -5,19 +5,19 @@ angular.module('wessApp')
     $scope.leftmenu = [
         {
             'title': 'Sites',
-            'link': '/main/sites'
+            'link': '/amnet/main/sites'
         },
         {
             'title': 'Research',
-            'link': '/main/goals'
+            'link': '/amnet/main/goals'
         },
         {
             'title': 'Gallery',
-            'link': '/main/gallery'
+            'link': '/amnet/main/gallery'
         },
         {
             'title': 'Contact',
-            'link': '/main/contact'
+            'link': '/amnet/main/contact'
         }
     ];
       

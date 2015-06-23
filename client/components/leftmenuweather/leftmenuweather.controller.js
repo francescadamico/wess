@@ -5,19 +5,19 @@ angular.module('wessApp')
     $scope.leftmenuweather = [
       {
         'title': 'All sites',
-        'link': '/weather/all_sites'
+        'link': '/amnet/weather/all_sites'
       },
       {
         'title': 'Entringen',
-        'link': '/weather/entringen'
+        'link': '/amnet/weather/entringen'
       },
       {
         'title': 'Poltringen',
-        'link': '/weather/poltringen'
+        'link': '/amnet/weather/poltringen'
       },
       {
         'title': 'Tailfingen',
-        'link': '/weather/tailfingen'
+        'link': '/amnet/weather/tailfingen'
       }
     ];
 

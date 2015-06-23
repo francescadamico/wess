@@ -3,7 +3,7 @@
 angular.module('wessApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/weather/all_sites', {
+      .when('/amnet/weather/all_sites', {
         templateUrl: 'app/weather/all_sites/all_sites.html',
         controller: 'AllSitesCtrl'
       });
