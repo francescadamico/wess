@@ -30,8 +30,11 @@ angular.module('wessApp')
 
     $scope.today = function() {
         $scope.formData_from = new Date;
+        $scope.formData_from.setUTCHours(12,0,0);
         $scope.formData_to = new Date; 
+        $scope.formData_to.setUTCHours(12,0,0);
         $scope.todayDate = new Date;
+        $scope.todayDate.setUTCHours(12,0,0);
     };
     $scope.today();
 
@@ -73,8 +76,8 @@ angular.module('wessApp')
       startingDay: 1
     };
     
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
+    //$scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = 'dd-MMMM-yyyy';//$scope.formats[0];
 
     /* handle sites */      
     $scope.sites = [
