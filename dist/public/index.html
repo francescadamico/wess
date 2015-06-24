@@ -1,0 +1,86 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="app/56d0d3f6.vendor.css"/>
+    <link rel="stylesheet" href="app/baf3ed5e.app.css"/>
+  </head>
+  <body ng-app="wessApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+ 
+    <!-- This is the html model for all the pages of the website -->
+    <!-- navigation bar --> 
+    <div ng-include="'components/navbar/navbar.html'"></div>
+
+    <!-- content structure: 
+            - left menu, depending on the selected section on the navbar;
+            - the content itself, depending on the selected page on the left menu -->
+      
+    <div class="container">
+        <div class="row">
+            <!-- left menu -->
+  			<div class="col col-sm-2">
+              	<div id="sidebar">
+                    <ul class="nav nav-stacked">
+                        <li><h3 class="highlight" ng-controller="NavbarCtrl">
+                            {{addTitleToLeftMenu()}} <i class="pull-right glyphicon" ng-class="{'glyphicon-home': addTitleToLeftMenu()=='Home','glyphicon-cloud': addTitleToLeftMenu()=='Weather','glyphicon-circle-arrow-down': addTitleToLeftMenu()=='User data'}"></i></h3>
+                        </li>
+                        <div ng-controller="NavbarCtrl" ng-include="leftMenuPath()"></div>
+                    </ul>
+                </div>  
+            </div>
+            <!-- content -->
+            <div class="col col-sm-10">
+                <div class="panel">
+                    <div ng-view=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Sponsored by: 
+                <a  href="http://www.geo.uni-tuebingen.de/arbeitsgruppen/angewandte-geowissenschaften/forschungsbereich/umweltphysik/arbeitsgruppe.html" target="_blank">
+                <img src="/assets/images/umphy_logo_blue.png" width="80px"></a> |
+                <a href="http://www.wess.info/typo3/index.php?id=5" target="_blank">
+                <img src="/assets/images/WESS_banner_white.png" width="100px"></a> |
+                <a href="http://www.uni-tuebingen.de/" target="_blank">
+                <img src="/assets/images/logo-uni-tuebingen.png" width="100px"></a>
+            </p>
+        </div>
+    </footer>
+      
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <script src="app/a085486e.vendor.js"></script>
+
+        <script src="app/00e6d4d6.app.js"></script>
+</body>
+</html>
