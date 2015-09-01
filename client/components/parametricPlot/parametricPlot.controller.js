@@ -91,14 +91,20 @@ angular.module('wessApp')
                       }
                       else {
                           var lastTimestamp = new Date(resultTs[0].ts);
-                          var lastTimestamp_from = new Date();
+                          var lastTimestamp_from;
                           // sets the first date to be displayed to:
                           //    - in case of 'One day' -> 1 day before the last timestamp found
                           //    - in case of 'One month' -> 30 days before
-                          if (timeInterval === 'One day')
-                              lastTimestamp_from.setDate(lastTimestamp.getDate()-1);
-                          else
-                              lastTimestamp_from.setDate(lastTimestamp.getDate() -30);
+                          if (timeInterval === 'One day') {
+                              /* getTime gives the number of milliseconds since 1970/01/01 
+                               * => 86400000 is the number of ms in one day
+                               * => 2592000000 is the number of ms in one month
+                               */
+                              lastTimestamp_from = new Date(lastTimestamp.getTime()-86400000);
+                          }
+                          else {
+                              lastTimestamp_from = new Date(lastTimestamp.getTime()-2592000000);
+                          }
 
                           // string to display the date, e.g. "26 April 2015 -- 26 May 2015"
                           $scope.dateString = lastTimestamp_from.getDate() + " " + monthNames[lastTimestamp_from.getMonth()] + " " + lastTimestamp_from.getFullYear() + " -- " + lastTimestamp.getDate() + " " + monthNames[lastTimestamp.getMonth()] + " " + lastTimestamp.getFullYear();
