@@ -1,0 +1,376 @@
+francesca@linda:~$ cd project/wess/
+francesca@linda:~/project/wess$ grunt serve:dist
+Grunt and task output will also be logged to "./logs/grunt.log"
+
+Running "serve:dist" (serve) task
+
+Running "clean:dist" (clean) task
+Cleaning dist/package.json...OK
+Cleaning dist/public...OK
+Cleaning dist/server...OK
+
+Running "concurrent:dist" (concurrent) task
+    
+    Grunt and task output will also be logged to "./logs/grunt.log"
+    
+    Running "svgmin:dist" (svgmin) task
+    Total saved: 0 B
+    
+    Done, without errors.
+    
+    
+    Execution Time (2015-10-08 12:18:47 UTC)
+    loading tasks    2s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 33%
+    svgmin:dist    4.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 67%
+    Total 6.1s
+        
+    Grunt and task output will also be logged to "./logs/grunt.log"
+    
+    Running "imagemin:dist" (imagemin) task
+    ✔ client/assets/images/IMG_7361.jpg (saved 105.65 kB - 2%)
+    ✔ client/assets/images/WESS_banner_scale.png (saved 4.8 kB - 54%)
+    ✔ client/assets/images/WESS_banner_white.png (saved 4.83 kB - 55%)
+    ✔ client/assets/images/Site_cross_section.png (saved 29.37 kB - 28%)
+    ✔ client/assets/images/fg-tower-8m_1kpx.jpg (saved 5.27 kB - 4%)
+    ✔ client/assets/images/fg-tower-8m_1kpx_tn.jpg (saved 367 B - 10%)
+    ✔ client/assets/images/ammertal.png (saved 92.13 kB - 9%)
+    ✔ client/assets/images/image1.jpg (saved 758.89 kB - 16%)
+    ✔ client/assets/images/image10_tn.jpg (saved 577 B - 8%)
+    ✔ client/assets/images/image10.jpg (saved 28.04 kB - 2%)
+    ✔ client/assets/images/image11_tn.jpg (saved 821 B - 8%)
+    ✔ client/assets/images/image11.jpg (saved 124.73 kB - 3%)
+    ✔ client/assets/images/image12_tn.jpg (saved 634 B - 8%)
+    ✔ client/assets/images/image12.jpg (saved 66.5 kB - 2%)
+    ✔ client/assets/images/image13_tn.jpg (saved 349 B - 7%)
+    ✔ client/assets/images/image13.jpg (saved 48 kB - 2%)
+    ✔ client/assets/images/image14_tn.jpg (saved 346 B - 8%)
+    ✔ client/assets/images/image14.jpg (saved 45.97 kB - 3%)
+    ✔ client/assets/images/image15_tn.jpg (saved 390 B - 10%)
+    ✔ client/assets/images/image15.jpg (saved 106.6 kB - 3%)
+    ✔ client/assets/images/image16_tn.jpg (saved 443 B - 7%)
+    ✔ client/assets/images/image16.jpg (saved 65.85 kB - 2%)
+    ✔ client/assets/images/image17_tn.jpg (saved 433 B - 7%)
+    ✔ client/assets/images/image17.jpg (saved 43.01 kB - 2%)
+    ✔ client/assets/images/image18_tn.jpg (saved 681 B - 8%)
+    ✔ client/assets/images/image18.jpg (saved 189.32 kB - 4%)
+    ✔ client/assets/images/image19_tn.jpg (saved 438 B - 7%)
+    ✔ client/assets/images/image1_tn.jpg (saved 452 B - 6%)
+    ✔ client/assets/images/image19.jpg (saved 82.11 kB - 3%)
+    ✔ client/assets/images/image2.jpg (saved 172.25 kB - 4%)
+    ✔ client/assets/images/image20_tn.jpg (saved 503 B - 6%)
+    ✔ client/assets/images/image20.jpg (saved 77.63 kB - 3%)
+    ✔ client/assets/images/image21_tn.jpg (saved 428 B - 8%)
+    ✔ client/assets/images/image21.jpg (saved 857.99 kB - 18%)
+    ✔ client/assets/images/image22_tn.jpg (saved 401 B - 7%)
+    ✔ client/assets/images/image22.jpg (saved 106.3 kB - 3%)
+    ✔ client/assets/images/image23_tn.jpg (saved 463 B - 7%)
+    ✔ client/assets/images/image23.jpg (saved 78.79 kB - 2%)
+    ✔ client/assets/images/image24_tn.jpg (saved 692 B - 8%)
+    ✔ client/assets/images/image24.jpg (saved 259.62 kB - 5%)
+    ✔ client/assets/images/image25_tn.jpg (saved 536 B - 8%)
+    ✔ client/assets/images/image25.jpg (saved 341.21 kB - 5%)
+    ✔ client/assets/images/image26.jpg (saved 30.12 kB - 2%)
+    ✔ client/assets/images/image26_tn.jpg (saved 319 B - 8%)
+    ✔ client/assets/images/image27_tn.jpg (saved 455 B - 7%)
+    ✔ client/assets/images/image27.jpg (saved 84.74 kB - 3%)
+    ✔ client/assets/images/image28_tn.jpg (saved 440 B - 8%)
+    ✔ client/assets/images/image28.jpg (saved 74.59 kB - 3%)
+    ✔ client/assets/images/image29_tn.jpg (saved 583 B - 8%)
+    ✔ client/assets/images/image2_tn.jpg (saved 1 kB - 9%)
+    ✔ client/assets/images/image29.jpg (saved 341.18 kB - 6%)
+    ✔ client/assets/images/image3.jpg (saved 275.36 kB - 6%)
+    ✔ client/assets/images/image30_tn.jpg (saved 381 B - 7%)
+    ✔ client/assets/images/image30.jpg (saved 88.76 kB - 2%)
+    ✔ client/assets/images/image31_tn.jpg (saved 334 B - 8%)
+    ✔ client/assets/images/image31.jpg (saved 451.61 kB - 15%)
+    ✔ client/assets/images/image32_tn.jpg (saved 442 B - 7%)
+    ✔ client/assets/images/image32.jpg (saved 82.35 kB - 2%)
+    ✔ client/assets/images/image33_tn.jpg (saved 693 B - 9%)
+    ✔ client/assets/images/image33.jpg (saved 341.56 kB - 5%)
+    ✔ client/assets/images/image34.jpg (saved 129.55 kB - 6%)
+    ✔ client/assets/images/image34_tn.jpg (saved 466 B - 13%)
+    ✔ client/assets/images/image35_tn.jpg (saved 440 B - 8%)
+    ✔ client/assets/images/image35.jpg (saved 77.46 kB - 3%)
+    ✔ client/assets/images/image36_tn.jpg (saved 445 B - 6%)
+    ✔ client/assets/images/image36.jpg (saved 740.88 kB - 16%)
+    ✔ client/assets/images/image37_tn.jpg (saved 691 B - 8%)
+    ✔ client/assets/images/image38.jpg (saved 16.51 kB - 4%)
+    ✔ client/assets/images/image38_tn.jpg (saved 328 B - 7%)
+    ✔ client/assets/images/image37.jpg (saved 963.25 kB - 18%)
+    ✔ client/assets/images/image39_tn.jpg (saved 489 B - 7%)
+    ✔ client/assets/images/image3_tn.jpg (saved 492 B - 7%)
+    ✔ client/assets/images/image4.jpg (already optimized)
+    ✔ client/assets/images/image39.jpg (saved 91.54 kB - 2%)
+    ✔ client/assets/images/image40_tn.jpg (saved 405 B - 6%)
+    ✔ client/assets/images/image40.jpg (saved 921.49 kB - 17%)
+    ✔ client/assets/images/image41.jpg (saved 567.4 kB - 15%)
+    ✔ client/assets/images/image41_tn.jpg (saved 321 B - 8%)
+    ✔ client/assets/images/image4_tn.jpg (saved 401 B - 7%)
+    ✔ client/assets/images/image4_tn_old.jpg (saved 520 B - 7%)
+    ✔ client/assets/images/image5.jpg (saved 18.58 kB - 5%)
+    ✔ client/assets/images/image5_old.jpg (already optimized)
+    ✔ client/assets/images/image5_tn.jpg (saved 365 B - 6%)
+    ✔ client/assets/images/image5_tn_old.jpg (saved 437 B - 7%)
+    ✔ client/assets/images/image4_old.jpg (already optimized)
+    ✔ client/assets/images/image6.jpg (saved 29.13 kB - 5%)
+    ✔ client/assets/images/image6_old.jpg (already optimized)
+    ✔ client/assets/images/image6_tn.jpg (saved 507 B - 7%)
+    ✔ client/assets/images/image6_tn_old.jpg (saved 379 B - 7%)
+    ✔ client/assets/images/image7_tn.jpg (saved 440 B - 7%)
+    ✔ client/assets/images/image8.jpg (already optimized)
+    ✔ client/assets/images/image8_tn.jpg (saved 413 B - 7%)
+    ✔ client/assets/images/image7.jpg (saved 73.93 kB - 2%)
+    ✔ client/assets/images/image9_tn.jpg (saved 349 B - 8%)
+    ✔ client/assets/images/joe.jpg (saved 5.29 kB - 3%)
+    ✔ client/assets/images/image9.jpg (saved 63.16 kB - 4%)
+    ✔ client/assets/images/logo-uni-tuebingen.png (saved 154 B - 4%)
+    ✔ client/assets/images/umphy_logo_blue.png (saved 1.12 kB - 49%)
+    ✔ client/assets/images/umphy_logo_green.png (saved 1.12 kB - 49%)
+    ✔ client/assets/images/umphy_logo_red.png (saved 1.12 kB - 49%)
+    ✔ client/assets/images/yeoman.png (saved 3.71 kB - 30%)
+    ✔ client/assets/images/site_cross_section_website.png (saved 25.56 kB - 28%)
+    Minified 102 images (saved 9.22 MB)
+    
+    Done, without errors.
+    
+    
+    Execution Time (2015-10-08 12:18:47 UTC)
+    loading tasks  13.2s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 45%
+    imagemin:dist  16.3s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 55%
+    Total 29.4s
+    
+Running "injector:scripts" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting js files (40 files)
+>> Nothing changed
+
+Running "injector:css" (injector) task
+Missing option `template`, using `dest` as template instead
+Injecting css files (18 files)
+>> Nothing changed
+
+Running "wiredep:target" (wiredep) task
+
+Running "useminPrepare:html" (useminPrepare) task
+Going through client/index.html to update the config
+Looking for build script HTML comment blocks
+
+Configuration is now:
+
+  concat:
+  { generated: 
+   { files: 
+      [ { dest: '.tmp/concat/app/vendor.css',
+          src: 
+           [ 'client/bower_components/bootstrap/dist/css/bootstrap.css',
+             'client/bower_components/font-awesome/css/font-awesome.css' ] },
+        { dest: '.tmp/concat/app/app.css',
+          src: 
+           [ '{.tmp,client}/app/app.css',
+             '{.tmp,client}/app/styles.css',
+             '{.tmp,client}/app/about/about.css',
+             '{.tmp,client}/app/main/contact/contact.css',
+             '{.tmp,client}/app/main/gallery/gallery.css',
+             '{.tmp,client}/app/main/gallery/picModal/picModal.css',
+             '{.tmp,client}/app/main/goals/goals.css',
+             '{.tmp,client}/app/main/main.css',
+             '{.tmp,client}/app/main/sites/sites.css',
+             '{.tmp,client}/app/styles.css',
+             '{.tmp,client}/app/user_data/blog/blog.css',
+             '{.tmp,client}/app/user_data/data/data.css',
+             '{.tmp,client}/app/user_data/post/post.css',
+             '{.tmp,client}/app/user_data/user_data.css',
+             '{.tmp,client}/app/user_data/wikipage/wikipage.css',
+             '{.tmp,client}/app/weather/all_sites/all_sites.css',
+             '{.tmp,client}/app/weather/entringen/entringen.css',
+             '{.tmp,client}/app/weather/poltringen/poltringen.css',
+             '{.tmp,client}/app/weather/tailfingen/tailfingen.css',
+             '{.tmp,client}/app/weather/weather.css' ] },
+        { dest: '.tmp/concat/app/vendor.js',
+          src: 
+           [ 'client/bower_components/jquery/dist/jquery.js',
+             'client/bower_components/angular/angular.js',
+             'client/bower_components/angular-resource/angular-resource.js',
+             'client/bower_components/angular-cookies/angular-cookies.js',
+             'client/bower_components/angular-sanitize/angular-sanitize.js',
+             'client/bower_components/angular-route/angular-route.js',
+             'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+             'client/bower_components/lodash/dist/lodash.compat.js',
+             'client/bower_components/d3/d3.js',
+             'client/bower_components/angular-mocks/angular-mocks.js',
+             'client/bower_components/moment/moment.js',
+             'client/bower_components/n3-line-chart/dist/line-chart.min.js',
+             'client/bower_components/q/q.js' ] },
+        { dest: '.tmp/concat/app/app.js',
+          src: 
+           [ '{.tmp,client}/app/app.js',
+             '{.tmp,client}/app/about/about.controller.js',
+             '{.tmp,client}/app/about/about.js',
+             '{.tmp,client}/app/main/contact/contact.controller.js',
+             '{.tmp,client}/app/main/contact/contact.js',
+             '{.tmp,client}/app/main/gallery/gallery.controller.js',
+             '{.tmp,client}/app/main/gallery/gallery.js',
+             '{.tmp,client}/app/main/gallery/picModal/picModal.controller.js',
+             '{.tmp,client}/app/main/gallery/picModal/picModal.js',
+             '{.tmp,client}/app/main/goals/goals.controller.js',
+             '{.tmp,client}/app/main/goals/goals.js',
+             '{.tmp,client}/app/main/main.controller.js',
+             '{.tmp,client}/app/main/main.js',
+             '{.tmp,client}/app/main/sites/sites.controller.js',
+             '{.tmp,client}/app/main/sites/sites.js',
+             '{.tmp,client}/app/user_data/blog/blog.controller.js',
+             '{.tmp,client}/app/user_data/blog/blog.js',
+             '{.tmp,client}/app/user_data/data/data.controller.js',
+             '{.tmp,client}/app/user_data/data/data.js',
+             '{.tmp,client}/app/user_data/post/post.controller.js',
+             '{.tmp,client}/app/user_data/post/post.js',
+             '{.tmp,client}/app/user_data/user_data.controller.js',
+             '{.tmp,client}/app/user_data/user_data.js',
+             '{.tmp,client}/app/user_data/wikipage/wikipage.controller.js',
+             '{.tmp,client}/app/user_data/wikipage/wikipage.js',
+             '{.tmp,client}/app/weather/all_sites/all_sites.controller.js',
+             '{.tmp,client}/app/weather/all_sites/all_sites.js',
+             '{.tmp,client}/app/weather/entringen/entringen.controller.js',
+             '{.tmp,client}/app/weather/entringen/entringen.js',
+             '{.tmp,client}/app/weather/poltringen/poltringen.controller.js',
+             '{.tmp,client}/app/weather/poltringen/poltringen.js',
+             '{.tmp,client}/app/weather/tailfingen/tailfingen.controller.js',
+             '{.tmp,client}/app/weather/tailfingen/tailfingen.js',
+             '{.tmp,client}/app/weather/weather.controller.js',
+             '{.tmp,client}/app/weather/weather.js',
+             '{.tmp,client}/components/dropdownInterval/dropdownInterval.controller.js',
+             '{.tmp,client}/components/leftmenu/leftmenu.controller.js',
+             '{.tmp,client}/components/leftmenuuser/leftmenuuser.controller.js',
+             '{.tmp,client}/components/leftmenuweather/leftmenuweather.controller.js',
+             '{.tmp,client}/components/navbar/navbar.controller.js',
+             '{.tmp,client}/components/parametricPlot/parametricPlot.controller.js' ] } ] } }
+
+  uglify:
+  { generated: 
+   { files: 
+      [ { dest: 'dist/public/app/vendor.js',
+          src: [ '.tmp/concat/app/vendor.js' ] },
+        { dest: 'dist/public/app/app.js',
+          src: [ '.tmp/concat/app/app.js' ] } ] } }
+
+  cssmin:
+  { generated: 
+   { files: 
+      [ { dest: 'dist/public/app/vendor.css',
+          src: [ '.tmp/concat/app/vendor.css' ] },
+        { dest: 'dist/public/app/app.css',
+          src: [ '.tmp/concat/app/app.css' ] } ] } }
+
+Running "autoprefixer:dist" (autoprefixer) task
+
+Running "ngtemplates:main" (ngtemplates) task
+File .tmp/templates.js created.
+Added .tmp/templates.js to <!-- build:js app/app.js -->
+
+Running "ngtemplates:tmp" (ngtemplates) task
+>> No templates found
+File .tmp/tmp-templates.js created.
+Added .tmp/tmp-templates.js to <!-- build:js app/app.js -->
+
+Running "concat:generated" (concat) task
+File .tmp/concat/app/vendor.css created.
+File .tmp/concat/app/app.css created.
+File .tmp/concat/app/vendor.js created.
+File .tmp/concat/app/app.js created.
+
+Running "ngAnnotate:dist" (ngAnnotate) task
+>> 2 files successfully generated.
+
+Running "copy:dist" (copy) task
+Created 75 directories, copied 503 files
+
+Running "cdnify:dist" (cdnify) task
+Going through dist/public/index.html to update script refs
+✔ bower_components/jquery/dist/jquery.js changed to //ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+✔ bower_components/angular/angular.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular.min.js
+✔ bower_components/angular-cookies/angular-cookies.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-cookies.min.js
+✔ bower_components/angular-resource/angular-resource.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-resource.min.js
+✔ bower_components/angular-route/angular-route.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-route.min.js
+✔ bower_components/angular-sanitize/angular-sanitize.js changed to //ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular-sanitize.min.js
+
+Running "cssmin:generated" (cssmin) task
+File dist/public/app/vendor.css created: 149.97 kB → 122.93 kB
+File dist/public/app/app.css created: 6.14 kB → 2.49 kB
+
+Running "uglify:generated" (uglify) task
+File dist/public/app/vendor.js created: 2.32 MB → 593.55 kB
+File dist/public/app/app.js created: 54.94 kB → 33.79 kB
+
+Running "rev:dist" (rev) task
+dist/public/app/app.js >> 4882e22c.app.js
+dist/public/app/vendor.js >> a085486e.vendor.js
+dist/public/app/app.css >> baf3ed5e.app.css
+dist/public/app/vendor.css >> 56d0d3f6.vendor.css
+
+Running "usemin:html" (usemin) task
+
+Processing as HTML - dist/public/index.html
+Update the HTML to reference our concat/min/revved script files
+<script src="app/vendor.js" changed to <script src="app/a085486e.vendor.js"
+<script src="app/app.js" changed to <script src="app/4882e22c.app.js"
+Update the HTML with the new css filenames
+<link rel="stylesheet" href="app/vendor.css" changed to <link rel="stylesheet" href="app/56d0d3f6.vendor.css"
+<link rel="stylesheet" href="app/app.css" changed to <link rel="stylesheet" href="app/baf3ed5e.app.css"
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Running "usemin:css" (usemin) task
+
+Processing as CSS - dist/public/app/56d0d3f6.vendor.css
+Fix webfonts path
+
+Processing as CSS - dist/public/app/baf3ed5e.app.css
+Fix webfonts path
+
+Running "usemin:js" (usemin) task
+
+Processing as JS - dist/public/app/4882e22c.app.js
+Update the JS to reference our revved images
+
+Processing as JS - dist/public/app/a085486e.vendor.js
+Update the JS to reference our revved images
+
+Running "env:all" (env) task
+
+Running "env:prod" (env) task
+
+Running "express:prod" (express) task
+Starting background Express server
+Express server listening on 9000, in production mode
+
+Running "wait" task
+>> Waiting for server reload...
+Done waiting!
+
+Running "open:server" (open) task
+
+Running "express-keepalive" task
+GET /api/data/chnId?channel=AirTemp__&station=ent_perm&statistic=Avg 304 60ms
+GET /api/data/chnId?channel=RH__&station=ent_perm&statistic=Avg 304 55ms
+GET /api/data/chnId?channel=WindSpd__&station=ent_perm&statistic=Avg 304 4ms
+GET /api/data/chnId?channel=SR01Up&station=ent_perm&statistic=Avg 304 3ms
+GET /api/data/chnId?channel=Rain_mm&station=ent_perm&statistic=Tot 304 4ms
+GET /api/data/chnId?channel=SoilTemp__&station=ent_perm&statistic=Avg 304 3ms
+GET /api/data/lastTs 200 12ms - 35b
+GET /api/data/lastTs 200 8ms - 35b
+GET /api/data/lastTs 200 9ms - 35b
+GET /api/data/lastTs 304 11ms
+GET /api/data/lastTs 200 6ms - 35b
+GET /api/data/lastTs 304 12ms
+GET /api/data/dataQuery?channel=WindSpd__&chn=8027&chn=8033&chn=8127&chn=8133&chn=8227&chn=8233&chn=8327&chn=8333&day=2015-09-18T08:23:00.000Z&station=ent_perm&timeInterval=One+day 304 26ms
+GET /api/data/dataQuery?channel=SR01Up&chn=8004&day=2015-09-18T08:23:00.000Z&station=ent_perm&timeInterval=One+day 304 40ms
+GET /api/data/dataQuery?channel=Rain_mm&chn=8054&day=2015-09-18T08:23:00.000Z&station=ent_perm&timeInterval=One+day 304 41ms
+GET /api/data/dataQuery?channel=RH__&chn=8040&chn=8044&chn=8140&chn=8144&chn=8240&chn=8244&chn=8340&chn=8344&day=2015-09-18T08:23:00.000Z&station=ent_perm&timeInterval=One+day 304 48ms
+GET /api/data/dataQuery?channel=AirTemp__&chn=8038&chn=8042&chn=8138&chn=8142&chn=8238&chn=8242&chn=8338&chn=8342&day=2015-09-18T08:23:00.000Z&station=ent_perm&timeInterval=One+day 304 52ms
+GET /api/data/dataQuery?channel=SoilTemp__&chn=8057&chn=8060&chn=8157&chn=8160&day=2015-09-18T08:23:00.000Z&station=ent_perm&timeInterval=One+day 304 54ms
+
+
