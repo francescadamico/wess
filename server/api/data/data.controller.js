@@ -617,6 +617,10 @@ exports.dataQuery = function(req,res) {
     var selectOneStation = "SELECT " + dateTrunc_chosen + " as tick, avg(val) as value ";
     var fromOneStation = "from dat_new "; //join tss Using (ts_id) 
     var whereOneStation = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
+    //cumulativeRain single station query parts
+    var selectOneStation_cumulativeRain = "SELECT " + dateTrunc_chosen + " as tick, sum(val) as value ";
+    var fromOneStation_cumulativeRain = "from dat_new "; //join tss Using (ts_id) 
+    var whereOneStation_cumulativeRain = "where ts between $1::timestamp " + timeInterval_chosen + " AND $1::timestamp ";
     
     if (station !== 'all') {
         var whereChn_id = " and chn_id IN ($2::int"
@@ -643,13 +647,14 @@ exports.dataQuery = function(req,res) {
     var groupByOneStation = " GROUP BY tick ";
     var orderByOneStation = "ORDER BY tick "; 
     var queryOneStation = selectOneStation + fromOneStation + whereOneStation + whereChn_id + groupByOneStation + orderByOneStation;
-
+    //cumulative_rain 
+    var queryOneStation_cumulativeRain = selectOneStation_cumulativeRain + fromOneStation_cumulativeRain + whereOneStation_cumulativeRain + whereChn_id + groupByOneStation + orderByOneStation;
     // single station cumulative rain
     var selectOneStation_cumulativeRain = "SELECT tick, sum(value) OVER (ORDER BY tick) as value \
 FROM( ";
     var groupByOneStation_cumulativeRain = ")t \
 GROUP BY tick, value ";
-    var queryOneStation_cumulativeRain = selectOneStation_cumulativeRain + queryOneStation + groupByOneStation_cumulativeRain + orderByOneStation;
+    var queryOneStation_cumulativeRain = selectOneStation_cumulativeRain + queryOneStation_cumulativeRain + groupByOneStation_cumulativeRain + orderByOneStation;
     /*SELECT tick, sum(value) OVER (ORDER BY tick) as value
 FROM(
 SELECT date_trunc('hour', ts) as tick, avg(val) as value
@@ -663,35 +668,50 @@ ORDER BY tick;*/
 
     // all stations query parts
     var selectAllStations = "SELECT tick , sum(val_polt) as val_polt, sum(val_ent) as val_ent, sum(val_tail) as val_tail ";
-    var selectAllStations_cumulativeRain = "SELECT tick , sum(val_polt) OVER (ORDER BY tick) as val_polt, sum(val_ent) OVER (ORDER BY tick) as val_ent, sum(val_tail) OVER (ORDER BY tick) as val_tail ";
     var fromSelectAllStations_firstStation = "FROM ( \
 SELECT " + dateTrunc_chosen + "as tick, avg(val) as val_polt, null::numeric as val_ent, null::numeric as val_tail ";
     var fromSelectAllStations_secondStation = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as val_polt, avg(val) as val_ent, null::numeric as val_tail ";
     var fromSelectAllStations_thirdStation = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as val_polt, null::numeric as val_ent, avg(val) as val_tail ";
     var groupByAllStations = ")t GROUP BY tick ORDER BY tick ASC";
+    //cumulative_rain  all stations query parts
+    var selectAllStations_cumulativeRain = "SELECT tick , sum(val_polt) OVER (ORDER BY tick) as val_polt, sum(val_ent) OVER (ORDER BY tick) as val_ent, sum(val_tail) OVER (ORDER BY tick) as val_tail ";
+    var fromSelectAllStations_firstStation_cumulativeRain = "FROM ( \
+SELECT " + dateTrunc_chosen + "as tick, sum(val) as val_polt, null::numeric as val_ent, null::numeric as val_tail ";
+    var fromSelectAllStations_secondStation_cumulativeRain = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as val_polt, sum(val) as val_ent, null::numeric as val_tail ";
+    var fromSelectAllStations_thirdStation_cumulativeRain = "UNION SELECT " + dateTrunc_chosen + "as tick, null::numeric as val_polt, null::numeric as val_ent, sum(val) as val_tail ";
     var groupByAllStations_cumulativeRain = ")t GROUP BY tick, val_polt, val_ent, val_tail ORDER BY tick ASC";
     
     var queryAllStations;
+    //cumulativeRain variable
+     var queryAllStations_cumulativeRain;
     if (channel !== 'Rain_mm')
         queryAllStations = selectAllStations;
     else 
-        queryAllStations = selectAllStations_cumulativeRain;
+        queryAllStations_cumulativeRain = selectAllStations_cumulativeRain; // cumulativeRain
     
     queryAllStations +=  fromSelectAllStations_firstStation + fromOneStation + whereOneStation +  whereChn_id_polt + groupByOneStation + 
             fromSelectAllStations_secondStation + fromOneStation + whereOneStation +  whereChn_id_ent + groupByOneStation +
             fromSelectAllStations_thirdStation + fromOneStation + whereOneStation +  whereChn_id_tail + groupByOneStation;
+    //cumulative_rain 
+    queryAllStations_cumulativeRain +=  fromSelectAllStations_firstStation_cumulativeRain + fromOneStation_cumulativeRain + whereOneStation_cumulativeRain +  whereChn_id_polt +                    groupByOneStation + 
+            fromSelectAllStations_secondStation_cumulativeRain + fromOneStation_cumulativeRain + whereOneStation_cumulativeRain +  whereChn_id_ent + groupByOneStation +
+            fromSelectAllStations_thirdStation_cumulativeRain + fromOneStation_cumulativeRain + whereOneStation_cumulativeRain +  whereChn_id_tail + groupByOneStation;
+    
     if (channel !== 'Rain_mm')
         queryAllStations += groupByAllStations;
     else 
-        queryAllStations += groupByAllStations_cumulativeRain;
+        queryAllStations_cumulativeRain += groupByAllStations_cumulativeRain; //cumulative Rain
     
     if (station !== 'all') {
-        if (channel === 'Rain_mm') // cumulative rain
+        if (channel === 'Rain_mm') // cumulative rain to display one station 
             queryText = queryOneStation_cumulativeRain;
         else // standard queries
             queryText = queryOneStation;
     }
     else {
+        if (channel === 'Rain_mm') // cumulative rain to display all stations
+             queryText = queryAllStations_cumulativeRain;
+        else
         queryText = queryAllStations;
     }
 
